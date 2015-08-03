@@ -11,6 +11,6 @@ A super clean WordPress starter theme based on [underscores](https://github.com/
 ## Automatic Updates
 
 The Forward WordPress Starter Theme uses [wp-updates](http://wp-updates.com) to notify users of new releases & bug fixes. If this will be used as a custom parent theme, updates can be disabled by removing `wp-updates-theme.php` and the last 5 lines from `functions.php`.
-=======
+
 # alfa-proto
 A full-featured theme based on the Forward starter theme (design.org)
