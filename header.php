@@ -30,12 +30,12 @@
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<div class="container">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false ) ); ?>
-				</div>
+				</div><!-- .container -->
 			</nav><!-- #site-navigation -->
 			<div id="mobile-menu-switch">
 				<a href="" class="toggle">Menu</a>
-			</div>
-		</div><!-- .container -->
+			</div><!-- .mobile-menu-switch -->
+		</div><!-- .header-container -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
