@@ -593,9 +593,7 @@ textarea {
     display: none
 }
 .main-navigation {
-    position: absolute;
-    top: 20px;
-    right: 0
+    position: relative;
 }
 .main-navigation .menu {
     display: block;
