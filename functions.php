@@ -72,6 +72,12 @@ function forward_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	add_image_size( 'small-thumbnail', 75, 9999, false );
+	add_image_size( 'large-thumbnail', 225, 225, true );
+	add_image_size( 'large-artwork', 500, 9999, false );
+	add_image_size( 'slider', 960, 300, true );
+
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'forward' ),
