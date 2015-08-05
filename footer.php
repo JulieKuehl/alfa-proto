@@ -14,7 +14,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="footer-container">
 			<div class="site-info">
-				<?php printf( __( 'Forward by %1$s &mdash; A %2$s Project.', 'forward' ), '<a href="http://design.org" >Design.org</a>', '<a href="http://drawbackwards.com" rel="designer">Drawbackwards</a>' ); ?>
+				<?php printf( __( 'Forward by %1$s', 'forward' ), '<a href="http://design.org" >Design.org</a>' ); ?>
 			</div><!-- .site-info -->
 		</div>
 	</footer><!-- #colophon -->
