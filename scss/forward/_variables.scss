@@ -55,8 +55,10 @@ $hex-background: shade($hex-real-white, 0%);
 // 
 $helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $source-sans: 'Source Sans Pro', $helvetica;
+$garamond: 'Garamond', serif;
 $mono: Monaco, Consolas, 'Lucida Console', monospace;
 $default-font: $source-sans;
+//$default-font: $garamond;
 $default-font-weight: light;
 $headings-font: $helvetica;
 
