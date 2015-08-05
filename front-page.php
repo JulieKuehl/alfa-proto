@@ -16,6 +16,8 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<?php if ( function_exists( 'soliloquy' ) ) { soliloquy( 'main-home-page-slider', 'slug' ); } ?>
+
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
