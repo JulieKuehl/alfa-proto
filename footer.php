@@ -13,7 +13,11 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="footer-container">
-			<div class="site-info">
+			<div class="fat-footer">
+				<span class="footer-left"><?php dynamic_sidebar( 'footer-left' ); ?></span>
+				<span class="footer-right"><?php dynamic_sidebar( 'footer-right' ); ?></span>
+			</div>
+			<!-- <div class="site-info">
 				<?php printf( __( 'Forward by %1$s', 'forward' ), '<a href="http://design.org" >Design.org</a>' ); ?>
 			</div><!-- .site-info -->
 		</div>

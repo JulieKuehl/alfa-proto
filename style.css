@@ -1529,6 +1529,18 @@ article.sticky {
     font-size: 0.875rem;
     line-height: 1.333em; }
 
+.footer-left {
+  float: left; }
+
+.footer-right {
+  float: right;
+  text-align: right; }
+
+.site-info {
+  clear: both;
+  padding-top: 1em;
+  text-align: center; }
+
 .search-form {
   display: block;
   margin-bottom: 1.875rem; }

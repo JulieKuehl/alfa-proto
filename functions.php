@@ -125,6 +125,24 @@ function forward_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Left', 'forward' ),
+		'id'            => 'footer-left',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="footer-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer Right', 'forward' ),
+		'id'            => 'footer-right',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="footer-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 endif; // forward_widgets_init
 add_action( 'widgets_init', 'forward_widgets_init' );

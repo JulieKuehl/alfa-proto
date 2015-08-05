@@ -1308,6 +1308,20 @@ article.format-chat {
     }
 }
 
+.footer-left {
+    float: left;
+}
+
+.footer-right {
+    float: right;
+    text-align: right;
+}
+
+.site-info {
+    clear: both;
+    padding-top: 1em;
+    text-align: center;
+}
 
 ////////////
 // Search //
