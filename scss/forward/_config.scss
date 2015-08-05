@@ -1,8 +1,8 @@
 // Default configuration
 // Use config-child to allow parent variables & mix-ins to be overridden.
 // 
-@import 'bourbon/app/assets/stylesheets/bourbon';
-@import 'neat/app/assets/stylesheets/neat';
+@import '../bourbon/bourbon';
+@import '../neat/neat';
 @import '../base/base';
 @import 'grid-settings';
 @import 'variables';

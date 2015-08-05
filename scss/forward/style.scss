@@ -490,7 +490,7 @@ img {
 // 
 .main-navigation {
     @include media($tablet) {
-        @include position(fixed, $header-bar-height-mobile null null 0px);
+        @include position(relative, $header-bar-height-mobile null null 0px);
 
         display: none;
         float: none;
