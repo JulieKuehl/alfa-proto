@@ -16,7 +16,9 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php if ( function_exists( 'soliloquy' ) ) { soliloquy( 'main-home-page-slider', 'slug' ); } ?>
+			<?php if ( function_exists( 'soliloquy' ) ) {
+				soliloquy( 'main-home-page-slider', 'slug' );
+			} ?>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -40,6 +42,10 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
+
+			<?php if ( function_exists( 'soliloquy' ) ) {
+				soliloquy( 'home-page-carousel', 'slug' );
+			} ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
