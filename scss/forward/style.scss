@@ -507,7 +507,7 @@ img {
 
         height: auto !important;
     }
-    @include position(absolute, 20px 0px null null);
+//    @include position(absolute, 20px 0px null null);
     // Adjust for wp admin bar
     .admin-bar & {
         @include media($tablet) {
