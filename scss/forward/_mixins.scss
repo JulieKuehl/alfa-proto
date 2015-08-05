@@ -73,6 +73,7 @@ $modular-scale-base: 1em;
         font-size: ms(3);
     }
 
+    font-family: $headings-font;
     font-size: ms(4);
     line-height: ms(0);
 
@@ -89,6 +90,7 @@ $modular-scale-base: 1em;
 @mixin type-style-h2 {
     @include font-weight(light);
 
+    font-family: $headings-font;
     font-size: ms(2);
     line-height: ms(1);
 
@@ -99,6 +101,7 @@ $modular-scale-base: 1em;
 @mixin type-style-h3 {
     @include font-weight(normal);
 
+    font-family: $headings-font;
     font-size: ms(1);
     line-height: ms(0);
 
@@ -109,6 +112,7 @@ $modular-scale-base: 1em;
 @mixin type-style-h4 {
     @include font-weight(normal);
 
+    font-family: $headings-font;
     font-size: ms(0);
     line-height: ms(0);
 
@@ -121,6 +125,7 @@ $modular-scale-base: 1em;
 @mixin type-style-h5 {
     @include font-weight(normal);
 
+    font-family: $headings-font;
     font-size: ms(0);
     line-height: ms(0);
 
@@ -131,6 +136,7 @@ $modular-scale-base: 1em;
 @mixin type-style-h6 {
     @include font-weight(normal);
 
+    font-family: $headings-font;
     font-size: ms(0);
     line-height: ms(0);
 
