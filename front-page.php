@@ -43,6 +43,7 @@ get_header(); ?>
 
 		<?php endif; ?>
 
+			<h2>New Artwork</h2>
 			<?php if ( function_exists( 'soliloquy' ) ) {
 				soliloquy( 'home-page-carousel', 'slug' );
 			} ?>
