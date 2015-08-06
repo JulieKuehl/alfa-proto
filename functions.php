@@ -75,7 +75,7 @@ function forward_setup() {
 	add_image_size( 'small-thumbnail', 75, 9999, false );
 	add_image_size( 'large-thumbnail', 225, 225, true );
 	add_image_size( 'large-artwork', 500, 9999, false );
-	add_image_size( 'slider', 960, 300, true );
+	add_image_size( 'slider', 2500, 400, false );
 
 
 	// This theme uses wp_nav_menu() in one location.
