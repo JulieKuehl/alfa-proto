@@ -797,7 +797,8 @@ textarea {
   border-bottom: 1px solid #dadada;
   margin-bottom: 1em; }
   #site-navigation ul {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    padding-top: .5em; }
 
 @media screen and (max-width: 768px) {
   .main-navigation {
