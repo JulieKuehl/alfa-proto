@@ -715,7 +715,7 @@ textarea {
   -webkit-appearance: none; }
 
 .container, .header-container, .content-container, .footer-container {
-  max-width: 68em;
+  max-width: 80em;
   margin-left: auto;
   margin-right: auto;
   padding-right: 2.0225em;
