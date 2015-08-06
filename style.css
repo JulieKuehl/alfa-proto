@@ -793,6 +793,12 @@ textarea {
     top: 0px;
     left: 0px; } }
 
+#site-navigation {
+  border-bottom: 1px solid #dadada;
+  margin-bottom: 1em; }
+  #site-navigation ul {
+    margin-bottom: 0; }
+
 @media screen and (max-width: 768px) {
   .main-navigation {
     position: relative;

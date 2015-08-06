@@ -486,6 +486,17 @@ img {
 // Navigation //
 ////////////////
 
+// Site Navigation
+//
+#site-navigation {
+    border-bottom: 1px solid $hex-border;
+    margin-bottom: 1em;
+
+    ul {
+        margin-bottom: 0;
+    }
+}
+
 // Main Navigation
 // 
 .main-navigation {
