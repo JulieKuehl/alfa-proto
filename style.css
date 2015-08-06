@@ -1080,6 +1080,9 @@ textarea {
   .widget_search .search-form {
     margin-bottom: 1em; }
 
+#soliloquy-container-85 .soliloquy-image {
+  height: 400px !important; }
+
 #home-page-columns {
   margin: 0 auto 2em;
   padding-left: 0;
