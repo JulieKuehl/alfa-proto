@@ -937,6 +937,9 @@ textarea {
   .main-navigation .sub-menu .sub-menu .menu-item {
     padding-left: 0.625rem; } }
 
+ul.sub-menu {
+  z-index: 1000; }
+
 #mobile-menu-switch {
   position: fixed;
   top: 0px;
