@@ -126,6 +126,42 @@ function forward_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
+		'name'          => __( 'Home Column 1', 'forward' ),
+		'id'            => 'home-col-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="home-col-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Home Column 2', 'forward' ),
+		'id'            => 'home-col-2',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="home-col-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Home Column 3', 'forward' ),
+		'id'            => 'home-col-3',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="home-col-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Home Column 4', 'forward' ),
+		'id'            => 'home-col-4',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="home-col-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
 		'name'          => __( 'Footer Left', 'forward' ),
 		'id'            => 'footer-left',
 		'description'   => '',

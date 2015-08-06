@@ -824,6 +824,30 @@ img {
     }
 }
 
+// Home page widget areas
+//
+#home-page-columns {
+    margin: 0 auto 2em;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.home-page-column {
+    float: left;
+    width: 24%;
+    margin-right: 1%;
+    text-align: center;
+}
+
+.home-page-column:last-of-type {
+    margin-right: 0;
+}
+
+.home-col-title {
+    text-align: center;
+}
+
 
 //////////
 // Blog //
