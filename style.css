@@ -1107,6 +1107,15 @@ textarea {
   font-size: 1.7em;
   text-align: center; }
 
+.home-carousel-title {
+  font-weight: 400;
+  font-family: "Garamond", serif;
+  font-size: 1.333em;
+  line-height: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.7em; }
+
 article.post,
 article.page,
 .comment-body {

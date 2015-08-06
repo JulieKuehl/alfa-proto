@@ -855,6 +855,11 @@ img {
     text-align: center;
 }
 
+.home-carousel-title {
+    @include type-style-h3;
+    font-size: 1.7em;
+}
+
 
 //////////
 // Blog //

@@ -81,7 +81,7 @@
 			<div class="home-page-column"><?php dynamic_sidebar( 'home-col-4' ); ?></div>
 		</div>
 
-		<h2>New Artwork</h2>
+		<h3 class="home-carousel-title">New Artwork</h3>
 		<?php if ( function_exists( 'soliloquy' ) ) {
 			soliloquy( 'home-page-carousel', 'slug' );
 		} ?>
