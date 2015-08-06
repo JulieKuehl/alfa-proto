@@ -458,11 +458,11 @@ h6 {
 
 a {
   text-decoration: none;
-  color: #3185CB; }
+  color: #760d10; }
   a:hover {
     text-decoration: underline; }
   a:hover {
-    color: #276aa2; }
+    color: #5e0a0c; }
   a:active {
     position: relative;
     top: 1px; }
@@ -960,7 +960,7 @@ ul.sub-menu {
     height: 60px;
     text-align: center;
     text-transform: uppercase;
-    color: #3185CB; }
+    color: #760d10; }
     #mobile-menu-switch .toggle:hover {
       text-decoration: none; }
     #mobile-menu-switch .toggle:active {
@@ -1709,15 +1709,15 @@ input[type=search] {
 input[type=submit] {
   font-weight: 400;
   padding: 6px 1.776889em;
-  color: #3185CB;
-  border: 1px solid #3185CB;
+  color: #760d10;
+  border: 1px solid #760d10;
   background-color: transparent; }
   @media screen and (max-width: 480px) {
     input[type=submit] {
       width: 100%; } }
   input[type=submit]:hover {
     color: #f9f9f9;
-    background-color: #3185CB; }
+    background-color: #760d10; }
   input[type=submit]:active {
     position: relative;
     top: 1px;

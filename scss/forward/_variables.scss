@@ -36,7 +36,8 @@ $hex-faint: #fdfdfd;
 $hex-light-grey: tint(#000, 60%);
 $hex-grey: tint(#000, 50%);
 
-$hex-primary: $hex-blue;
+//$hex-primary: $hex-blue;
+$hex-primary: #760d10;
 $hex-primary-hover: shade($hex-primary, 20%);
 
 $hex-secondary: $hex-red;
