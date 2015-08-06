@@ -762,7 +762,7 @@ textarea {
 
 .site-title {
   font-weight: 300;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Garamond", serif;
   font-size: 3.1573345183em;
   line-height: 1em;
   margin-top: 0.5627813555em;
@@ -1044,7 +1044,7 @@ textarea {
 
 .widget-title {
   font-weight: 400;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Garamond", serif;
   font-size: 1em;
   line-height: 1em;
   margin-top: 1em;
@@ -1098,6 +1098,13 @@ textarea {
   margin-right: 0; }
 
 .home-col-title {
+  font-weight: 400;
+  font-family: "Garamond", serif;
+  font-size: 1.333em;
+  line-height: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 1.7em;
   text-align: center; }
 
 article.post,
@@ -1116,7 +1123,7 @@ article.page,
   article.page h1,
   .comment-body h1 {
     font-weight: 300;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Garamond", serif;
     font-size: 3.1573345183em;
     line-height: 1em;
     margin-top: 0.5627813555em;
@@ -1138,7 +1145,7 @@ article.page,
   article.page h2,
   .comment-body h2 {
     font-weight: 300;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Garamond", serif;
     font-size: 2.368593037em;
     line-height: 1.776889em;
     margin-top: 1em;
@@ -1147,7 +1154,7 @@ article.page,
   article.page h3,
   .comment-body h3 {
     font-weight: 400;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Garamond", serif;
     font-size: 1.333em;
     line-height: 1em;
     margin-top: 1em;
@@ -1156,7 +1163,7 @@ article.page,
   article.page h4,
   .comment-body h4 {
     font-weight: 400;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Garamond", serif;
     font-size: 1em;
     line-height: 1em;
     margin-top: 1em;
@@ -1166,7 +1173,7 @@ article.page,
   article.page h5,
   .comment-body h5 {
     font-weight: 400;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Garamond", serif;
     font-size: 1em;
     line-height: 1em;
     margin-top: 1em;
@@ -1175,7 +1182,7 @@ article.page,
   article.page h6,
   .comment-body h6 {
     font-weight: 400;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Garamond", serif;
     font-size: 1em;
     line-height: 1em;
     margin-top: 1em;
@@ -1205,7 +1212,7 @@ article.page,
 
 .entry-title {
   font-weight: 300;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Garamond", serif;
   font-size: 3.1573345183em;
   line-height: 1em;
   margin-top: 0.5627813555em;
@@ -1239,7 +1246,7 @@ article.page,
 
 .page-title {
   font-weight: 400;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Garamond", serif;
   font-size: 1em;
   line-height: 1em;
   margin-top: 1em;
@@ -1402,7 +1409,7 @@ article.sticky {
 
 .comments-title {
   font-weight: 300;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Garamond", serif;
   font-size: 2.368593037em;
   line-height: 1.776889em;
   margin-top: 1em;
@@ -1492,7 +1499,7 @@ article.sticky {
 .comment-reply-title,
 .comments-title {
   font-weight: 300;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Garamond", serif;
   font-size: 2.368593037em;
   line-height: 1.776889em;
   margin-top: 1em;
@@ -1603,7 +1610,7 @@ article.sticky {
 
 .content-area label {
   font-weight: 400;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Garamond", serif;
   font-size: 1em;
   line-height: 1em;
   margin-top: 1em;
@@ -1766,7 +1773,7 @@ input[type=submit] {
     margin-right: 0; }
 .error404 .page-title {
   font-weight: 300;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Garamond", serif;
   font-size: 3.1573345183em;
   line-height: 1em;
   margin-top: 0.5627813555em;

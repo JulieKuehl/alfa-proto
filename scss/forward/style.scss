@@ -838,7 +838,6 @@ img {
     padding-right: 0;
 }
 
-
 .home-page-column {
     float: left;
     width: 24%;
@@ -851,6 +850,8 @@ img {
 }
 
 .home-col-title {
+    @include type-style-h3;
+    font-size: 1.7em;
     text-align: center;
 }
 
