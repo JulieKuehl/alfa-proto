@@ -740,6 +740,7 @@ ul.sub-menu {
     margin-bottom: unit(4);
 }
 
+
 /////////////
 // Primary //
 /////////////
@@ -1422,6 +1423,47 @@ article.format-chat {
     }
 }
 
+
+// Search Form as icon in nav
+//
+#menu-main-menu {
+    float: left;
+}
+
+#site-navigation .search-form {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 2em;
+}
+
+#site-navigation .search-field {
+    background-color: transparent;
+    background-image: url(images/search-icon.png);
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    border: none;
+    cursor: pointer;
+    height: 37px;
+    margin: 3px 0;
+    padding: 0 0 0 34px;
+    position: relative;
+    -webkit-transition: width 400ms ease, background 400ms ease;
+    transition:         width 400ms ease, background 400ms ease;
+    width: 0;
+}
+
+#site-navigation .search-field:focus {
+    background-color: #fff;
+    border: 2px solid #c3c0ab;
+    cursor: text;
+    outline: 0;
+    width: 230px;
+}
+.search-form
+.search-submit {
+    display:none;
+}
 
 ///////////
 // Forms //

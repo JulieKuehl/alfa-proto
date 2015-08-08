@@ -278,3 +278,8 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
+
+/**
+ * Add HTML5 search form support
+ */
+add_theme_support('html5', array('search-form'));

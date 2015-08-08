@@ -35,7 +35,7 @@
 
 	<nav id="site-navigation" class="main-navigation" role="navigation">
 		<div class="container">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false ) ); ?> <?php get_search_form(); ?>
 		</div><!-- .container -->
 	</nav><!-- #site-navigation -->
 
