@@ -17,6 +17,14 @@ $easing-default: ease-in-out;
 $margin: $gutter;
 $padding: $gutter;
 
+// Style Tile Colors
+//
+$color-alfa-1: #760d10;
+$color-alfa-2: #959977;
+$color-alfa-3: #e0e0c0;
+$color-alfa-4: #5e5e5e;
+$color-alfa-5: #040404;
+
 // Colors
 // 
 $hex-default: tint(#000, 35%);
@@ -37,10 +45,11 @@ $hex-light-grey: tint(#000, 60%);
 $hex-grey: tint(#000, 50%);
 
 //$hex-primary: $hex-blue;
-$hex-primary: #760d10;
+$hex-primary: $color-alfa-1;
 $hex-primary-hover: shade($hex-primary, 20%);
 
-$hex-secondary: $hex-red;
+//$hex-secondary: $hex-red;
+$hex-secondary: $color-alfa-2;
 $hex-secondary-hover: shade($hex-secondary, 20%);
 
 $hex-border: shade(#e6e6e6, 5%);
