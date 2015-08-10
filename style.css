@@ -1814,3 +1814,14 @@ input[type=submit] {
   height: 400px;
   border: #ccc solid 1px;
   margin: 20px 0; }
+
+.orderby {
+  height: 3em; }
+
+.woocommerce-ordering select {
+  background-color: #959977;
+  padding: 1em;
+  color: #dadada; }
+
+.woocommerce-ordering option {
+  padding: 1em .5em 1em; }

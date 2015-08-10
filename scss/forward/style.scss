@@ -1620,3 +1620,26 @@ input[type=submit] {
     border: #ccc solid 1px;
     margin: 20px 0;
 }
+
+
+/////////////////
+// WooCommerce //
+/////////////////
+
+.woocommerce .woocommerce-ordering {
+
+}
+
+.orderby {
+    height: 3em;
+}
+
+.woocommerce-ordering select {
+    background-color: $hex-secondary;
+    padding: 1em;
+    color: $hex-border;
+}
+
+.woocommerce-ordering option {
+    padding: 1em .5em 1em;
+}
