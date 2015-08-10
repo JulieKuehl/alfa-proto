@@ -283,3 +283,25 @@ function woocommerce_support() {
  * Add HTML5 search form support
  */
 add_theme_support('html5', array('search-form'));
+
+
+/**
+ * Change the Shop archive page title.
+ * @param  string $title
+ * @return string
+ */
+function wc_custom_shop_archive_title( $title ) {
+	if ( is_shop() ) {
+		return str_replace( __( 'Products', 'woocommerce' ), 'Artwork', $title );
+	}
+
+	return $title;
+}
+add_filter( 'wp_title', 'wc_custom_shop_archive_title' );
+
+function woo_shop_page_title( $page_title ) {
+	if( 'Shop' == $page_title) {
+		return "Artwork";
+	}
+}
+add_filter( 'woocommerce_page_title', 'woo_shop_page_title');
