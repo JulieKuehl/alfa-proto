@@ -10,13 +10,15 @@
 
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-		<?php the_field( 'gallery_city' ); ?>, <?php the_field( 'gallery_state' ); ?><br/>
+		<p></p><?php the_field( 'gallery_city' ); ?>, <?php the_field( 'gallery_state' ); ?></p>
 
-		<?php $image = wp_get_attachment_image_src(get_field('gallery_photo'), 'full'); ?>
+		<img src="<?php the_field( 'gallery_photo' ); ?>" height="300" width="auto"/>
 
 		<!-- TODO: get medium image to display -->
-		<?php var_dump( $image[0] ); ?>
-		<img src="<?php echo $image[0]; ?>" alt="<?php echo get_the_title(get_field('gallery_photo')) ?>" />
+		<!-- Code to grab a specified size of the gallery's image -->
+		<?php //$image = wp_get_attachment_image_src(get_field('gallery_photo'), 'full'); ?>
+		<?php //var_dump( $image[0] ); ?>
+<!--		<img src="--><?php //echo $image[0]; ?><!--" alt="--><?php //echo get_the_title(get_field('gallery_photo')) ?><!--" />-->
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">

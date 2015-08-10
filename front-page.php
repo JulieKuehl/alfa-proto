@@ -21,21 +21,23 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'forward' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="header-container">
+	<header id="masthead" class="" role="banner">
+		<div class="site-header header-container">
+			<div class="search-box">
+				<?php get_search_form(); ?>
+			</div><!-- .search-box  -->
 			<div class="site-branding">
-				<h1 class="site-title"><a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<div class="site-description"><?php bloginfo( 'description' ); ?></div>
+				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/alfa-logo.png" alt="ALFA Logo" /></a>
 			</div><!-- .site-branding -->
-			<div id="mobile-menu-switch">
-				<a href="" class="toggle">Menu</a>
-			</div><!-- .mobile-menu-switch -->
 		</div><!-- .header-container -->
 	</header><!-- #masthead -->
 
+	<div id="mobile-menu-switch">
+		<a href="" class="toggle">Menu</a>
+	</div><!-- .mobile-menu-switch -->
 	<nav id="site-navigation" class="main-navigation" role="navigation">
 		<div class="container">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false ) ); ?> <?php get_search_form(); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false ) ); ?>
 		</div><!-- .container -->
 	</nav><!-- #site-navigation -->
 
