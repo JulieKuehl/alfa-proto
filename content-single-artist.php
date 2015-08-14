@@ -39,6 +39,32 @@
 		?>
 	</div><!-- .entry-content -->
 
+	<!-- Related artwork connected posts -->
+	<?php
+	// Find connected pages
+	$connected = new WP_Query( array(
+		'connected_type' => 'product_to_artist',
+		'connected_items' => get_queried_object(),
+		'nopaging' => true,
+	) );
+
+	// Display connected pages
+	if ( $connected->have_posts() ) :
+		?>
+		<h3>Related artwork:</h3>
+		<ul>
+			<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php the_post_thumbnail( 'thumbnail'); ?></li>
+			<?php endwhile; ?>
+		</ul>
+
+		<?php
+// Prevent weirdness
+		wp_reset_postdata();
+
+	endif;
+	?>
+
 	<footer class="entry-footer">
 		<?php forward_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
