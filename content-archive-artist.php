@@ -6,16 +6,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php forward_featured_image(); ?>
-
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php forward_posted_on(); ?>
-		</div><!-- .entry-meta -->
+		<?php $image = get_field('artist_photo'); ?>
+		<?php if($image): //dont output an empty image tag ?>
+			<div class="artist-archive-photo">
+				<img src="<?php echo $image['sizes']['large-thumbnail']; ?>" alt="<?php echo $image['caption']; ?>" />
+			</div>
 		<?php endif; ?>
+
+		<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
