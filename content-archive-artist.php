@@ -11,7 +11,7 @@
 		<div class="artist-archive-photo">
 			<?php
 			$attachment_id = get_field('artist_photo_id');
-			$size = 'large-thumbnail'; // (thumbnail, medium, large, full or custom size)
+			$size = 'large-thumbnail'; 
 			$image = wp_get_attachment_image_src( $attachment_id, $size );
 			$image_url = $image['sizes']['large-thumbnail'];
 			// url = $image[0];
