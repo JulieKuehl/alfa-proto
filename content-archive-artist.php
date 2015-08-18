@@ -4,38 +4,28 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> class="gallery">
 
-	<header class="entry-header">
+	<div class="artist-archive-entry">
 
-		<?php $image = get_field('artist_photo'); ?>
-		<?php if($image): //dont output an empty image tag ?>
-			<div class="artist-archive-photo">
-				<img src="<?php echo $image['sizes']['large-thumbnail']; ?>" alt="<?php echo $image['caption']; ?>" />
-			</div>
-		<?php endif; ?>
+		<div class="artist-archive-photo">
+			<?php
+			$attachment_id = get_field('artist_photo_id');
+			$size = 'large-thumbnail'; // (thumbnail, medium, large, full or custom size)
+			$image = wp_get_attachment_image_src( $attachment_id, $size );
+			$image_url = $image['sizes']['large-thumbnail'];
+			// url = $image[0];
+			// width = $image[1];
+			// height = $image[2];
+			?>
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark">
+				<img class="artist_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
+			</a>
+		</div>
 
-		<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+		<?php the_title( sprintf( '<h3 class="artist-archive-name"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
 
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue Reading %s', 'forward' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-		?>
-
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'forward' ),
-				'after'  => '</div>',
-				'pagelink' => '<span>%</span>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+	</div><!-- .artist-entry-header -->
 
 	<footer class="entry-footer">
 		<?php forward_entry_footer(); ?>
