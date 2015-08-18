@@ -462,7 +462,7 @@ a {
   a:hover {
     text-decoration: underline; }
   a:hover {
-    color: #5e0a0c; }
+    color: #5e0a0d; }
   a:active {
     position: relative;
     top: 1px; }
@@ -484,7 +484,7 @@ blockquote {
   line-height: 1.776889em;
   margin-bottom: 1em;
   padding-left: 1.333em;
-  border-left: 1px solid #dadada; }
+  border-left: 1px solid #dbdbdb; }
   blockquote p {
     margin-bottom: 1em; }
     > blockquote p:last-child {
@@ -513,7 +513,7 @@ code {
   padding: 0.237601541em 0.4221915645em 0.237601541em 0.4221915645em;
   background-color: #fdfdfd; }
   body code {
-    border: 1px solid #dadada; }
+    border: 1px solid #dbdbdb; }
 
 pre {
   overflow: auto;
@@ -522,7 +522,7 @@ pre {
   padding: 1.776889em;
   background-color: #fdfdfd; }
   body pre {
-    border: 1px solid #dadada; }
+    border: 1px solid #dbdbdb; }
 
 acronym,
 abbr {
@@ -733,7 +733,7 @@ textarea {
   position: relative; }
 
 #masthead {
-  border-bottom: 1px solid #dadada; }
+  border-bottom: 1px solid #dbdbdb; }
 
 .site-title {
   font-weight: 300;
@@ -758,7 +758,7 @@ textarea {
     left: 0px; } }
 
 #site-navigation {
-  border-bottom: 1px solid #dadada;
+  border-bottom: 1px solid #dbdbdb;
   margin-bottom: 1em; }
   #site-navigation ul {
     margin-bottom: 0;
@@ -845,7 +845,7 @@ textarea {
       padding-right: 1.01125em;
       padding-bottom: 0.625rem;
       padding-left: 1.01125em;
-      border-bottom: 1px solid #dadada; } }
+      border-bottom: 1px solid #dbdbdb; } }
 @media screen and (min-width: 769px) {
   .main-navigation .sub-menu {
     position: absolute;
@@ -856,7 +856,7 @@ textarea {
     display: none;
     min-width: 150px;
     padding: 0.625rem;
-    border: 1px solid #dadada;
+    border: 1px solid #dbdbdb;
     background-color: #f9f9f9; } }
 @media screen and (max-width: 768px) {
   .main-navigation .sub-menu {
@@ -930,7 +930,7 @@ ul.sub-menu {
     #mobile-menu-switch .toggle:active {
       top: 0; }
     #mobile-menu-switch .toggle.on {
-      border-left: 1px solid #dadada;
+      border-left: 1px solid #dbdbdb;
       background-color: #f9f9f9; }
 
 .post-navigation {
@@ -1028,7 +1028,7 @@ ul.sub-menu {
   margin-bottom: 1em;
   padding-top: 1em;
   padding-bottom: 1em;
-  border-bottom: 1px solid #dadada; }
+  border-bottom: 1px solid #dbdbdb; }
   .widget:first-child {
     padding-top: 0; }
   .widget:last-child {
@@ -1092,7 +1092,7 @@ article.page,
 .comment-body {
   margin-bottom: 3.75rem;
   padding-bottom: 3.75rem;
-  border-bottom: 1px solid #dadada; }
+  border-bottom: 1px solid #dbdbdb; }
   @media screen and (max-width: 768px) {
     article.post,
     article.page,
@@ -1184,7 +1184,7 @@ article.page,
     line-height: 1.333em;
     padding: 0.7501875469em 0.7501875469em 0.7501875469em 0;
     text-align: left;
-    border-bottom: 1px solid #dadada; }
+    border-bottom: 1px solid #dbdbdb; }
 
 .page article.page {
   padding-bottom: 0;
@@ -1527,7 +1527,7 @@ article.sticky {
 .site-footer {
   padding-top: 3.75rem;
   padding-bottom: 3.75rem;
-  border-top: 1px solid #dadada; }
+  border-top: 1px solid #dbdbdb; }
   @media screen and (max-width: 768px) {
     .site-footer {
       padding-top: 1.875rem;
@@ -1659,7 +1659,7 @@ textarea, input[type=search] {
   margin-top: 0.3167228541em;
   margin-bottom: 1em;
   padding: 6px 8px;
-  border: 1px solid #c4c4c4; }
+  border: 1px solid #c5c5c5; }
   input[type='color']:hover,
   input[type='date']:hover,
   input[type='datetime']:hover,
@@ -1689,7 +1689,7 @@ textarea, input[type=search] {
   input[type='url']:focus,
   input[type='week']:focus,
   textarea:focus, input[type=search]:focus {
-    border-color: #989898;
+    border-color: #999999;
     outline: none; }
 
 input[type='color'],
@@ -1821,7 +1821,7 @@ input[type=submit] {
 .woocommerce-ordering select {
   background-color: #959977;
   padding: 1em;
-  color: #dadada; }
+  color: #dbdbdb; }
 
 .woocommerce-ordering option {
   padding: 1em .5em 1em; }
