@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area fullwidth">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -20,23 +20,24 @@ get_header(); ?>
 
 			</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<div class="outer-container">
 
-				<?php get_template_part( 'content', 'archive-artist' ); ?>
+				<?php /* Start the Loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php endwhile; ?>
+						<?php get_template_part( 'content', 'archive-artist' ); ?>
 
-			<?php forward_posts_navigation(); ?>
+				<?php endwhile; ?>
 
-		<?php else : ?>
+			</div><!-- .outer-container -->
 
-			<?php get_template_part( 'content', 'none' ); ?>
+				<?php forward_posts_navigation(); ?>
 
-		<?php endif; ?>
+				<?php else : ?>
+					<?php get_template_part( 'content', 'none' ); ?>
+				<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

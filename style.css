@@ -1825,3 +1825,10 @@ input[type=submit] {
 
 .woocommerce-ordering option {
   padding: 1em .5em 1em; }
+
+.fullwidth {
+  width: 100%; }
+
+.artist-archive-entry {
+  float: left;
+  width: 25%; }
