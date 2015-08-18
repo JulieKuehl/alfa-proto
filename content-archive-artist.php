@@ -30,5 +30,5 @@
 		</footer><!-- .entry-footer -->
 
 	</div><!-- .artist-archive-entry -->
-	
+
 </article><!-- #post-## -->

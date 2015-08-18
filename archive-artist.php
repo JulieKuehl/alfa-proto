@@ -20,7 +20,7 @@ get_header(); ?>
 
 			</header><!-- .page-header -->
 
-			<div class="outer-container">
+			<div class="outer-container facetwp-template">
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
