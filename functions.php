@@ -296,6 +296,13 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 30);
 
+/**
+ * Remove WooCommerce breadcrumbs
+ */
+add_action( 'init', 'jk_remove_wc_breadcrumbs' );
+function jk_remove_wc_breadcrumbs() {
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+}
 
 
 /**
