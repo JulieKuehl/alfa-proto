@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area fullwidth">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -19,6 +19,8 @@ get_header(); ?>
 				<h1 class="page-title"><?php echo str_replace( 'Archives: ', '', get_the_archive_title() ); ?></h1>
 
 			</header><!-- .page-header -->
+
+			<?php query_posts($query_string . '&orderby=team_member_display_order&order=ASC'); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>

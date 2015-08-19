@@ -34,13 +34,10 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue Reading %s', 'forward' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-		?>
+
+		<?php the_field( 'team_member_details'); ?>
+
+		<?php the_title(); ?> can be reached at <a href="<?php the_field( 'team_member_email' ); ?>"><?php the_field( 'team_member_email' ); ?></a>
 
 		<?php
 			wp_link_pages( array(
