@@ -41,6 +41,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
 
+	<?php
+	/* get artist name connected to product*/
+	$connected = p2p_type( 'product_to_artist' )->set_direction( 'to' )->get_connected( $post_id );
+	?>
+	<?php the_field( 'artist_firstname' ); ?> <?php the_field( 'artist_lastname' ); ?>
+
 	<div class="summary entry-summary">
 
 		<?php
@@ -57,7 +63,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			 */
 			do_action( 'woocommerce_single_product_summary' );
 		?>
-
+		<p>For more information, <a href="/contact/">please contact us.</a></p>
 	</div><!-- .summary -->
 
 	<?php
