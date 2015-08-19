@@ -10,9 +10,9 @@
 
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-		<p></p><?php the_field( 'gallery_city' ); ?>, <?php the_field( 'gallery_state' ); ?></p>
+			<p><?php the_field( 'gallery_city' ); ?>, <?php the_field( 'gallery_state' ); ?></p>
 
-		<div class="artist-archive-photo">
+		<div class="gallery-archive-photo">
 			<?php
 			$attachment_id = get_field('gallery_photo_id');
 			$size = 'large-thumbnail';
