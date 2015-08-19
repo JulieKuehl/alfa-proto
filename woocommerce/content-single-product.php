@@ -63,7 +63,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			 */
 			do_action( 'woocommerce_single_product_summary' );
 		?>
+
 		<p>For more information, <a href="/contact/">please contact us.</a></p>
+		
 	</div><!-- .summary -->
 
 	<?php
