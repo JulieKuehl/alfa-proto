@@ -86,6 +86,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 //		do_action( 'woocommerce_after_shop_loop_item' );
 
 	?>
+
 	<a href="<?php the_permalink(); ?>"<span class="view-artwork-link">View this piece</span></a>
 
 </li>

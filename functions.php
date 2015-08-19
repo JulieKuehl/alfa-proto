@@ -304,8 +304,30 @@ function jk_remove_wc_breadcrumbs() {
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 }
 
-
 /**
  * Add HTML5 search form support
  */
 add_theme_support('html5', array('search-form'));
+
+/**
+ * Add ShareThis support for WooCommerce
+ */
+if ( ! defined( 'SHARETHIS_PUBLISHER_ID' ) ) {
+	define( 'SHARETHIS_PUBLISHER_ID', 'enter your id here' );
+}
+
+function sharethis_for_woocommerce() {
+	global $post;
+
+	$thumbnail_id = get_post_thumbnail_id( $post->ID );
+	$thumbnail    = $thumbnail_id ? current( wp_get_attachment_image_src( $thumbnail_id, 'large' ) ) : '';
+	?>
+	<div class="social">
+		<iframe src="https://www.facebook.com/plugins/like.php?href=<?php echo esc_attr( urlencode( get_permalink( $post->ID ) ) ); ?>&layout=button_count&show_faces=false&width=100&action=like&colorscheme=light&height=21" style="border:none; overflow:hidden; width:100px; height:21px;"></iframe>
+		<span class="st_twitter"></span><span class="st_email"></span><span class="st_sharethis" st_image="<?php echo esc_attr( urlencode( $thumbnail ) ); ?>"></span><span class="st_plusone_button"></span>
+	</div>
+	<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher:"<?php echo esc_attr( SHARETHIS_PUBLISHER_ID ); ?>"});</script>
+	<?php
+}
+add_action( 'woocommerce_share', 'sharethis_for_woocommerce' );
