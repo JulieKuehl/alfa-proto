@@ -27,11 +27,15 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 	?>
 
+<div class="content-area fullwidth">
+
 <!-- TODO: is this needed? -->
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
 <!--			<h1 class="page-title">--><?php //woocommerce_page_title(); ?><!--</h1>-->
-			<h1 class="page-title">ALFA Artwork</h1>
+
+				<h1 class="page-title">Artwork</h1>
+
 
 		<?php endif; ?>
 
@@ -93,13 +97,14 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_after_main_content' );
 	?>
 
-<!--	--><?php
+	<?php
 //		/**
 //		 * woocommerce_sidebar hook
 //		 *
 //		 * @hooked woocommerce_get_sidebar - 10
 //		 */
 //		do_action( 'woocommerce_sidebar' );
-//	?>
+	?>
+</div><!-- .content-area -->
 
 <?php get_footer( 'shop' ); ?>

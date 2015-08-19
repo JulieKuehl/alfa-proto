@@ -65,7 +65,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<p>For more information, <a href="/contact/">please contact us.</a></p>
-		
+
 	</div><!-- .summary -->
 
 	<?php
