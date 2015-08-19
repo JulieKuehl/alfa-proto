@@ -1815,6 +1815,9 @@ input[type=submit] {
   border: #ccc solid 1px;
   margin: 20px 0; }
 
+.woocommerce .woocommerce-ordering {
+  display: none; }
+
 .orderby {
   height: 3em; }
 
