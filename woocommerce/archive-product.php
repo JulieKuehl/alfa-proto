@@ -27,9 +27,11 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 	?>
 
+<!-- TODO: is this needed? -->
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
-			<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
+<!--			<h1 class="page-title">--><?php //woocommerce_page_title(); ?><!--</h1>-->
+			<h1 class="page-title">ALFA Artwork</h1>
 
 		<?php endif; ?>
 
