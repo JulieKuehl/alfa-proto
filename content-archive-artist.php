@@ -19,6 +19,7 @@
 			// height = $image[2];
 			?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark">
+
 				<img class="artist_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
 			</a>
 
