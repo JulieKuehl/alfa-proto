@@ -83,8 +83,9 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 		 *
 		 * @hooked woocommerce_template_loop_add_to_cart - 10
 		 */
-		do_action( 'woocommerce_after_shop_loop_item' );
+//		do_action( 'woocommerce_after_shop_loop_item' );
 
 	?>
+	<a href="<?php the_permalink(); ?>"<span class="view-artwork-link">View this piece</span></a>
 
 </li>

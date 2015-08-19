@@ -1836,4 +1836,10 @@ input[type=submit] {
   float: left;
   width: 25%; }
 
+.view-artwork-link {
+  background-color: #959977;
+  border-radius: 6px;
+  color: #e0e0c0;
+  padding: .5em; }
+
 /*# sourceMappingURL=style.css.map */
