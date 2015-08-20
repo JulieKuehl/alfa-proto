@@ -27,7 +27,21 @@
 //			) );
 //		?>
 
-		<img src="<?php the_field( 'artist_photo' ); ?>" />
+		<div class="artist-archive-photo">
+			<?php
+			$attachment_id = get_field('artist_photo_id');
+			$size = 'large-thumbnail';
+			$image = wp_get_attachment_image_src( $attachment_id, $size );
+			$image_url = $image['sizes']['large-thumbnail'];
+			// url = $image[0];
+			// width = $image[1];
+			// height = $image[2];
+			?>
+
+			<img class="artist_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
+
+		</div><!-- .artist-archive-photo -->
+
 		<?php echo the_field( 'artist_biography' ); ?>
 
 		<?php
