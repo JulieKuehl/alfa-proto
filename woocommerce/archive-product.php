@@ -17,37 +17,31 @@ get_header( 'shop' ); ?>
 
 <?php query_posts($query_string . '&orderby=date&order=DESC'); ?>
 
+<?php
+	/**
+	 * woocommerce_before_main_content hook
+	 *
+	 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+	 * @hooked woocommerce_breadcrumb - 20
+	 */
+	do_action( 'woocommerce_before_main_content' );
+?>
+
+<div class="content-area">
+
+	<h1 class="page-title">Artwork</h1>
+
 	<?php
 		/**
-		 * woocommerce_before_main_content hook
+		 * woocommerce_archive_description hook
 		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
+		 * @hooked woocommerce_taxonomy_archive_description - 10
+		 * @hooked woocommerce_product_archive_description - 10
 		 */
-		do_action( 'woocommerce_before_main_content' );
+		do_action( 'woocommerce_archive_description' );
 	?>
 
-<div class="content-area fullwidth">
-
-<!-- TODO: is this needed? -->
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-
-<!--			<h1 class="page-title">--><?php //woocommerce_page_title(); ?><!--</h1>-->
-
-				<h1 class="page-title">Artwork</h1>
-
-
-		<?php endif; ?>
-
-		<?php
-			/**
-			 * woocommerce_archive_description hook
-			 * 
-			 * @hooked woocommerce_taxonomy_archive_description - 10
-			 * @hooked woocommerce_product_archive_description - 10
-			 */
-			do_action( 'woocommerce_archive_description' );
-		?>
+	<div class="facetwp-template">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -88,6 +82,8 @@ get_header( 'shop' ); ?>
 
 		<?php endif; ?>
 
+	</div>
+
 	<?php
 		/**
 		 * woocommerce_after_main_content hook
@@ -98,13 +94,16 @@ get_header( 'shop' ); ?>
 	?>
 
 	<?php
-//		/**
-//		 * woocommerce_sidebar hook
-//		 *
-//		 * @hooked woocommerce_get_sidebar - 10
-//		 */
-//		do_action( 'woocommerce_sidebar' );
+	//		/**
+	//		 * woocommerce_sidebar hook
+	//		 *
+	//		 * @hooked woocommerce_get_sidebar - 10
+	//		 */
+	//		do_action( 'woocommerce_sidebar' );
 	?>
+
+	<?php get_sidebar( 'sidebar' ); ?>
+
 </div><!-- .content-area -->
 
 <?php get_footer( 'shop' ); ?>
