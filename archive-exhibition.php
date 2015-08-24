@@ -20,10 +20,10 @@ get_header(); ?>
 
 			</header><!-- .page-header -->
 
-			<?php query_posts($query_string . '&orderby=exhibition_ending_date&order=DESC'); ?>
-
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php add_action( 'pre_get_posts', 'alfa_get_posts_exhbition' ); ?>
 
 				<?php get_template_part( 'content', 'archive-exhibition' ); ?>
 

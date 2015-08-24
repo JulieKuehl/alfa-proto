@@ -338,11 +338,7 @@ add_action( 'woocommerce_share', 'sharethis_for_woocommerce' );
 // Sort products (artwork) archive page by title
 add_action( 'pre_get_posts', 'alfa_get_posts_product' );
 
-function alfa_get_posts_product( $query )
-{
-	if (is_admin()){
-		return;
-	}
+function alfa_get_posts_product( $query ) {
 
 	if (is_post_type_archive('product')){
 
@@ -356,17 +352,27 @@ function alfa_get_posts_product( $query )
 // Sort artists archive page by title (name)
 add_action( 'pre_get_posts', 'alfa_get_posts_artist' );
 
-function alfa_get_posts_artist( $query )
-{
-	if (is_admin()){
-		return;
-	}
+function alfa_get_posts_artist( $query ) {
 
 	if (is_post_type_archive('artist')){
 
 		// Stock: sort artists by title (name)
 		$query->set('orderby', 'title');
 		$query->set('order', 'ASC' );
+	}
+	return $query;
+}
+
+// Sort exhibitions archive page by ending date
+add_action( 'pre_get_posts', 'alfa_get_posts_exhibition' );
+
+function alfa_get_posts_exhibition( $query ) {
+
+	if (is_post_type_archive('exhibition')){
+
+		// Stock: sort artists by title (name)
+		$query->set('orderby', 'exhibition_ending_date');
+		$query->set('order', 'DESC' );
 	}
 	return $query;
 }
