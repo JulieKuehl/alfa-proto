@@ -41,13 +41,39 @@ if ( ! defined( 'ABSPATH' ) ) {
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
 
-	<?php
-	/* get artist name connected to product*/
-	$connected = p2p_type( 'product_to_artist' )->set_direction( 'to' )->get_connected( $post_id );
-	?>
-	<?php the_field( 'artist_firstname' ); ?> <?php the_field( 'artist_lastname' ); ?>
-
 	<div class="summary entry-summary">
+
+<!--		--><?php
+//		/* get artist name connected to product*/
+//		$connected = p2p_type( 'product_to_artist' )->set_direction( 'to' )->get_connected( $post_id );
+//		?>
+
+<!--		Artist: --><?php //the_field( 'artist_firstname' ); ?><!-- --><?php //the_field( 'artist_lastname' ); ?>
+
+		<!-- Related artwork connected posts -->
+		<?php
+		// Find connected artwork (product)
+		$connected = new WP_Query( array(
+			'connected_type' => 'product_to_artist',
+			'connected_items' => get_queried_object(),
+			'nopaging' => true,
+		) );
+
+		// Display connected artwork (product)
+		if ( $connected->have_posts() ) :
+			?>
+
+				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<?php endwhile; ?>
+
+
+			<?php
+			// Prevent weirdness
+			wp_reset_postdata();
+
+		endif;
+		?>
 
 		<?php
 			/**
