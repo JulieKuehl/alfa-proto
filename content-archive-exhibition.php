@@ -10,7 +10,9 @@
 
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-			<p><?php the_field( 'exhibition_starting_date' ); ?> &mdash; <?php the_field( 'exhibition_ending_date' ); ?><br />
+
+			<p><?php $starting_date = DateTime::createFromFormat('Ymd', get_field('exhibition_starting_date'));
+				echo $starting_date->format('l, F jS, Y'); ?> &mdash; <?php $ending_date = DateTime::createFromFormat('Ymd', get_field('exhibition_ending_date')); 	echo $ending_date->format('l, F jS, Y'); ?><br />
 			<?php the_field( 'exhibition_location' ); ?></p>
 
 		<div class="exhibition-archive-photo">
@@ -36,13 +38,13 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue Reading %s', 'forward' ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-		?>
+<!--		--><?php
+//			/* translators: %s: Name of current post */
+//			the_content( sprintf(
+//				__( 'Continue Reading %s', 'forward' ),
+//				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+//			) );
+//		?>
 
 		<?php
 			wp_link_pages( array(
