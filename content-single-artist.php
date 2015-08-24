@@ -55,14 +55,14 @@
 
 	<!-- Related artwork connected posts -->
 	<?php
-	// Find connected pages
+	// Find connected artwork (product)
 	$connected = new WP_Query( array(
 		'connected_type' => 'product_to_artist',
 		'connected_items' => get_queried_object(),
 		'nopaging' => true,
 	) );
 
-	// Display connected pages
+	// Display connected artwork (product)
 	if ( $connected->have_posts() ) :
 		?>
 		<h3>Related artwork:</h3>
@@ -73,7 +73,7 @@
 		</ul>
 
 		<?php
-// Prevent weirdness
+		// Prevent weirdness
 		wp_reset_postdata();
 
 	endif;
