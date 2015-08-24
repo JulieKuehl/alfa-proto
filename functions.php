@@ -370,7 +370,7 @@ function alfa_get_posts_exhibition( $query ) {
 
 	if (is_post_type_archive('exhibition')){
 
-		// Stock: sort artists by title (name)
+		// Stock: sort exhbitions by ending date
 		$query->set('orderby', 'exhibition_ending_date');
 		$query->set('order', 'DESC' );
 	}
