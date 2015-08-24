@@ -20,7 +20,7 @@
 
 		<p><?php $starting_date = DateTime::createFromFormat('Ymd', get_field('exhibition_starting_date'));
 			echo $starting_date->format('l, F jS, Y'); ?> &mdash; <?php $ending_date = DateTime::createFromFormat('Ymd', get_field('exhibition_ending_date')); 	echo $ending_date->format('l, F jS, Y'); ?><br />
-			
+
 		<?php the_field( 'exhibition_location' ); ?><br />
 
 		<div class="exhibition-archive-photo">

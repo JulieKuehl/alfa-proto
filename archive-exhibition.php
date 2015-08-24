@@ -20,6 +20,8 @@ get_header(); ?>
 
 			</header><!-- .page-header -->
 
+			<?php query_posts($query_string . '&orderby=exhibition_ending_date&order=DESC'); ?>
+
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
