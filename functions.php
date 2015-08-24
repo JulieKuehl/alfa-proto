@@ -331,3 +331,42 @@ function sharethis_for_woocommerce() {
 	<?php
 }
 add_action( 'woocommerce_share', 'sharethis_for_woocommerce' );
+
+/**
+ * Set archive ordering criteria
+ */
+// Sort products (artwork) archive page by title
+add_action( 'pre_get_posts', 'alfa_get_posts_product' );
+
+function alfa_get_posts_product( $query )
+{
+	if (is_admin()){
+		return;
+	}
+
+	if (is_post_type_archive('product')){
+
+		// Stock: sort artwork by title
+		$query->set('orderby', 'title');
+		$query->set('order', 'ASC' );
+	}
+	return $query;
+}
+
+// Sort artists archive page by title (name)
+add_action( 'pre_get_posts', 'alfa_get_posts_artist' );
+
+function alfa_get_posts_artist( $query )
+{
+	if (is_admin()){
+		return;
+	}
+
+	if (is_post_type_archive('artist')){
+
+		// Stock: sort artists by title (name)
+		$query->set('orderby', 'title');
+		$query->set('order', 'ASC' );
+	}
+	return $query;
+}

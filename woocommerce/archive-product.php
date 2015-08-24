@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-<?php query_posts($query_string . '&orderby=date&order=DESC'); ?>
+<?php //query_posts($query_string . '&orderby=date&order=DESC'); ?>
 
 <?php
 	/**
@@ -60,6 +60,8 @@ get_header( 'shop' ); ?>
 				<?php woocommerce_product_subcategories(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php add_action( 'pre_get_posts', 'alfa_get_posts_product' ); ?>
 
 					<?php wc_get_template_part( 'content', 'product' ); ?>
 
