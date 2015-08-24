@@ -43,13 +43,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="summary entry-summary">
 
-<!--		--><?php
-//		/* get artist name connected to product*/
-//		$connected = p2p_type( 'product_to_artist' )->set_direction( 'to' )->get_connected( $post_id );
-//		?>
-
-<!--		Artist: --><?php //the_field( 'artist_firstname' ); ?><!-- --><?php //the_field( 'artist_lastname' ); ?>
-
 		<!-- Related artwork connected posts -->
 		<?php
 		// Find connected artwork (product)
