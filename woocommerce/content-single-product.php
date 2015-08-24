@@ -43,16 +43,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="summary entry-summary">
 
-		<!-- Related artwork connected posts -->
+		<!-- Related artist connected posts -->
 		<?php
-		// Find connected artwork (product)
+		// Find connected artist
 		$connected = new WP_Query( array(
 			'connected_type' => 'product_to_artist',
 			'connected_items' => get_queried_object(),
 			'nopaging' => true,
 		) );
 
-		// Display connected artwork (product)
+		// Display connected artist
 		if ( $connected->have_posts() ) :
 			?>
 
