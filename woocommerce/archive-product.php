@@ -15,8 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-<?php //query_posts($query_string . '&orderby=date&order=DESC'); ?>
-
 <?php
 	/**
 	 * woocommerce_before_main_content hook
