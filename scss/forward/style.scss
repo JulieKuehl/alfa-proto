@@ -1665,8 +1665,41 @@ input[type=submit] {
 }
 
 .view-artwork-link {
+    margin: 1em 0;
+}
+
+.view-artwork-link button {
     background-color: $color-alfa-2;
     border-radius: 6px;
     color: $color-alfa-3;
     padding: .5em;
+}
+
+.artwork-product-image {
+    float: left;
+    width: 48%;
+}
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+    width: 100%;
+    border-bottom: 1px solid $hex-border;
+    padding-bottom: 1em;
+}
+
+.woocommerce ul.products li.product h3 {
+    padding-top: 0;
+}
+
+.woocommerce-ordering li {
+    padding-bottom: 1em;
+}
+
+.artwork-product-metainfo {
+    float: right;
+    width: 48%;
+}
+
+.noUi-connect {
+    background-color: $color-alfa-3 !important;
 }

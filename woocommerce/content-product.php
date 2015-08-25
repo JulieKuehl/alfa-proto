@@ -46,47 +46,84 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-	<a href="<?php the_permalink(); ?>">
+		<div class="artwork-product-image">
+			<a href="<?php the_permalink(); ?>">
+				<?php
 
-		<?php
+					/**
+					 * woocommerce_before_shop_loop_item_title hook
+					 *
+					 * @hooked woocommerce_show_product_loop_sale_flash - 10
+					 * @hooked woocommerce_template_loop_product_thumbnail - 10
+					 */
+					do_action( 'woocommerce_before_shop_loop_item_title' );
 
-			/**
-			 * woocommerce_before_shop_loop_item_title hook
-			 *
-			 * @hooked woocommerce_show_product_loop_sale_flash - 10
-			 * @hooked woocommerce_template_loop_product_thumbnail - 10
-			 */
-			do_action( 'woocommerce_before_shop_loop_item_title' );
+				?>
+			</a>
+		</div><!-- .artwork-product-image -->
 
-			/**
-			 * woocommerce_shop_loop_item_title hook
-			 *
-			 * @hooked woocommerce_template_loop_product_title - 10
-			 */
-			do_action( 'woocommerce_shop_loop_item_title' );
 
-			/**
-			 * woocommerce_after_shop_loop_item_title hook
-			 *
-			 * @hooked woocommerce_template_loop_rating - 5
-			 * @hooked woocommerce_template_loop_price - 10
-			 */
-			do_action( 'woocommerce_after_shop_loop_item_title' );
-		?>
+		<div class="artwork-product-metainfo">
+			<?php
+				/**
+				 * woocommerce_shop_loop_item_title hook
+				 *
+				 * @hooked woocommerce_template_loop_product_title - 10
+				 */
+				do_action( 'woocommerce_shop_loop_item_title' );
 
-	</a>
+				/**
+				 * woocommerce_after_shop_loop_item_title hook
+				 *
+				 * @hooked woocommerce_template_loop_rating - 5
+				 * @hooked woocommerce_template_loop_price - 10
+				 */
+				do_action( 'woocommerce_after_shop_loop_item_title' );
+			?>
 
-	<?php
+			<?php
 
-		/**
-		 * woocommerce_after_shop_loop_item hook
-		 *
-		 * @hooked woocommerce_template_loop_add_to_cart - 10
-		 */
-//		do_action( 'woocommerce_after_shop_loop_item' );
+				/**
+				 * woocommerce_after_shop_loop_item hook
+				 *
+				 * @hooked woocommerce_template_loop_add_to_cart - 10
+				 */
+				// commented out to prevent "Read More" buttons from displaying
+		//		do_action( 'woocommerce_after_shop_loop_item' );
 
-	?>
+			?>
 
-	<a href="<?php the_permalink(); ?>"<span class="view-artwork-link">View this piece</span></a>
+			<?php
+				/**
+				* Related artist connected posts
+				*/
+
+				// Find connected artist
+				$connected = new WP_Query( array(
+				'connected_type' => 'product_to_artist',
+				'connected_items' => get_queried_object(),
+				'nopaging' => true,
+				) );
+
+				// Display connected artist
+				if ( $connected->have_posts() ) :
+				?>
+
+			<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+				<ul>
+					<li class="artwork-product-artist"><?php the_title(); ?></li>
+				</ul>
+			<?php endwhile; ?>
+
+			<?php
+			// Prevent weirdness
+			wp_reset_postdata();
+
+			endif;
+			?>
+
+			<div class="view-artwork-link"><button><a href="<?php the_permalink(); ?>">View this piece</a></button></div>
+
+		</div><!-- .artwork-product-metainfo -->
 
 </li>

@@ -1837,9 +1837,35 @@ input[type=submit] {
   width: 25%; }
 
 .view-artwork-link {
+  margin: 1em 0; }
+
+.view-artwork-link button {
   background-color: #959977;
   border-radius: 6px;
   color: #e0e0c0;
   padding: .5em; }
+
+.artwork-product-image {
+  float: left;
+  width: 48%; }
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  width: 100%;
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 1em; }
+
+.woocommerce ul.products li.product h3 {
+  padding-top: 0; }
+
+.woocommerce-ordering li {
+  padding-bottom: 1em; }
+
+.artwork-product-metainfo {
+  float: right;
+  width: 48%; }
+
+.noUi-connect {
+  background-color: #e0e0c0 !important; }
 
 /*# sourceMappingURL=style.css.map */
