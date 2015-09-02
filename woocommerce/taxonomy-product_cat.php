@@ -71,7 +71,7 @@ do_action( 'woocommerce_before_main_content' );
 
 				<?php add_action( 'pre_get_posts', 'alfa_get_posts_product' ); ?>
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php wc_get_template_part( 'content', 'product-new' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
