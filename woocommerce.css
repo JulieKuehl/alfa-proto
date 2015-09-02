@@ -14,28 +14,28 @@
 }
 
 .new-artwork-entry {
+    display: block;
     float: left;
-    border: none !important;
-    width: 25% !important;
 }
 
 .new-artwork-image {
-    float: left;
-    width: 100% !important;
+    width: 100%;
 }
 
 .new-artwork-metainfo {
-    float: left;
     text-align: center;
     width: 100%;
 }
 
 #new-artwork ul.products {
-    border: none;
+
+}
+
+#new-artwork ul.products li.product {
+    border-bottom: none;
     float: left;
 }
 
-#new-artwork ul.products li.product,
-#new-artwork ul.products li.product {
-    border-bottom: none;
+#new-artwork li.product {
+    float: left;
 }

@@ -1676,12 +1676,10 @@ input[type=submit] {
     padding: .5em;
 }
 
-//.woocommerce ul.products li.product,
-//.woocommerce-page ul.products li.product {
-//    width: 100%;
-//    border-bottom: 1px solid $hex-border;
-//    padding-bottom: 1em;
-//}
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+
+}
 
 .woocommerce ul.products li.product h3 {
     padding-top: 0;
