@@ -64,36 +64,21 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 
 		<div class="artwork-product-metainfo">
-<!--			--><?php
-//				/**
-//				 * woocommerce_shop_loop_item_title hook
-//				 *
-//				 * @hooked woocommerce_template_loop_product_title - 10
-//				 */
-//				do_action( 'woocommerce_shop_loop_item_title' );
-//
-//				/**
-//				 * woocommerce_after_shop_loop_item_title hook
-//				 *
-//				 * @hooked woocommerce_template_loop_rating - 5
-//				 * @hooked woocommerce_template_loop_price - 10
-//				 */
-//				do_action( 'woocommerce_after_shop_loop_item_title' );
-//			?>
-
 			<?php
-			/**
-			 * woocommerce_single_product_summary hook
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_rating - 10
-			 * @hooked woocommerce_template_single_excerpt - 20
-			 * @hooked woocommerce_template_single_price - 30
-			 * @hooked woocommerce_template_single_add_to_cart - 30
-			 * @hooked woocommerce_template_single_meta - 40
-			 * @hooked woocommerce_template_single_sharing - 50
-			 */
-			do_action( 'woocommerce_single_product_summary' );
+				/**
+				 * woocommerce_shop_loop_item_title hook
+				 *
+				 * @hooked woocommerce_template_loop_product_title - 10
+				 */
+				do_action( 'woocommerce_shop_loop_item_title' );
+
+				/**
+				 * woocommerce_after_shop_loop_item_title hook
+				 *
+				 * @hooked woocommerce_template_loop_rating - 5
+				 * @hooked woocommerce_template_loop_price - 10
+				 */
+				do_action( 'woocommerce_after_shop_loop_item_title' );
 			?>
 
 			<?php
@@ -126,7 +111,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 			<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
 				<ul>
-					<li class="artwork-product-artist"><?php the_title(); ?></li>
+					<li class="artwork-product-artist"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 				</ul>
 			<?php endwhile; ?>
 
