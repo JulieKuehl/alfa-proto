@@ -80,7 +80,9 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 				 */
 				do_action( 'woocommerce_after_shop_loop_item_title' );
 			?>
-BOO!
+
+			<?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ) ?>
+
 			<?php
 
 				/**
