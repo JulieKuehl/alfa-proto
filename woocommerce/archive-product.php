@@ -25,7 +25,7 @@ get_header( 'shop' ); ?>
 	do_action( 'woocommerce_before_main_content' );
 ?>
 
-<div class="content-area fullwidth">
+<div class="content-area">
 
 	<h1 class="page-title">Artwork</h1>
 
@@ -102,7 +102,7 @@ get_header( 'shop' ); ?>
 	//		do_action( 'woocommerce_sidebar' );
 	?>
 
-<!--	--><?php //get_sidebar( 'sidebar' ); ?>
+	<?php get_sidebar( 'sidebar' ); ?>
 
 </div><!-- .content-area -->
 
