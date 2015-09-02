@@ -46,7 +46,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-		<div class="artwork-product-image">
+		<div class="new-artwork-image">
 			<a href="<?php the_permalink(); ?>">
 				<?php
 
@@ -63,7 +63,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 		</div><!-- .artwork-product-image -->
 
 
-		<div class="artwork-product-metainfo">
+		<div class="new-artwork-metainfo">
 
 			<?php
 			/**
@@ -83,7 +83,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
 				<ul>
-					<li class="artwork-product-artist"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+					<li class="new-artwork-artist"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 				</ul>
 			<?php endwhile; ?>
 
@@ -110,7 +110,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 				 */
 				do_action( 'woocommerce_after_shop_loop_item_title' );
 			?>
-BOO!
+
 			<?php
 
 				/**

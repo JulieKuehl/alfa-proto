@@ -1651,33 +1651,18 @@ input[type=submit] {
     width: 100%;
 }
 
-.artist-archive-entry,
-.product-archive-entry {
+.artist-archive-entry {
     float: left;
     width: 25%;
 }
 
-.artist-archive-photo,
-.product-archive-photo,
-.woocommerce ul.products li.product a img {
+.artist-archive-photo {
     float: left;
     width: 25% !important;
 }
 
-.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
-    border: none;
-    float: left;
-    width: 25%;
-}
+.artist-archive-name {
 
-.artist-archive-name,
-.product-archive-name {
-
-}
-
-.product-archive-metainfo {
-    float: left;
-    text-align: center;
 }
 
 .view-artwork-link {
@@ -1691,17 +1676,12 @@ input[type=submit] {
     padding: .5em;
 }
 
-.artwork-product-image {
-    float: left;
-    width: 48%;
-}
-
-.woocommerce ul.products li.product,
-.woocommerce-page ul.products li.product {
-    width: 100%;
-    border-bottom: 1px solid $hex-border;
-    padding-bottom: 1em;
-}
+//.woocommerce ul.products li.product,
+//.woocommerce-page ul.products li.product {
+//    width: 100%;
+//    border-bottom: 1px solid $hex-border;
+//    padding-bottom: 1em;
+//}
 
 .woocommerce ul.products li.product h3 {
     padding-top: 0;
@@ -1709,6 +1689,11 @@ input[type=submit] {
 
 .woocommerce-ordering li {
     padding-bottom: 1em;
+}
+
+.artwork-product-image {
+    float: left;
+    width: 48%;
 }
 
 .artwork-product-metainfo {
@@ -1720,16 +1705,28 @@ input[type=submit] {
     background-color: $color-alfa-3 !important;
 }
 
-///////////////////////
-// NEW ARTWORK SHAME //
-///////////////////////
-
-.product-archive-photo {
-    float: left;
-    width: 25% !important;
-}
-
-.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
-    border: none !important;
-    width: 25% !important;
-}
+/////////////////////////
+//// NEW ARTWORK SHAME //
+/////////////////////////
+//
+//.new-artwork-entry {
+//    float: left;
+//    border: none !important;
+//    width: 25% !important;
+//}
+//
+//.new-artwork-image {
+//    float: left;
+//    width: 25% !important;
+//}
+//
+//.new-artwork-metainfo {
+//    float: left;
+//    text-align: center;
+//}
+//
+//#new-artwork ul.products {
+//    border: none;
+//    float: left;
+//    width: 25%;
+//}

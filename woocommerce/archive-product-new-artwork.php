@@ -25,9 +25,9 @@ get_header( 'shop' ); ?>
 	do_action( 'woocommerce_before_main_content' );
 ?>
 
-<div class="content-area fullwidth">
+<div id="new-artwork" class="content-area fullwidth">
 
-	<h1 class="page-title">Artwork</h1>
+	<h1 class="page-title">New Artwork</h1>
 
 	<?php
 		/**
@@ -53,15 +53,21 @@ get_header( 'shop' ); ?>
 				do_action( 'woocommerce_before_shop_loop' );
 			?>
 
+			<div class="clearfix"></div>
+
+			<div class="new-artwork-entry">
+
 			<?php woocommerce_product_loop_start(); ?>
 
 				<?php woocommerce_product_subcategories(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
+
+
 					<?php add_action( 'pre_get_posts', 'alfa_get_posts_product' ); ?>
 
-					<?php wc_get_template_part( 'content', 'product' ); ?>
+					<?php wc_get_template_part( 'content', 'new-artwork' ); ?>
 
 				<?php endwhile; // end of the loop. ?>
 
@@ -79,6 +85,8 @@ get_header( 'shop' ); ?>
 		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
 
 			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
+
+						</div>
 
 		<?php endif; ?>
 
