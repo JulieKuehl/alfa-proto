@@ -64,6 +64,36 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 
 		<div class="artwork-product-metainfo">
+
+			<?php
+			/**
+			 * Related artist connected posts
+			 */
+
+			// Find connected artist
+			$connected = new WP_Query( array(
+				'connected_type' => 'product_to_artist',
+				'connected_items' => $post,
+				'nopaging' => true,
+			) );
+
+			// Display connected artist
+			if ( $connected->have_posts() ) :
+				?>
+
+				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+				<ul>
+					<li class="artwork-product-artist"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+				</ul>
+			<?php endwhile; ?>
+
+				<?php
+				// Prevent weirdness
+				wp_reset_postdata();
+
+			endif;
+			?>
+
 			<?php
 				/**
 				 * woocommerce_shop_loop_item_title hook
@@ -80,9 +110,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 				 */
 				do_action( 'woocommerce_after_shop_loop_item_title' );
 			?>
-
-			<?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ) ?>
-
+BOO!
 			<?php
 
 				/**
@@ -93,35 +121,6 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 				// commented out to prevent "Read More" buttons from displaying
 		//		do_action( 'woocommerce_after_shop_loop_item' );
 
-			?>
-
-			<?php
-				/**
-				* Related artist connected posts
-				*/
-
-				// Find connected artist
-				$connected = new WP_Query( array(
-				'connected_type' => 'product_to_artist',
-				'connected_items' => get_queried_object(),
-				'nopaging' => true,
-				) );
-
-				// Display connected artist
-				if ( $connected->have_posts() ) :
-				?>
-
-			<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-				<ul>
-					<li class="artwork-product-artist"><?php the_title(); ?></li>
-				</ul>
-			<?php endwhile; ?>
-
-			<?php
-			// Prevent weirdness
-			wp_reset_postdata();
-
-			endif;
 			?>
 
 			<div class="view-artwork-link"><button><a href="<?php the_permalink(); ?>">View this piece</a></button></div>

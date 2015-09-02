@@ -1832,9 +1832,25 @@ input[type=submit] {
 .fullwidth {
   width: 100%; }
 
-.artist-archive-entry {
+.artist-archive-entry,
+.product-archive-entry {
   float: left;
   width: 25%; }
+
+.artist-archive-photo,
+.product-archive-photo,
+.woocommerce ul.products li.product a img {
+  float: left;
+  width: 25% !important; }
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+  border: none;
+  float: left;
+  width: 25%; }
+
+.product-archive-metainfo {
+  float: left;
+  text-align: center; }
 
 .view-artwork-link {
   margin: 1em 0; }
@@ -1867,5 +1883,13 @@ input[type=submit] {
 
 .noUi-connect {
   background-color: #e0e0c0 !important; }
+
+.product-archive-photo {
+  float: left;
+  width: 25% !important; }
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+  border: none !important;
+  width: 25% !important; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,15 +1,5 @@
 <?php
 /**
- * The Template for displaying products in a product category. Simply includes the archive template.
- *
- * Override this template by copying it to yourtheme/woocommerce/taxonomy-product_cat.php
- *
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     1.6.4
- */
-
-/**
  * The Template for displaying product archives, including the main shop page which is a post type archive.
  *
  * Override this template by copying it to yourtheme/woocommerce/archive-product.php
@@ -37,7 +27,7 @@ do_action( 'woocommerce_before_main_content' );
 
 <div class="content-area fullwidth">
 
-	<h1 class="page-title">New Artwork</h1>
+	<h1 class="page-title">Artwork</h1>
 
 	<?php
 	/**
@@ -71,7 +61,7 @@ do_action( 'woocommerce_before_main_content' );
 
 				<?php add_action( 'pre_get_posts', 'alfa_get_posts_product' ); ?>
 
-				<?php wc_get_template_part( 'content', 'product-new' ); ?>
+				<?php wc_get_template_part( 'content', 'new-artwork' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
@@ -111,6 +101,8 @@ do_action( 'woocommerce_before_main_content' );
 	//		 */
 	//		do_action( 'woocommerce_sidebar' );
 	?>
+
+	<!--	--><?php //get_sidebar( 'sidebar' ); ?>
 
 </div><!-- .content-area -->
 
