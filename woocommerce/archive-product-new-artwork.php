@@ -39,7 +39,7 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_archive_description' );
 	?>
 
-	<div class="facetwp-template">
+	<div class="">
 
 		<?php if ( have_posts() ) : ?>
 

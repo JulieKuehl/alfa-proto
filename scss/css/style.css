@@ -1837,8 +1837,7 @@ input[type=submit] {
   width: 25%; }
 
 .artist-archive-photo {
-  float: left;
-  width: 100%; }
+  float: left; }
 
 .view-artwork-link {
   margin: 1em 0; }
@@ -1865,7 +1864,3 @@ input[type=submit] {
 
 .noUi-connect {
   background-color: #e0e0c0 !important; }
-
-#new-artwork li.product.type-product.status-publish.product_cat-new-artwork,
-.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
-  width: 100%; }

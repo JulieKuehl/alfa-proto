@@ -1644,9 +1644,11 @@ input[type=submit] {
     padding: 1em .5em 1em;
 }
 
+
 ///////////
 // Shame //
 ///////////
+
 .fullwidth {
     width: 100%;
 }
@@ -1658,7 +1660,7 @@ input[type=submit] {
 
 .artist-archive-photo {
     float: left;
-    width: 25% !important;
+    width: 100%;
 }
 
 .artist-archive-name {
@@ -1706,7 +1708,7 @@ input[type=submit] {
 /////////////////////////
 //// NEW ARTWORK SHAME //
 /////////////////////////
-//
+
 //.new-artwork-entry {
 //    float: left;
 //    border: none !important;
@@ -1728,3 +1730,8 @@ input[type=submit] {
 //    float: left;
 //    width: 25%;
 //}
+
+#new-artwork li.product.type-product.status-publish.product_cat-new-artwork,
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+    width: 100%;
+}
