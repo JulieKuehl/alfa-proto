@@ -1868,6 +1868,9 @@ input[type=submit] {
   float: left;
   width: 100%; }
 
+ul.artist-work {
+  list-style: none; }
+
 .view-artwork-link {
   margin: 1em 0; }
 
@@ -1918,3 +1921,22 @@ input[type=submit] {
 
 .new-artwork-entry:nth-child(4n+1) {
   clear: left; }
+
+.related {
+  max-width: 80em;
+  margin-left: auto;
+  margin-right: auto; }
+  .related::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.related-products {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 23.2317613015%; }
+  .related-products:last-child {
+    margin-right: 0; }
+  .related-products:nth-child(4n) {
+    margin-right: 0; }

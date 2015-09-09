@@ -1654,8 +1654,6 @@ input[type=submit] {
 }
 
 .artist-archive-entry {
-    //float: left;
-    //width: 25%;
     @include span-columns(3);
     @include omega(4n);
 }
@@ -1667,10 +1665,16 @@ input[type=submit] {
 .artist-archive-photo img {
     float: left;
     width: 100%;
+    //@include span-columns(3);
+    //@include omega(1n);
 }
 
 .artist-archive-name {
 
+}
+
+ul.artist-work {
+    list-style: none;
 }
 
 .view-artwork-link {
@@ -1730,4 +1734,17 @@ input[type=submit] {
 
 .new-artwork-entry:nth-child(4n+1) {
     clear: left;
+}
+
+////////////////////////////
+// RELATED PRODUCTS SHAME //
+////////////////////////////
+
+.related {
+    @include outer-container();
+}
+
+.related-products {
+    @include span-columns(3);
+    @include omega(4n);
 }

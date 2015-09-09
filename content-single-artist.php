@@ -27,7 +27,7 @@
 //			) );
 //		?>
 
-		<div class="artist-archive-photo">
+		<div class="artist-photo">
 			<?php
 			$attachment_id = get_field('artist_photo_id');
 			$size = 'large-thumbnail';
@@ -65,10 +65,19 @@
 	// Display connected artwork (product)
 	if ( $connected->have_posts() ) :
 		?>
-		<h3>Related artwork:</h3>
-		<ul>
+
+	<div class="related">
+		<h2>Related artwork:</h2>
+		<ul class="products artist-work">
 			<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-				<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><?php the_post_thumbnail( 'thumbnail'); ?></li>
+			<div class="related-products">
+				<li>
+					<a href="<?php the_permalink(); ?>">
+						<?php the_post_thumbnail( 'medium-thumbnail'); ?>
+						<h3><?php the_title(); ?></h3>
+					</a>
+				</li>
+			</div><!-- .related-products -->
 			<?php endwhile; ?>
 		</ul>
 
@@ -78,6 +87,7 @@
 
 	endif;
 	?>
+	</div><!-- .related -->
 
 	<footer class="entry-footer">
 		<?php forward_entry_footer(); ?>
