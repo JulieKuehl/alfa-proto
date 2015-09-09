@@ -12,7 +12,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-// $visual-grid: true !global;
+ $visual-grid: true !global;
 
 // Import default configuration.
 // Use '@import config-child' when building child themes.
@@ -1734,4 +1734,19 @@ input[type=submit] {
 #new-artwork li.product.type-product.status-publish.product_cat-new-artwork,
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
     width: 100%;
+}
+
+#new-artwork-archive .products {
+    @include outer-container();
+}
+
+.new-artwork-entry {
+    li.block {
+        @include span-columns(3);
+        @include omega(4n);
+    }
+}
+
+.new-artwork-entry:last-child {
+    //@include row();
 }

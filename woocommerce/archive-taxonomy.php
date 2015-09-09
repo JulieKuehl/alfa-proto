@@ -40,7 +40,7 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_archive_description' );
 	?>
 
-	<div class="outer-container facetwp-template">
+	<div id="new-artwork-archive" class="outer-container facetwp-template">
 
 		<?php if ( have_posts() ) : ?>
 
