@@ -223,8 +223,8 @@ function forward_scripts() {
 	// wp_enqueue_script( 'forward-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	// Add Google Maps support
-	wp_enqueue_script( 'forward-google-map', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true );
-	wp_enqueue_script( 'forward-google-map-init', get_template_directory_uri() . '/js/google-maps.js', array('google-map', 'jquery'), '0.1', true );
+	wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true );
+	wp_enqueue_script( 'google-map-init', get_template_directory_uri() . '/js/google-maps.js', array('google-map', 'jquery'), '0.1', true );
 }
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

@@ -43,7 +43,7 @@
 		<!-- Add Google Map of gallery location -->
 		<?php
 
-		$location = get_field( 'gallery-map' );
+		$location = get_field( 'gallery_map' );
 
 		if( !empty($location) ):
 			?>
