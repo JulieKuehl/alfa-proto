@@ -1853,9 +1853,18 @@ input[type=submit] {
 
 .artist-archive-entry {
   float: left;
-  width: 25%; }
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 23.2317613015%; }
+  .artist-archive-entry:last-child {
+    margin-right: 0; }
+  .artist-archive-entry:nth-child(4n) {
+    margin-right: 0; }
 
-.artist-archive-photo {
+.artist-archive-entry:nth-child(4n+1) {
+  clear: left; }
+
+.artist-archive-photo img {
   float: left;
   width: 100%; }
 

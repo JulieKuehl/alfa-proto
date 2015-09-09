@@ -4,9 +4,8 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
-
-	<div class="artist-archive-entry">
+<div class="artist-archive-entry">
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
 		<div class="artist-archive-photo">
 			<?php
@@ -30,6 +29,6 @@
 			<?php forward_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 
-	</div><!-- .artist-archive-entry -->
+	</article><!-- #post-## -->
 
-</article><!-- #post-## -->
+</div><!-- .artist-archive-entry -->

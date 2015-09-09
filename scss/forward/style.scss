@@ -1654,11 +1654,17 @@ input[type=submit] {
 }
 
 .artist-archive-entry {
-    float: left;
-    width: 25%;
+    //float: left;
+    //width: 25%;
+    @include span-columns(3);
+    @include omega(4n);
 }
 
-.artist-archive-photo {
+.artist-archive-entry:nth-child(4n+1) {
+    clear: left;
+}
+
+.artist-archive-photo img {
     float: left;
     width: 100%;
 }
