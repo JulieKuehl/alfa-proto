@@ -1885,7 +1885,6 @@ input[type=submit] {
 .noUi-connect {
   background-color: #e0e0c0 !important; }
 
-#new-artwork li.product.type-product.status-publish.product_cat-new-artwork,
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
   width: 100%; }
 
@@ -1898,14 +1897,17 @@ input[type=submit] {
     content: "";
     display: table; }
 
-.new-artwork-entry li.block {
+.new-artwork-entry {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 23.23176%; }
-  .new-artwork-entry li.block:last-child {
+  .new-artwork-entry:last-child {
     margin-right: 0; }
-  .new-artwork-entry li.block:nth-child(4n) {
+  .new-artwork-entry:nth-child(4n) {
     margin-right: 0; }
+
+.new-artwork-entry:nth-child(4n+1) {
+  clear: left; }
 
 /*# sourceMappingURL=style.css.map */

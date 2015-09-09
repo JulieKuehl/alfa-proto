@@ -1705,33 +1705,10 @@ input[type=submit] {
     background-color: $color-alfa-3 !important;
 }
 
-/////////////////////////
-//// NEW ARTWORK SHAME //
-/////////////////////////
+///////////////////////
+// NEW ARTWORK SHAME //
+///////////////////////
 
-//.new-artwork-entry {
-//    float: left;
-//    border: none !important;
-//    width: 25% !important;
-//}
-//
-//.new-artwork-image {
-//    float: left;
-//    width: 25% !important;
-//}
-//
-//.new-artwork-metainfo {
-//    float: left;
-//    text-align: center;
-//}
-//
-//#new-artwork ul.products {
-//    border: none;
-//    float: left;
-//    width: 25%;
-//}
-
-#new-artwork li.product.type-product.status-publish.product_cat-new-artwork,
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
     width: 100%;
 }
@@ -1741,12 +1718,10 @@ input[type=submit] {
 }
 
 .new-artwork-entry {
-    li.block {
         @include span-columns(3);
         @include omega(4n);
-    }
 }
 
-.new-artwork-entry:last-child {
-    //@include row();
+.new-artwork-entry:nth-child(4n+1) {
+    clear: left;
 }
