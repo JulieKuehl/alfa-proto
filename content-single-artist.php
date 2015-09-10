@@ -66,11 +66,11 @@
 	if ( $connected->have_posts() ) :
 		?>
 
-	<div class="related">
-		<h2>Related artwork:</h2>
+	<div id="related-artwork-archive" class="related outer-container">
+		<h2>Related Artwork:</h2>
 		<ul class="products artist-work">
 			<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-			<div class="related-products">
+			<div class="related-artwork-entry">
 				<li>
 					<a href="<?php the_permalink(); ?>">
 						<?php the_post_thumbnail( 'medium-thumbnail'); ?>

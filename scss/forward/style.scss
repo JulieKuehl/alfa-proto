@@ -1728,15 +1728,18 @@ input[type=search] {
 }
 
 #exhibition-artwork .products,
+#related-artwork-archive .products,
 #new-artwork-archive .products {
     @include outer-container();
 }
 
+.related-artwork-entry,
 .new-artwork-entry {
         @include span-columns(3);
         @include omega(4n);
 }
 
+.related-artwork-entry:nth-child(4n+1),
 .new-artwork-entry:nth-child(4n+1) {
     clear: left;
 }
