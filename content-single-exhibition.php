@@ -54,7 +54,7 @@
 		?>
 
 		<div id="exhibition-artwork" class="outer-container">
-			<h2>Related artwork:</h2>
+			<h2>Featured Artwork:</h2>
 			<ul class="products">
 				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
 					<div class="new-artwork-entry related-products">
