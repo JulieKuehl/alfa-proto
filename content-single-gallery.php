@@ -17,28 +17,30 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php the_field( 'gallery_address' ); ?><br />
-		<?php the_field( 'gallery_city'); ?>, <?php the_field( 'gallery_state' ); ?> <?php the_field( 'gallery_zip' ); ?><br />
-		<?php the_field( 'gallery_phone' ); ?><br />
-		<?php the_field( 'gallery_hours' ); ?><br />
 
-		<div class="gallery-archive-photo">
+		<p><?php the_field( 'gallery_address' ); ?><br />
+		<?php the_field( 'gallery_city'); ?>, <?php the_field( 'gallery_state' ); ?> <?php the_field( 'gallery_zip' ); ?></p>
+		<p><?php the_field( 'gallery_phone' ); ?></p>
+		<p><?php the_field( 'gallery_hours' ); ?></p>
+
+		<div class="gallery-photo">
 			<?php
 			$attachment_id = get_field('gallery_photo_id');
-			$size = 'large-thumbnail';
+			$size = 'large-artwork';
 			$image = wp_get_attachment_image_src( $attachment_id, $size );
-			$image_url = $image['sizes']['large-thumbnail'];
+			$image_url = $image['sizes']['large-artwork'];
 			// url = $image[0];
 			// width = $image[1];
 			// height = $image[2];
 			?>
 
-			<img class="gallery_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
+			<img alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
 
 		</div><!-- .gallery-archive-photo -->
 
 		<?php the_field( 'gallery_description' ); ?><br />
+
+		<div class="clearfix"></div>
 
 		<!-- Add Google Map of gallery location -->
 		<?php
