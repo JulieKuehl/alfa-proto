@@ -42,7 +42,23 @@
 
 		</div><!-- .artist-archive-photo -->
 
+		<h2>Biography</h2>
 		<?php echo the_field( 'artist_biography' ); ?>
+
+		<h2>Selected Exhibitions</h2>
+		<?php echo the_field( 'artist_exhibitions' ); ?>
+
+		<h2>Commissions</h2>
+		<?php echo the_field( 'artist_commissions' ); ?>
+
+		<h2>Art Reviews</h2>
+		<?php echo the_field( 'artist_reviews' ); ?>
+
+		<h2>Press & Publications</h2>
+		<?php echo the_field( 'artist_news' ); ?>
+
+		<h2>Studio Visit</h2>
+		<?php echo the_field( 'artist_studio_visit' ); ?>
 
 		<?php
 			wp_link_pages( array(
