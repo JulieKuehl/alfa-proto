@@ -40,6 +40,43 @@
 
 		<?php the_field( 'exhibition_details' ); ?><br />
 
+
+	<!-- Display connected artwork (product) -->
+		<?php
+		// Find connected artwork (product)
+		$connected = new WP_Query( array(
+			'connected_type' => 'product_to_exhibition',
+			'connected_items' => get_queried_object(),
+			'nopaging' => true,
+		) );
+
+		if ( $connected->have_posts() ) :
+		?>
+
+		<div id="exhibition-artwork" class="outer-container">
+			<h2>Related artwork:</h2>
+			<ul class="products">
+				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+					<div class="new-artwork-entry related-products">
+						<li>
+							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail( 'medium-thumbnail'); ?>
+								<h3><?php the_title(); ?></h3>
+							</a>
+						</li>
+					</div><!-- .related-products -->
+				<?php endwhile; ?>
+			</ul>
+
+			<?php
+			// Prevent weirdness
+			wp_reset_postdata();
+
+			endif;
+			?>
+		</div><!-- .related -->
+
+
 		<!-- Add Google Map of gallery location -->
 		<?php
 

@@ -1671,8 +1671,10 @@ input[type=submit] {
 
 }
 
+ul.products,
 ul.artist-work {
     list-style: none;
+    margin-left: 0;
 }
 
 .view-artwork-link {
@@ -1725,6 +1727,7 @@ input[type=search] {
     width: 100%;
 }
 
+#exhibition-artwork .products,
 #new-artwork-archive .products {
     @include outer-container();
 }
