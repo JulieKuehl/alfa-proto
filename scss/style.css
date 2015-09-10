@@ -1897,6 +1897,9 @@ ul.artist-work {
 .noUi-connect {
   background-color: #e0e0c0 !important; }
 
+input[type=search] {
+  border-right: 1px solid #c5c5c5; }
+
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
   width: 100%; }
 
