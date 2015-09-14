@@ -14,7 +14,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<?php wp_enqueue_script('jquery'); ?>
+<?php wp_enqueue_script('jquery-ui-core'); ?>
+<?php wp_enqueue_script('jquery-ui-tabs'); ?>
 <?php wp_head(); ?>
+	<!-- tabs script -->
+<script type="text/javascript">
+	jQuery(document).ready(function($){
+		$("#tabs").tabs();
+	});
+</script>
 </head>
 
 <body <?php body_class(); ?>>

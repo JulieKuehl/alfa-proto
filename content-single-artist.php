@@ -19,46 +19,122 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-<!--		--><?php
-//			/* translators: %s: Name of current post */
-//			the_content( sprintf(
-//				__( 'Continue Reading %s', 'forward' ),
-//				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-//			) );
-//		?>
 
-		<div class="artist-photo">
-			<?php
-			$attachment_id = get_field('artist_photo_id');
-			$size = 'large-thumbnail';
-			$image = wp_get_attachment_image_src( $attachment_id, $size );
-			$image_url = $image['sizes']['large-thumbnail'];
-			// url = $image[0];
-			// width = $image[1];
-			// height = $image[2];
-			?>
+		<div id="tabs" class="ui-tabs">
 
-			<img class="artist_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
+			<ul class="tabs ui-tabs-nav">
+				<li><a href="#tab-available-work" class="ui-tabs-anchor" >Available Work</a></li>
+				<li><a href="#tab-archives" class="ui-tabs-anchor">Archives</a></li>
+				<li><a href="#tab-biography" class="ui-tabs-anchor">Biography</a></li>
+				<li><a href="#tab-selected-exhibitions" class="ui-tabs-anchor">Selected Exhibitions</a></li>
+				<li><a href="#tab-commissions" class="ui-tabs-anchor">Commissions</a></li>
+				<li><a href="#tab-art-reviews" class="ui-tabs-anchor">Art Reviews</a></li>
+				<li><a href="#tab-press" class="ui-tabs-anchor">Press and Publications</a></li>
+				<li><a href="#tab-visit" class="ui-tabs-anchor">Studio Visit</a></li>
+			</ul>
 
-		</div><!-- .artist-archive-photo -->
+			<div id="tab-available-work" class="ui-tabs-panel">
+				<!-- Related artwork connected posts -->
+				<?php
+				// Find connected artwork (product)
+				$connected = new WP_Query( array(
+					'connected_type' => 'product_to_artist',
+					'connected_items' => get_queried_object(),
+					'nopaging' => true,
+				) );
 
-		<h2>Biography</h2>
-		<?php echo the_field( 'artist_biography' ); ?>
+				// Display connected artwork (product)
+				if ( $connected->have_posts() ) :
+				?>
 
-		<h2>Selected Exhibitions</h2>
-		<?php echo the_field( 'artist_exhibitions' ); ?>
+				<div id="related-artwork-archive" class="related outer-container">
+					<h2>Related Artwork:</h2>
+					<ul class="products artist-work">
+						<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+							<div class="related-artwork-entry">
+								<li>
+									<a href="<?php the_permalink(); ?>">
+										<?php the_post_thumbnail( 'medium-thumbnail'); ?>
+										<h3><?php the_title(); ?></h3>
+									</a>
+								</li>
+							</div><!-- .related-products -->
+						<?php endwhile; ?>
+					</ul>
 
-		<h2>Commissions</h2>
-		<?php echo the_field( 'artist_commissions' ); ?>
+					<?php
+					// Prevent weirdness
+					wp_reset_postdata();
 
-		<h2>Art Reviews</h2>
-		<?php echo the_field( 'artist_reviews' ); ?>
+					endif;
+					?>
+				</div><!-- .related -->
+			</div>
 
-		<h2>Press & Publications</h2>
-		<?php echo the_field( 'artist_news' ); ?>
+			<div id="tab-archives" class="ui-tabs-panel">
 
-		<h2>Studio Visit</h2>
-		<?php echo the_field( 'artist_studio_visit' ); ?>
+			</div>
+
+			<div id="tab-biography" class="ui-tabs-panel">
+				<div class="artist-photo">
+					<?php
+					$attachment_id = get_field('artist_photo_id');
+					$size = 'large-thumbnail';
+					$image = wp_get_attachment_image_src( $attachment_id, $size );
+					$image_url = $image['sizes']['large-thumbnail'];
+					// url = $image[0];
+					// width = $image[1];
+					// height = $image[2];
+					?>
+
+					<img class="artist_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
+				</div><!-- .artist-archive-photo -->
+
+				<?php echo the_field( 'artist_biography' ); ?>
+
+			</div>
+
+			<div id="tab-selected-exhibitions" class="ui-tabs-panel">
+				<?php echo the_field( 'artist_exhibitions' ); ?>
+			</div>
+
+			<div id="tab-commissions" class="ui-tabs-panel">
+				<?php echo the_field( 'artist_commissions' ); ?>
+			</div>
+
+			<div id="tab-art-reviews" class="ui-tabs-panel">
+				<?php echo the_field( 'artist_reviews' ); ?>
+			</div>
+
+			<div id="tab-press" class="ui-tabs-panel">
+				<?php echo the_field( 'artist_news' ); ?>
+			</div>
+
+			<div id="tab-visit" class="ui-tabs-panel">
+				<?php echo the_field( 'artist_studio_visit' ); ?>
+			</div>
+
+		</div>
+
+
+
+<!--		<h2>Biography</h2>-->
+<!--		--><?php //echo the_field( 'artist_biography' ); ?>
+<!---->
+<!--		<h2>Selected Exhibitions</h2>-->
+<!--		--><?php //echo the_field( 'artist_exhibitions' ); ?>
+<!---->
+<!--		<h2>Commissions</h2>-->
+<!--		--><?php //echo the_field( 'artist_commissions' ); ?>
+<!---->
+<!--		<h2>Art Reviews</h2>-->
+<!--		--><?php //echo the_field( 'artist_reviews' ); ?>
+<!---->
+<!--		<h2>Press & Publications</h2>-->
+<!--		--><?php //echo the_field( 'artist_news' ); ?>
+<!---->
+<!--		<h2>Studio Visit</h2>-->
+<!--		--><?php //echo the_field( 'artist_studio_visit' ); ?>
 
 		<?php
 			wp_link_pages( array(

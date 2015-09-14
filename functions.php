@@ -200,22 +200,22 @@ function forward_scripts() {
 	wp_enqueue_style( 'forward-style', get_stylesheet_uri() );
 
 	// Front-end scripts
-	if ( !is_admin() ) {
+	if ( ! is_admin() ) {
 
-	  // Load minified scripts if debug mode is off
-	  if ( WP_DEBUG === true ) {
-	    $suffix = '';
-	  } else {
-	    $suffix = '.min';
-	  }
+		// Load minified scripts if debug mode is off
+		if ( WP_DEBUG === true ) {
+			$suffix = '';
+		} else {
+			$suffix = '.min';
+		}
 
-	  // Load theme-specific JavaScript with versioning based on last modified time; http://www.ericmmartin.com/5-tips-for-using-jquery-with-wordpress/
-	  wp_enqueue_script( 'forward-js-core', get_stylesheet_directory_uri() . '/js/core' . $suffix . '.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/core' . $suffix . '.js' ), true );
+		// Load theme-specific JavaScript with versioning based on last modified time; http://www.ericmmartin.com/5-tips-for-using-jquery-with-wordpress/
+		wp_enqueue_script( 'forward-js-core', get_stylesheet_directory_uri() . '/js/core' . $suffix . '.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/core' . $suffix . '.js' ), true );
 
-	  // Conditionally load another script
-	  // if ( is_singular() ) {
-	  //   wp_enqueue_script( 'my-theme-extras', get_stylesheet_directory_uri() . '/js/extras' . $suffix . '.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/extras' . $suffix . '.js' ), true );
-	  // }
+		// Conditionally load another script
+		// if ( is_singular() ) {
+		//   wp_enqueue_script( 'my-theme-extras', get_stylesheet_directory_uri() . '/js/extras' . $suffix . '.js', array( 'jquery' ), filemtime( get_template_directory() . '/js/extras' . $suffix . '.js' ), true );
+		// }
 	}
 
 	// wp_enqueue_script( 'forward-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -224,155 +224,178 @@ function forward_scripts() {
 
 	// Add Google Maps support
 	wp_enqueue_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array(), '3', true );
-	wp_enqueue_script( 'google-map-init', get_template_directory_uri() . '/js/google-maps.js', array('google-map', 'jquery'), '0.1', true );
+	wp_enqueue_script( 'google-map-init', get_template_directory_uri() . '/js/google-maps.js', array(
+		'google-map',
+		'jquery'
+	), '0.1', true );
 }
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-endif; // forward_scripts
-add_action( 'wp_enqueue_scripts', 'forward_scripts' );
+	endif; // forward_scripts
+	add_action( 'wp_enqueue_scripts', 'forward_scripts' );
 
 
-/**
- * Implement the Custom Header feature.
- */
+	/**
+	 * Implement the Custom Header feature.
+	 */
 //require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
+	/**
+	 * Custom template tags for this theme.
+	 */
+	require get_template_directory() . '/inc/template-tags.php';
 
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
+	/**
+	 * Custom functions that act independently of the theme templates.
+	 */
+	require get_template_directory() . '/inc/extras.php';
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
+	/**
+	 * Customizer additions.
+	 */
+	require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
+	/**
+	 * Load Jetpack compatibility file.
+	 */
+	require get_template_directory() . '/inc/jetpack.php';
 
-/**
- * Enable automatic theme updates.
- */
-require_once('wp-updates-theme.php');
-new WPUpdatesThemeUpdater_1511( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
+	/**
+	 * Enable automatic theme updates.
+	 */
+	require_once( 'wp-updates-theme.php' );
+	new WPUpdatesThemeUpdater_1511( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
 
-/**
- * Add WooCommerce support
- */
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+	/**
+	 * Add WooCommerce support
+	 */
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
-add_action('woocommerce_before_main_content', 'forward_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'forward_wrapper_end', 10);
+	add_action( 'woocommerce_before_main_content', 'forward_wrapper_start', 10 );
+	add_action( 'woocommerce_after_main_content', 'forward_wrapper_end', 10 );
 
-function forward_wrapper_start() {
-	echo '<section id="main">';
-}
-
-function forward_wrapper_end() {
-	echo '</section>';
-}
-
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
-	add_theme_support( 'woocommerce' );
-}
-
-/**
- * Customize WooCommerce single product page
- */
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
-
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 30);
-
-/**
- * Remove WooCommerce breadcrumbs
- */
-add_action( 'init', 'jk_remove_wc_breadcrumbs' );
-function jk_remove_wc_breadcrumbs() {
-	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
-}
-
-/**
- * Add HTML5 search form support
- */
-add_theme_support('html5', array('search-form'));
-
-/**
- * Add ShareThis support for WooCommerce
- */
-if ( ! defined( 'SHARETHIS_PUBLISHER_ID' ) ) {
-	define( 'SHARETHIS_PUBLISHER_ID', 'enter your id here' );
-}
-
-function sharethis_for_woocommerce() {
-	global $post;
-
-	$thumbnail_id = get_post_thumbnail_id( $post->ID );
-	$thumbnail    = $thumbnail_id ? current( wp_get_attachment_image_src( $thumbnail_id, 'large' ) ) : '';
-	?>
-	<div class="social">
-		<iframe src="https://www.facebook.com/plugins/like.php?href=<?php echo esc_attr( urlencode( get_permalink( $post->ID ) ) ); ?>&layout=button_count&show_faces=false&width=100&action=like&colorscheme=light&height=21" style="border:none; overflow:hidden; width:100px; height:21px;"></iframe>
-		<span class="st_twitter"></span><span class="st_email"></span><span class="st_sharethis" st_image="<?php echo esc_attr( urlencode( $thumbnail ) ); ?>"></span><span class="st_plusone_button"></span>
-	</div>
-	<script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
-	<script type="text/javascript">stLight.options({publisher:"<?php echo esc_attr( SHARETHIS_PUBLISHER_ID ); ?>"});</script>
-	<?php
-}
-add_action( 'woocommerce_share', 'sharethis_for_woocommerce' );
-
-/**
- * Set archive ordering criteria
- */
-// Sort products (artwork) archive page by title
-add_action( 'pre_get_posts', 'alfa_get_posts_product' );
-
-function alfa_get_posts_product( $query ) {
-
-	if (is_post_type_archive('product')){
-
-		// Stock: sort artwork by title
-		$query->set('orderby', 'title');
-		$query->set('order', 'ASC' );
+	function forward_wrapper_start() {
+		echo '<section id="main">';
 	}
-	return $query;
-}
+
+	function forward_wrapper_end() {
+		echo '</section>';
+	}
+
+	add_action( 'after_setup_theme', 'woocommerce_support' );
+	function woocommerce_support() {
+		add_theme_support( 'woocommerce' );
+	}
+
+	/**
+	 * Customize WooCommerce single product page
+	 */
+	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+
+	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 30 );
+
+	/**
+	 * Remove WooCommerce breadcrumbs
+	 */
+	add_action( 'init', 'jk_remove_wc_breadcrumbs' );
+	function jk_remove_wc_breadcrumbs() {
+		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+	}
+
+	/**
+	 * Add HTML5 search form support
+	 */
+	add_theme_support( 'html5', array( 'search-form' ) );
+
+	/**
+	 * Add ShareThis support for WooCommerce
+	 */
+	if ( ! defined( 'SHARETHIS_PUBLISHER_ID' ) ) {
+		define( 'SHARETHIS_PUBLISHER_ID', 'enter your id here' );
+	}
+
+	function sharethis_for_woocommerce() {
+		global $post;
+
+		$thumbnail_id = get_post_thumbnail_id( $post->ID );
+		$thumbnail    = $thumbnail_id ? current( wp_get_attachment_image_src( $thumbnail_id, 'large' ) ) : '';
+		?>
+		<div class="social">
+			<iframe
+				src="https://www.facebook.com/plugins/like.php?href=<?php echo esc_attr( urlencode( get_permalink( $post->ID ) ) ); ?>&layout=button_count&show_faces=false&width=100&action=like&colorscheme=light&height=21"
+				style="border:none; overflow:hidden; width:100px; height:21px;"></iframe>
+			<span class="st_twitter"></span><span class="st_email"></span><span class="st_sharethis"
+			                                                                    st_image="<?php echo esc_attr( urlencode( $thumbnail ) ); ?>"></span><span
+				class="st_plusone_button"></span>
+		</div>
+		<script type="text/javascript">var switchTo5x = true;</script>
+		<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+		<script
+			type="text/javascript">stLight.options({publisher: "<?php echo esc_attr( SHARETHIS_PUBLISHER_ID ); ?>"});</script>
+		<?php
+	}
+
+	add_action( 'woocommerce_share', 'sharethis_for_woocommerce' );
+
+	/**
+	 * Set archive ordering criteria
+	 */
+// Sort products (artwork) archive page by title
+	add_action( 'pre_get_posts', 'alfa_get_posts_product' );
+
+	function alfa_get_posts_product( $query ) {
+
+		if ( is_post_type_archive( 'product' ) ) {
+
+			// Stock: sort artwork by title
+			$query->set( 'orderby', 'title' );
+			$query->set( 'order', 'ASC' );
+		}
+
+		return $query;
+	}
 
 // Sort artists archive page by title (name)
-add_action( 'pre_get_posts', 'alfa_get_posts_artist' );
+	add_action( 'pre_get_posts', 'alfa_get_posts_artist' );
 
-function alfa_get_posts_artist( $query ) {
+	function alfa_get_posts_artist( $query ) {
 
-	if (is_post_type_archive('artist')){
+		if ( is_post_type_archive( 'artist' ) ) {
 
-		// Stock: sort artists by title (name)
-		$query->set('orderby', 'title');
-		$query->set('order', 'ASC' );
+			// Stock: sort artists by title (name)
+			$query->set( 'orderby', 'title' );
+			$query->set( 'order', 'ASC' );
+		}
+
+		return $query;
 	}
-	return $query;
-}
 
 // Sort exhibitions archive page by ending date
-add_action( 'pre_get_posts', 'alfa_get_posts_exhibition' );
+	add_action( 'pre_get_posts', 'alfa_get_posts_exhibition' );
 
-function alfa_get_posts_exhibition( $query ) {
+	function alfa_get_posts_exhibition( $query ) {
 
-	if (is_post_type_archive('exhibition')){
+		if ( is_post_type_archive( 'exhibition' ) ) {
 
-		// Stock: sort exhbitions by ending date
-		$query->set('orderby', 'exhibition_ending_date');
-		$query->set('order', 'DESC' );
+			// Stock: sort exhbitions by ending date
+			$query->set( 'orderby', 'exhibition_ending_date' );
+			$query->set( 'order', 'DESC' );
+		}
+
+		return $query;
 	}
-	return $query;
-}
+
+//// Add script for tabbed content
+//add_action( 'wp_enqueue_scripts', 'alfa_tabs_script' );
+//
+//function alfa_tabs_script() {
+//	// Register the script like this for a theme:
+//	wp_register_script( 'tabs-script', "//code.jquery.com/ui/1.11.4/jquery-ui.js", array( 'jquery', 'jquery-ui-core' ), '20120208', true );
+//
+//	wp_enqueue_script( 'tabs-script' );
+//}
