@@ -389,13 +389,3 @@ function forward_scripts() {
 
 		return $query;
 	}
-
-//// Add script for tabbed content
-//add_action( 'wp_enqueue_scripts', 'alfa_tabs_script' );
-//
-//function alfa_tabs_script() {
-//	// Register the script like this for a theme:
-//	wp_register_script( 'tabs-script', "//code.jquery.com/ui/1.11.4/jquery-ui.js", array( 'jquery', 'jquery-ui-core' ), '20120208', true );
-//
-//	wp_enqueue_script( 'tabs-script' );
-//}

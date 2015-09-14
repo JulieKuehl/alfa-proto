@@ -1771,7 +1771,7 @@ input[type=search] {
 // TABBED CONTENT SHAME //
 //////////////////////////
 
-.tab-container,
+//.tab-container,
 .ui-tabs {
     width: 100%;
     margin: 0 auto;
@@ -1793,16 +1793,16 @@ ul.tabs li,
     background: none;
     color: #222;
     display: inline-block;
-    padding: 10px 15px;
+    padding: 10px;
     cursor: pointer;
 }
 
-ul.tabs li.current{
-    background: #ededed;
-    color: #222;
-}
+//ul.tabs li.current{
+//    background: #ededed;
+//    color: #222;
+//}
 
-.tab-content,
+//.tab-content,
 .ui-tabs-panel {
     display: none;
     //background: $color-alfa-2;
