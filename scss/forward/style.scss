@@ -12,7 +12,7 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
- $visual-grid: true !global;
+// $visual-grid: true !global;
 
 // Import default configuration.
 // Use '@import config-child' when building child themes.
@@ -1811,4 +1811,9 @@ ul.tabs li,
 
 .tab-content.current{
     display: inherit;
+}
+
+// removed boldness from submenus
+.main-navigation .menu .current_page_parent {
+    font-weight: 300;
 }

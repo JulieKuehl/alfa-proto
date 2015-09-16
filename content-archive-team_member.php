@@ -37,7 +37,7 @@
 
 		<?php the_field( 'team_member_details'); ?>
 
-		<?php the_title(); ?> can be reached at <a href="<?php the_field( 'team_member_email' ); ?>"><?php the_field( 'team_member_email' ); ?></a>
+		<?php the_title(); ?> can be reached at <a href="mailto:<?php the_field( 'team_member_email' ); ?>"><?php the_field( 'team_member_email' ); ?></a>
 
 		<?php
 			wp_link_pages( array(

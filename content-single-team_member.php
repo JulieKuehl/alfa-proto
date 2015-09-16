@@ -30,6 +30,8 @@
 		<img class="team_member_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
 
 		<?php the_field( 'team_member_details' ); ?>
+
+		<?php the_title(); ?> can be reached at <a href="mailto:<?php the_field( 'team_member_email' ); ?>"><?php the_field( 'team_member_email' ); ?></a>
 	</div>
 
 		<?php
