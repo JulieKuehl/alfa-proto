@@ -9,7 +9,9 @@
 	<?php forward_featured_image(); ?>
 
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+<!--		--><?php //the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+
+		<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?>, <?php the_field( 'team_member_position' ); ?></a></h1>
 
 		<div class="team-member-archive-photo">
 			<?php

@@ -9,7 +9,7 @@
 	<?php forward_featured_image(); ?>
 
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<h1 class="entry-title"><?php the_title(); ?>, <?php the_field( 'team_member_position' ); ?></h1>
 
 		<div class="entry-meta">
 <!--			--><?php //forward_posted_on(); ?>
