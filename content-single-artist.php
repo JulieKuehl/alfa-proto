@@ -20,8 +20,10 @@
 
 	<div class="entry-content">
 
+		<!-- Begin tabbed content -->
 		<div id="tabs" class="ui-tabs">
 
+			<!-- Tab navigation menu -->
 			<ul class="tabs ui-tabs-nav">
 				<li><a href="#tab-available-work" class="ui-tabs-anchor" >Available Work</a></li>
 				<li><a href="#tab-archives" class="ui-tabs-anchor">Archives</a></li>
@@ -32,6 +34,8 @@
 				<li><a href="#tab-press" class="ui-tabs-anchor">Press and Publications</a></li>
 				<li><a href="#tab-visit" class="ui-tabs-anchor">Studio Visit</a></li>
 			</ul>
+
+			<!-- Available Work tab -->
 
 			<div id="tab-available-work" class="ui-tabs-panel">
 				<!-- Related artwork connected posts -->
@@ -47,8 +51,8 @@
 				if ( $connected->have_posts() ) :
 				?>
 
-				<div id="related-artwork-archive" class="related outer-container">
-<!--					<h2>Related Artwork:</h2>-->
+				<div id="available-artwork-archive" class="related outer-container">
+
 					<ul class="products artist-work">
 						<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
 							<div class="related-artwork-entry">
@@ -58,7 +62,7 @@
 										<h3><?php the_title(); ?></h3>
 									</a>
 								</li>
-							</div><!-- .related-products -->
+							</div><!-- .related-artwork-entry -->
 						<?php endwhile; ?>
 					</ul>
 
@@ -71,10 +75,11 @@
 					wp_reset_postdata();
 
 					endif;
-					?>
-				</div><!-- .related-artwork-archive -->
-				
 
+					?>
+				</div><!-- .available-artwork-archive -->
+
+			<!-- Archive tab -->
 			<div id="tab-archives" class="ui-tabs-panel">
 
 				<!-- Related artwork connected posts -->
@@ -91,7 +96,7 @@
 				?>
 
 				<div id="related-artwork-archive" class="related outer-container">
-<!--					<h2>Related Artwork:</h2>-->
+
 					<ul class="products artist-work">
 						<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
 							<div class="related-artwork-entry">
@@ -101,7 +106,7 @@
 										<h3><?php the_title(); ?></h3>
 									</a>
 								</li>
-							</div><!-- .related-products -->
+							</div><!-- .related-artwork-entry -->
 						<?php endwhile; ?>
 					</ul>
 
@@ -115,11 +120,12 @@
 
 					endif;
 					?>
-				</div><!-- .related -->
+				</div><!-- .related-artwork-archive -->
 
-			</div>
 
+			<!-- Biography tab -->
 			<div id="tab-biography" class="ui-tabs-panel">
+
 				<div class="artist-photo">
 					<?php
 					$attachment_id = get_field('artist_photo_id');
@@ -132,33 +138,39 @@
 					?>
 
 					<img class="artist_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
-				</div><!-- .artist-archive-photo -->
+				</div><!-- .artist-photo -->
 
 				<?php echo the_field( 'artist_biography' ); ?>
 
-			</div>
+			</div><!-- .tab-biography -->
 
+
+			<!-- Selected Exhibitions tab -->
 			<div id="tab-selected-exhibitions" class="ui-tabs-panel">
 				<?php echo the_field( 'artist_exhibitions' ); ?>
-			</div>
+			</div><!-- .tab-selected-exhibitions -->
 
+			<!-- Commissions tab -->
 			<div id="tab-commissions" class="ui-tabs-panel">
 				<?php echo the_field( 'artist_commissions' ); ?>
-			</div>
+			</div><!-- .tab-commissions -->
 
+			<!-- Art Reviews tab -->
 			<div id="tab-art-reviews" class="ui-tabs-panel">
 				<?php echo the_field( 'artist_reviews' ); ?>
-			</div>
+			</div><!-- .tab-art-reviews -->
 
+			<!-- Press and Publications tab -->
 			<div id="tab-press" class="ui-tabs-panel">
 				<?php echo the_field( 'artist_news' ); ?>
-			</div>
+			</div><!-- .tab-press -->
 
+			<!-- Studio Visit tab -->
 			<div id="tab-visit" class="ui-tabs-panel">
 				<?php echo the_field( 'artist_studio_visit' ); ?>
-			</div>
+			</div><!-- .tab-visit -->
 
-		</div>
+		</div><!-- .tabs -->
 
 
 		<?php
