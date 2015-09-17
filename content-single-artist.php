@@ -62,14 +62,18 @@
 						<?php endwhile; ?>
 					</ul>
 
+					<?php else : ?>
+
+						<p class="info-box"><?php _e( 'Nothing currently available', 'alfa' ); ?></p>
+
 					<?php
 					// Prevent weirdness
 					wp_reset_postdata();
 
 					endif;
 					?>
-				</div><!-- .related -->
-			</div>
+				</div><!-- .related-artwork-archive -->
+				
 
 			<div id="tab-archives" class="ui-tabs-panel">
 
@@ -100,6 +104,10 @@
 							</div><!-- .related-products -->
 						<?php endwhile; ?>
 					</ul>
+
+					<?php else : ?>
+
+						<p class="info-box"><?php _e( 'No archives available', 'alfa' ); ?></p>
 
 					<?php
 					// Prevent weirdness

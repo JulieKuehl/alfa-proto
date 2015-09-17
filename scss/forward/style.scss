@@ -1671,6 +1671,12 @@ input[type=submit] {
 
 }
 
+.info-box {
+    background-color: lighten($color-alfa-2, 20%);
+    padding: 1em;
+    text-align: center;
+}
+
 ul.products,
 ul.artist-work {
     list-style: none;

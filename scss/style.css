@@ -1849,6 +1849,11 @@ input[type=submit] {
   float: left;
   width: 100%; }
 
+.info-box {
+  background-color: #c2c5b1;
+  padding: 1em;
+  text-align: center; }
+
 ul.products,
 ul.artist-work {
   list-style: none;
