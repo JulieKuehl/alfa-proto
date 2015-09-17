@@ -389,3 +389,13 @@ function forward_scripts() {
 
 		return $query;
 	}
+
+// Increase the number of posts displayed on the Tema Member archive page
+function team_member_posts_per_page() {
+	if ( is_post_type_archive( 'team_member' ) )
+		return 999;
+	else
+		return 10; // default: 5 posts per page
+}
+
+add_filter('pre_option_posts_per_page', 'team_member_posts_per_page');
