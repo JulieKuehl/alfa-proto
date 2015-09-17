@@ -390,7 +390,7 @@ function forward_scripts() {
 		return $query;
 	}
 
-// Increase the number of posts displayed on the Tema Member archive page
+// Increase the number of posts displayed on the Team Member archive page
 function team_member_posts_per_page() {
 	if ( is_post_type_archive( 'team_member' ) )
 		return 999;
