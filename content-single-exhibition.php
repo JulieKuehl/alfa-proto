@@ -28,10 +28,6 @@
 			$attachment_id = get_field('exhibition_photo_id');
 			$size = 'large-thumbnail';
 			$image = wp_get_attachment_image_src( $attachment_id, $size );
-			$image_url = $image['sizes']['large-thumbnail'];
-			// url = $image[0];
-			// width = $image[1];
-			// height = $image[2];
 			?>
 
 			<img class="exhibition_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
@@ -39,6 +35,41 @@
 		</div><!-- .exhibition-archive-photo -->
 
 		<?php the_field( 'exhibition_details' ); ?><br />
+
+		<!-- Display connected artists -->
+		<?php
+		// Find connected artists
+		$connected = new WP_Query( array(
+			'connected_type' => 'artist_to_exhibition',
+			'connected_items' => get_queried_object(),
+			'nopaging' => true,
+		) );
+
+		if ( $connected->have_posts() ) :
+		?>
+
+		<div id="exhibition-artists" class="outer-container">
+			<h2>Featured Artists:</h2>
+			<ul class="products">
+				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+					<div class="new-artwork-entry related-products">
+						<li>
+							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail( 'medium-thumbnail'); ?>
+								<h3><?php the_title(); ?></h3>
+							</a>
+						</li>
+					</div><!-- .related-products -->
+				<?php endwhile; ?>
+			</ul>
+
+			<?php
+			// Prevent weirdness
+			wp_reset_postdata();
+
+			endif;
+			?>
+		</div><!-- .exhibition-artists -->
 
 
 	<!-- Display connected artwork (product) -->
