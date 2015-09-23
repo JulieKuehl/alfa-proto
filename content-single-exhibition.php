@@ -74,7 +74,7 @@
 
 			endif;
 			?>
-		</div><!-- .related -->
+		</div><!-- .exhibition-artwork -->
 
 
 		<!-- Add Google Map of gallery location -->
