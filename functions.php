@@ -399,3 +399,10 @@ function team_member_posts_per_page() {
 }
 
 add_filter('pre_option_posts_per_page', 'team_member_posts_per_page');
+
+// Move Yoast to bottom
+function yoasttobottom() {
+	return 'low';
+}
+
+add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
