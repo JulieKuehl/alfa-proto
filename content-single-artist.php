@@ -63,7 +63,7 @@
 					while ( $connected->have_posts() ) :
 						$connected->the_post(); ?>
 
-					<div id="available-artwork-archive" class="related outer-container">
+					<div id="available-artwork-available" class="related outer-container">
 
 						<ul class="products artist-work">
 							<div class="related-artwork-entry">
@@ -76,7 +76,9 @@
 							</div><!-- .related-artwork-entry -->
 						</ul>
 
-				<?php endwhile; ?>
+					</div><!-- .available-artwork-available -->
+
+					<?php endwhile; ?>
 
 				<?php wp_reset_postdata(); ?>
 
@@ -86,7 +88,7 @@
 
 				<?php endif; ?>
 
-			</div><!-- .available-artwork-archive -->
+			</div><!-- .tab-available-work -->
 
 
 			<!-- Archives tab -->
@@ -130,6 +132,8 @@
 							</div><!-- .related-artwork-entry -->
 						</ul>
 
+					</div><!-- .related-artwork-archive -->
+
 				<?php endwhile; ?>
 
 				<?php wp_reset_postdata(); ?>
@@ -140,7 +144,7 @@
 
 				<?php endif; ?>
 
-			</div><!-- .related-artwork-archive -->
+			</div><!-- .tab-archives -->
 
 
 			<!-- Biography tab -->
