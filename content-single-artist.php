@@ -25,14 +25,14 @@
 
 			<!-- Tab navigation menu -->
 			<ul class="tabs ui-tabs-nav">
-				<li><a href="#tab-available-work" class="ui-tabs-anchor" >Available Work</a></li>
-				<li><a href="#tab-archives" class="ui-tabs-anchor">Archives</a></li>
-				<li><a href="#tab-biography" class="ui-tabs-anchor">Biography</a></li>
-				<li><a href="#tab-selected-exhibitions" class="ui-tabs-anchor">Selected Exhibitions</a></li>
-				<li><a href="#tab-commissions" class="ui-tabs-anchor">Commissions</a></li>
-				<li><a href="#tab-art-reviews" class="ui-tabs-anchor">Art Reviews</a></li>
-				<li><a href="#tab-press" class="ui-tabs-anchor">Press and Publications</a></li>
-				<li><a href="#tab-visit" class="ui-tabs-anchor">Studio Visit</a></li>
+				<li><a href="#tab-available-work">Available Work</a></li>
+				<li><a href="#tab-archives">Archives</a></li>
+				<li><a href="#tab-biography">Biography</a></li>
+				<li><a href="#tab-selected-exhibitions">Selected Exhibitions</a></li>
+				<li><a href="#tab-commissions">Commissions</a></li>
+				<li><a href="#tab-art-reviews">Art Reviews</a></li>
+				<li><a href="#tab-press">Press and Publications</a></li>
+				<li><a href="#tab-visit">Studio Visit</a></li>
 			</ul>
 
 			<!-- Available Work tab -->
@@ -197,7 +197,6 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
 
 	<footer class="entry-footer">
 		<?php forward_entry_footer(); ?>
