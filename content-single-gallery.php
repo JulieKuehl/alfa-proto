@@ -25,13 +25,9 @@
 
 		<div class="gallery-photo">
 			<?php
-			$attachment_id = get_field('gallery_photo_id');
-			$size = 'large-artwork';
-			$image = wp_get_attachment_image_src( $attachment_id, $size );
-			$image_url = $image['sizes']['large-artwork'];
-			// url = $image[0];
-			// width = $image[1];
-			// height = $image[2];
+				$attachment_id = get_field('gallery_photo_id');
+				$size = 'large-artwork';
+				$image = wp_get_attachment_image_src( $attachment_id, $size );
 			?>
 
 			<img alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
