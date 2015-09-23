@@ -15,13 +15,9 @@
 
 		<div class="team-member-archive-photo">
 			<?php
-			$attachment_id = get_field('team_member_photo_id');
-			$size = 'large-thumbnail';
-			$image = wp_get_attachment_image_src( $attachment_id, $size );
-			$image_url = $image['sizes']['large-thumbnail'];
-			// url = $image[0];
-			// width = $image[1];
-			// height = $image[2];
+				$attachment_id = get_field('team_member_photo_id');
+				$size = 'large-thumbnail';
+				$image = wp_get_attachment_image_src( $attachment_id, $size );
 			?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark">
 
