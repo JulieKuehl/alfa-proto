@@ -390,9 +390,9 @@ function forward_scripts() {
 		return $query;
 	}
 
-// Increase the number of posts displayed on the Team Member archive page
+// Increase the number of posts displayed on the specified archive pages
 function team_member_posts_per_page() {
-	if ( is_post_type_archive( 'team_member' ) )
+	if ( is_post_type_archive( 'team_member') || is_post_type_archive( 'artist' ) || is_post_type_archive( 'gallery' ) || is_post_type_archive( 'exhibition' ) || is_post_type_archive( 'product' ) )
 		return 999;
 	else
 		return 10; // default: 5 posts per page
