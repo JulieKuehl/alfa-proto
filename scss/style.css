@@ -1899,12 +1899,14 @@ input[type=search] {
 .woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
   width: 100%; }
 
+#exhibition-artists .products,
 #exhibition-artwork .products,
 #related-artwork-archive .products,
 #new-artwork-archive .products {
   max-width: 80em;
   margin-left: auto;
   margin-right: auto; }
+  #exhibition-artists .products::after,
   #exhibition-artwork .products::after,
   #related-artwork-archive .products::after,
   #new-artwork-archive .products::after {
