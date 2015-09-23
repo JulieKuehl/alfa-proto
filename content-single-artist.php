@@ -36,25 +36,36 @@
 			</ul>
 
 			<!-- Available Work tab -->
-
 			<div id="tab-available-work" class="ui-tabs-panel">
-				<!-- Related artwork connected posts -->
+
+				<!-- Find the artwork related to this artist and show only available products -->
 				<?php
-				// Find connected artwork (product)
-				$connected = new WP_Query( array(
+					$args = array(
+					'post_type' => 'artist',
+					'meta_key'  => 'artwork_availability',
 					'connected_type' => 'product_to_artist',
 					'connected_items' => get_queried_object(),
 					'nopaging' => true,
-				) );
 
-				// Display connected artwork (product)
-				if ( $connected->have_posts() ) :
+					'meta_query' => array(
+								'key' => 'artwork_availability',
+								'value' => array( 'Available' ),
+								'compare' => 'IN',
+						),
+					);
+
+					$connected = new WP_Query( $args );
 				?>
 
-				<div id="available-artwork-archive" class="related outer-container">
+				<!-- Display connected artwork (product) -->
+				<?php
+				if ( $connected->have_posts() ) :
+					while ( $connected->have_posts() ) :
+						$connected->the_post(); ?>
 
-					<ul class="products artist-work">
-						<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+					<div id="available-artwork-archive" class="related outer-container">
+
+						<ul class="products artist-work">
 							<div class="related-artwork-entry">
 								<li>
 									<a href="<?php the_permalink(); ?>">
@@ -63,42 +74,52 @@
 									</a>
 								</li>
 							</div><!-- .related-artwork-entry -->
-						<?php endwhile; ?>
-					</ul>
+						</ul>
 
-					<?php else : ?>
+				<?php endwhile; ?>
 
-						<p class="info-box"><?php _e( 'Nothing currently available', 'alfa' ); ?></p>
+				<?php wp_reset_postdata(); ?>
 
-					<?php
-					// Prevent weirdness
-					wp_reset_postdata();
+				<?php else : ?>
 
-					endif;
+					<p class="info-box"><?php _e( 'Nothing currently available', 'forward' ); ?></p>
 
-					?>
-				</div><!-- .available-artwork-archive -->
+				<?php endif; ?>
 
-			<!-- Archive tab -->
+			</div><!-- .available-artwork-archive -->
+
+
+			<!-- Archives tab -->
 			<div id="tab-archives" class="ui-tabs-panel">
 
-				<!-- Related artwork connected posts -->
+				<!-- Find the artwork related to this artist and show only archive products -->
 				<?php
-				// Find connected artwork (product)
-				$connected = new WP_Query( array(
-					'connected_type' => 'product_to_artist',
-					'connected_items' => get_queried_object(),
-					'nopaging' => true,
-				) );
+					$args = array(
+						'post_type' => 'artist',
+						'meta_key'  => 'artwork_availability',
+						'connected_type' => 'product_to_artist',
+						'connected_items' => get_queried_object(),
+						'nopaging' => true,
 
-				// Display connected artwork (product)
-				if ( $connected->have_posts() ) :
+						'meta_query' => array(
+							'key'    => 'artwork_availability',
+							'value'    => array( 'Archive' ),
+							'compare' => 'IN',
+						),
+					);
+
+					$connected = new WP_Query( $args );
 				?>
 
-				<div id="related-artwork-archive" class="related outer-container">
+				<!-- Display connected artwork (product) -->
+				<?php
+				if ( $connected->have_posts() ) :
+					while ( $connected->have_posts() ) :
+						$connected->the_post(); ?>
 
-					<ul class="products artist-work">
-						<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
+					<div id="related-artwork-archive" class="related outer-container">
+
+						<ul class="products artist-work">
 							<div class="related-artwork-entry">
 								<li>
 									<a href="<?php the_permalink(); ?>">
@@ -107,20 +128,19 @@
 									</a>
 								</li>
 							</div><!-- .related-artwork-entry -->
-						<?php endwhile; ?>
-					</ul>
+						</ul>
 
-					<?php else : ?>
+				<?php endwhile; ?>
 
-						<p class="info-box"><?php _e( 'No archives available', 'alfa' ); ?></p>
+				<?php wp_reset_postdata(); ?>
 
-					<?php
-					// Prevent weirdness
-					wp_reset_postdata();
+				<?php else : ?>
 
-					endif;
-					?>
-				</div><!-- .related-artwork-archive -->
+					<p class="info-box"><?php _e( 'No archives available', 'alfa' ); ?></p>
+
+				<?php endif; ?>
+
+			</div><!-- .related-artwork-archive -->
 
 
 			<!-- Biography tab -->
@@ -128,13 +148,9 @@
 
 				<div class="artist-photo">
 					<?php
-					$attachment_id = get_field('artist_photo_id');
-					$size = 'large-thumbnail';
-					$image = wp_get_attachment_image_src( $attachment_id, $size );
-					$image_url = $image['sizes']['large-thumbnail'];
-					// url = $image[0];
-					// width = $image[1];
-					// height = $image[2];
+						$attachment_id = get_field('artist_photo_id');
+						$size = 'large-thumbnail';
+						$image = wp_get_attachment_image_src( $attachment_id, $size );
 					?>
 
 					<img class="artist_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
