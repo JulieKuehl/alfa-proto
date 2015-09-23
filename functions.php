@@ -6,11 +6,14 @@
  */
 
 
-if ( ! function_exists( 'forward_google_fonts' ) ) :
 /**
  * Adds google font support.
  * 
  */
+if ( ! function_exists( 'forward_google_fonts' ) ) :
+
+add_action('wp_enqueue_scripts', 'forward_google_fonts');
+
 function forward_google_fonts() {
 	$query_args = array(
 		'family' => 'Source+Sans+Pro:200,300,400,600',
@@ -26,7 +29,7 @@ function forward_google_fonts() {
 	wp_enqueue_style('source-sans');
 }
 endif; // forward_google_fonts
-add_action('wp_enqueue_scripts', 'forward_google_fonts');
+
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -36,7 +39,6 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-if ( ! function_exists( 'forward_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -44,6 +46,10 @@ if ( ! function_exists( 'forward_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
+if ( ! function_exists( 'forward_setup' ) ) :
+
+add_action( 'after_setup_theme', 'forward_setup' );
+
 function forward_setup() {
 
 	/*
@@ -106,15 +112,17 @@ function forward_setup() {
 	) ) );
 }
 endif; // forward_setup
-add_action( 'after_setup_theme', 'forward_setup' );
 
 
-if ( ! function_exists( 'forward_widgets_init' ) ) :
 /**
- * Register widget area.
+ * Register widget areas
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
+if ( ! function_exists( 'forward_widgets_init' ) ) :
+
+add_action( 'widgets_init', 'forward_widgets_init' );
+
 function forward_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'forward' ),
@@ -190,12 +198,15 @@ function forward_widgets_init() {
 	) );
 }
 endif; // forward_widgets_init
-add_action( 'widgets_init', 'forward_widgets_init' );
 
-if ( ! function_exists( 'forward_scripts' ) ) :
+
 /**
  * Enqueue scripts and styles.
  */
+if ( ! function_exists( 'forward_scripts' ) ) :
+
+add_action( 'wp_enqueue_scripts', 'forward_scripts' );
+
 function forward_scripts() {
 	wp_enqueue_style( 'forward-style', get_stylesheet_uri() );
 
@@ -235,162 +246,182 @@ function forward_scripts() {
 	}
 
 	endif; // forward_scripts
-	add_action( 'wp_enqueue_scripts', 'forward_scripts' );
 
 
-	/**
-	 * Implement the Custom Header feature.
-	 */
+/**
+ * Implement the Custom Header feature.
+ */
 //require get_template_directory() . '/inc/custom-header.php';
 
-	/**
-	 * Custom template tags for this theme.
-	 */
-	require get_template_directory() . '/inc/template-tags.php';
 
-	/**
-	 * Custom functions that act independently of the theme templates.
-	 */
-	require get_template_directory() . '/inc/extras.php';
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
 
-	/**
-	 * Customizer additions.
-	 */
-	require get_template_directory() . '/inc/customizer.php';
 
-	/**
-	 * Load Jetpack compatibility file.
-	 */
-	require get_template_directory() . '/inc/jetpack.php';
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/inc/extras.php';
 
-	/**
-	 * Enable automatic theme updates.
-	 */
-	require_once( 'wp-updates-theme.php' );
-	new WPUpdatesThemeUpdater_1511( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
 
-	/**
-	 * Add WooCommerce support
-	 */
-	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
-	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
 
-	add_action( 'woocommerce_before_main_content', 'forward_wrapper_start', 10 );
-	add_action( 'woocommerce_after_main_content', 'forward_wrapper_end', 10 );
 
-	function forward_wrapper_start() {
-		echo '<section id="main">';
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/inc/jetpack.php';
+
+
+/**
+ * Enable automatic theme updates.
+ */
+require_once( 'wp-updates-theme.php' );
+new WPUpdatesThemeUpdater_1511( 'http://wp-updates.com/api/2/theme', basename( get_template_directory() ) );
+
+
+/**
+ * Add WooCommerce support
+ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+
+add_action( 'woocommerce_before_main_content', 'forward_wrapper_start', 10 );
+add_action( 'woocommerce_after_main_content', 'forward_wrapper_end', 10 );
+
+function forward_wrapper_start() {
+	echo '<section id="main">';
+}
+function forward_wrapper_end() {
+	echo '</section>';
+}
+
+add_action( 'after_setup_theme', 'woocommerce_support' );
+
+function woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+}
+
+
+/**
+ * Customize WooCommerce single product page
+ */
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 30 );
+
+
+/**
+ * Remove WooCommerce breadcrumbs
+ */
+add_action( 'init', 'jk_remove_wc_breadcrumbs' );
+
+function jk_remove_wc_breadcrumbs() {
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+}
+
+/**
+ * Add HTML5 search form support
+ */
+add_theme_support( 'html5', array( 'search-form' ) );
+
+
+/**
+ * Add ShareThis support for WooCommerce
+ */
+if ( ! defined( 'SHARETHIS_PUBLISHER_ID' ) ) {
+	define( 'SHARETHIS_PUBLISHER_ID', 'enter your id here' );
+}
+
+add_action( 'woocommerce_share', 'sharethis_for_woocommerce' );
+
+function sharethis_for_woocommerce() {
+	global $post;
+
+	$thumbnail_id = get_post_thumbnail_id( $post->ID );
+	$thumbnail    = $thumbnail_id ? current( wp_get_attachment_image_src( $thumbnail_id, 'large' ) ) : '';
+	?>
+	<div class="social">
+		<iframe
+			src="https://www.facebook.com/plugins/like.php?href=<?php echo esc_attr( urlencode( get_permalink( $post->ID ) ) ); ?>&layout=button_count&show_faces=false&width=100&action=like&colorscheme=light&height=21"
+			style="border:none; overflow:hidden; width:100px; height:21px;"></iframe>
+		<span class="st_twitter"></span><span class="st_email"></span><span class="st_sharethis"
+		                                                                    st_image="<?php echo esc_attr( urlencode( $thumbnail ) ); ?>"></span><span
+			class="st_plusone_button"></span>
+	</div>
+	<script type="text/javascript">var switchTo5x = true;</script>
+	<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+	<script
+		type="text/javascript">stLight.options({publisher: "<?php echo esc_attr( SHARETHIS_PUBLISHER_ID ); ?>"});</script>
+	<?php
+}
+
+
+// SET ARCHIVE ORDERING CRITERIA
+
+/*
+ * Sort products (artwork) archive page by title
+ */
+add_action( 'pre_get_posts', 'alfa_get_posts_product' );
+
+function alfa_get_posts_product( $query ) {
+
+	if ( is_post_type_archive( 'product' ) ) {
+
+		// Stock: sort artwork by title
+		$query->set( 'orderby', 'title' );
+		$query->set( 'order', 'ASC' );
 	}
 
-	function forward_wrapper_end() {
-		echo '</section>';
+	return $query;
+}
+
+/*
+ * Sort artists archive page by title (name)
+ */
+add_action( 'pre_get_posts', 'alfa_get_posts_artist' );
+
+function alfa_get_posts_artist( $query ) {
+
+	if ( is_post_type_archive( 'artist' ) ) {
+
+		// Stock: sort artists by title (name)
+		$query->set( 'orderby', 'title' );
+		$query->set( 'order', 'ASC' );
 	}
 
-	add_action( 'after_setup_theme', 'woocommerce_support' );
-	function woocommerce_support() {
-		add_theme_support( 'woocommerce' );
+	return $query;
+}
+
+/*
+ * Sort exhibitions archive page by ending date
+ */
+add_action( 'pre_get_posts', 'alfa_get_posts_exhibition' );
+
+function alfa_get_posts_exhibition( $query ) {
+
+	if ( is_post_type_archive( 'exhibition' ) ) {
+
+		// Stock: sort exhibitions by ending date
+		$query->set( 'orderby', 'exhibition_ending_date' );
+		$query->set( 'order', 'DESC' );
 	}
 
-	/**
-	 * Customize WooCommerce single product page
-	 */
-	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+	return $query;
+}
 
-	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 30 );
 
-	/**
-	 * Remove WooCommerce breadcrumbs
-	 */
-	add_action( 'init', 'jk_remove_wc_breadcrumbs' );
-	function jk_remove_wc_breadcrumbs() {
-		remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
-	}
+/*
+ * Increase the number of posts displayed on the specified archive pages
+ */
+add_filter('pre_option_posts_per_page', 'team_member_posts_per_page');
 
-	/**
-	 * Add HTML5 search form support
-	 */
-	add_theme_support( 'html5', array( 'search-form' ) );
-
-	/**
-	 * Add ShareThis support for WooCommerce
-	 */
-	if ( ! defined( 'SHARETHIS_PUBLISHER_ID' ) ) {
-		define( 'SHARETHIS_PUBLISHER_ID', 'enter your id here' );
-	}
-
-	function sharethis_for_woocommerce() {
-		global $post;
-
-		$thumbnail_id = get_post_thumbnail_id( $post->ID );
-		$thumbnail    = $thumbnail_id ? current( wp_get_attachment_image_src( $thumbnail_id, 'large' ) ) : '';
-		?>
-		<div class="social">
-			<iframe
-				src="https://www.facebook.com/plugins/like.php?href=<?php echo esc_attr( urlencode( get_permalink( $post->ID ) ) ); ?>&layout=button_count&show_faces=false&width=100&action=like&colorscheme=light&height=21"
-				style="border:none; overflow:hidden; width:100px; height:21px;"></iframe>
-			<span class="st_twitter"></span><span class="st_email"></span><span class="st_sharethis"
-			                                                                    st_image="<?php echo esc_attr( urlencode( $thumbnail ) ); ?>"></span><span
-				class="st_plusone_button"></span>
-		</div>
-		<script type="text/javascript">var switchTo5x = true;</script>
-		<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
-		<script
-			type="text/javascript">stLight.options({publisher: "<?php echo esc_attr( SHARETHIS_PUBLISHER_ID ); ?>"});</script>
-		<?php
-	}
-
-	add_action( 'woocommerce_share', 'sharethis_for_woocommerce' );
-
-	/**
-	 * Set archive ordering criteria
-	 */
-// Sort products (artwork) archive page by title
-	add_action( 'pre_get_posts', 'alfa_get_posts_product' );
-
-	function alfa_get_posts_product( $query ) {
-
-		if ( is_post_type_archive( 'product' ) ) {
-
-			// Stock: sort artwork by title
-			$query->set( 'orderby', 'title' );
-			$query->set( 'order', 'ASC' );
-		}
-
-		return $query;
-	}
-
-// Sort artists archive page by title (name)
-	add_action( 'pre_get_posts', 'alfa_get_posts_artist' );
-
-	function alfa_get_posts_artist( $query ) {
-
-		if ( is_post_type_archive( 'artist' ) ) {
-
-			// Stock: sort artists by title (name)
-			$query->set( 'orderby', 'title' );
-			$query->set( 'order', 'ASC' );
-		}
-
-		return $query;
-	}
-
-// Sort exhibitions archive page by ending date
-	add_action( 'pre_get_posts', 'alfa_get_posts_exhibition' );
-
-	function alfa_get_posts_exhibition( $query ) {
-
-		if ( is_post_type_archive( 'exhibition' ) ) {
-
-			// Stock: sort exhbitions by ending date
-			$query->set( 'orderby', 'exhibition_ending_date' );
-			$query->set( 'order', 'DESC' );
-		}
-
-		return $query;
-	}
-
-// Increase the number of posts displayed on the specified archive pages
 function team_member_posts_per_page() {
 	if ( is_post_type_archive( 'team_member') || is_post_type_archive( 'artist' ) || is_post_type_archive( 'gallery' ) || is_post_type_archive( 'exhibition' ) || is_post_type_archive( 'product' ) )
 		return 999;
@@ -398,11 +429,12 @@ function team_member_posts_per_page() {
 		return 10; // default: 5 posts per page
 }
 
-add_filter('pre_option_posts_per_page', 'team_member_posts_per_page');
 
-// Move Yoast to bottom
+/*
+ * Move Yoast to bottom
+ */
+add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
+
 function yoasttobottom() {
 	return 'low';
 }
-
-add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
