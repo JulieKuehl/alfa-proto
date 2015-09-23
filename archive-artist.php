@@ -22,7 +22,7 @@ get_header(); ?>
 
 			<div class="outer-container facetwp-template">
 
-				<?php /* Start the Loop */ ?>
+				<!--  Start the Loop -->
 				<?php while ( have_posts() ) : the_post(); ?>
 
 						<?php add_action( 'pre_get_posts', 'alfa_get_posts_artist' ); ?>
