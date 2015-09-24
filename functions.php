@@ -390,7 +390,9 @@ add_action( 'pre_get_posts', 'alfa_sort_artists' );
 
 function alfa_sort_artists( $query ) {
 
-	if ( is_post_type_archive( 'artist' ) ) {
+	if ( ! $query->is_main_query() || ! is_post_type_archive( 'artist' ) ) {
+
+		return;
 
 		// Sort artists by lastname
 		$query->set( 'meta_key', 'artist_lastname' );
