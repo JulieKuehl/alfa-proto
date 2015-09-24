@@ -1750,12 +1750,14 @@ input[type=search] {
     @include outer-container();
 }
 
+.related-exhibition-entry,
 .related-artwork-entry,
 .new-artwork-entry {
         @include span-columns(3);
         @include omega(4n);
 }
 
+.related-exhibition-entry:nth-child(4n+1),
 .related-artwork-entry:nth-child(4n+1),
 .new-artwork-entry:nth-child(4n+1) {
     clear: left;

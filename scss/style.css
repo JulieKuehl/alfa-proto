@@ -1914,19 +1914,23 @@ input[type=search] {
     content: "";
     display: table; }
 
+.related-exhibition-entry,
 .related-artwork-entry,
 .new-artwork-entry {
   float: left;
   display: block;
   margin-right: 2.35765%;
   width: 23.23176%; }
+  .related-exhibition-entry:last-child,
   .related-artwork-entry:last-child,
   .new-artwork-entry:last-child {
     margin-right: 0; }
+  .related-exhibition-entry:nth-child(4n),
   .related-artwork-entry:nth-child(4n),
   .new-artwork-entry:nth-child(4n) {
     margin-right: 0; }
 
+.related-exhibition-entry:nth-child(4n+1),
 .related-artwork-entry:nth-child(4n+1),
 .new-artwork-entry:nth-child(4n+1) {
   clear: left; }

@@ -171,17 +171,10 @@
 				<!-- Find the exhibitions related to this artist -->
 				<?php
 				$args = array(
-					'post_type' => 'artist',
-					'meta_key'  => 'artwork_availability',
+					'post_type' => 'exhibition',
 					'connected_type' => 'exhibition_to_artist',
 					'connected_items' => get_queried_object(),
 					'nopaging' => true,
-
-//					'meta_query' => array(
-//						'key'    => 'artwork_availability',
-//						'value'    => array( 'Archive' ),
-//						'compare' => 'IN',
-//					),
 				);
 
 				$connected = new WP_Query( $args );
@@ -193,13 +186,23 @@
 				while ( $connected->have_posts() ) :
 				$connected->the_post(); ?>
 
-					<div id="related-exhbitions" class="related outer-container">
+					<div id="related-exhibitions" class="related outer-container">
 
 						<ul class="products artist-work">
-							<div class="related-artwork-entry">
+							<div class="related-exhibition-entry">
 								<li>
 									<a href="<?php the_permalink(); ?>">
-										<?php the_post_thumbnail( 'medium-thumbnail'); ?>
+
+										<div class="exhibition-photo">
+											<?php
+												$attachment_id = get_field('exhibition_photo_id');
+												$size = 'large-thumbnail';
+												$image = wp_get_attachment_image_src( $attachment_id, $size );
+											?>
+
+											<img class="exhbition_photo" alt="Image of <?php echo the_title(); ?> Exhibition" src="<?php echo $image[0]; ?>" />
+										</div><!-- .artist-photo -->
+
 										<h3><?php the_title(); ?></h3>
 									</a>
 								</li>
