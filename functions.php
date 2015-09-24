@@ -397,8 +397,6 @@ function alfa_sort_artists( $query ) {
 		$query->set( 'orderby', 'meta_value' );
 		$query->set( 'order', 'ASC' );
 	}
-
-	return $query;
 }
 
 
