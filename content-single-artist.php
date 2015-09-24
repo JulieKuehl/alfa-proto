@@ -201,7 +201,7 @@
 											?>
 
 											<img class="exhbition_photo" alt="Image of <?php echo the_title(); ?> Exhibition" src="<?php echo $image[0]; ?>" />
-										</div><!-- .artist-photo -->
+										</div><!-- .exhibition-photo -->
 
 										<h3><?php the_title(); ?></h3>
 									</a>
