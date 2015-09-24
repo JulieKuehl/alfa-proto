@@ -40,7 +40,7 @@
 		<?php
 		// Find connected artists
 		$connected = new WP_Query( array(
-			'connected_type' => 'artist_to_exhibition',
+			'connected_type' => 'exhibition_to_artist',
 			'connected_items' => get_queried_object(),
 			'nopaging' => true,
 		) );
@@ -55,7 +55,17 @@
 					<div class="new-artwork-entry related-products">
 						<li>
 							<a href="<?php the_permalink(); ?>">
-								<?php the_post_thumbnail( 'medium-thumbnail'); ?>
+
+								<div class="artist-photo">
+									<?php
+									$attachment_id = get_field('artist_photo_id');
+									$size = 'large-thumbnail';
+									$image = wp_get_attachment_image_src( $attachment_id, $size );
+									?>
+
+									<img class="exhbition_photo" alt="Image of <?php echo the_title(); ?> Exhibition" src="<?php echo $image[0]; ?>" />
+								</div><!-- .artist-photo -->
+
 								<h3><?php the_title(); ?></h3>
 							</a>
 						</li>
