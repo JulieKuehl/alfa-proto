@@ -140,7 +140,7 @@
 
 				<?php else : ?>
 
-					<p class="info-box"><?php _e( 'No archives available', 'alfa' ); ?></p>
+					<p class="info-box"><?php _e( 'No archives available', 'forward' ); ?></p>
 
 				<?php endif; ?>
 
@@ -167,7 +167,56 @@
 
 			<!-- Selected Exhibitions tab -->
 			<div id="tab-selected-exhibitions" class="ui-tabs-panel">
-				<?php echo the_field( 'artist_exhibitions' ); ?>
+
+				<!-- Find the exhibitions related to this artist -->
+				<?php
+				$args = array(
+					'post_type' => 'artist',
+					'meta_key'  => 'artwork_availability',
+					'connected_type' => 'exhibition_to_artist',
+					'connected_items' => get_queried_object(),
+					'nopaging' => true,
+
+//					'meta_query' => array(
+//						'key'    => 'artwork_availability',
+//						'value'    => array( 'Archive' ),
+//						'compare' => 'IN',
+//					),
+				);
+
+				$connected = new WP_Query( $args );
+				?>
+
+				<!-- Display connected exhibitions -->
+				<?php
+				if ( $connected->have_posts() ) :
+				while ( $connected->have_posts() ) :
+				$connected->the_post(); ?>
+
+					<div id="related-exhbitions" class="related outer-container">
+
+						<ul class="products artist-work">
+							<div class="related-artwork-entry">
+								<li>
+									<a href="<?php the_permalink(); ?>">
+										<?php the_post_thumbnail( 'medium-thumbnail'); ?>
+										<h3><?php the_title(); ?></h3>
+									</a>
+								</li>
+							</div><!-- .related-artwork-entry -->
+						</ul>
+
+					</div><!-- .related-exhibitions -->
+
+				<?php endwhile; ?>
+
+				<?php wp_reset_postdata(); ?>
+
+				<?php else : ?>
+
+					<p class="info-box"><?php _e( 'No exhibitions', 'forward' ); ?></p>
+
+				<?php endif; ?>
 			</div><!-- .tab-selected-exhibitions -->
 
 			<!-- Commissions tab -->

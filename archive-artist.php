@@ -25,7 +25,7 @@ get_header(); ?>
 				<!--  Start the Loop -->
 				<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php add_action( 'pre_get_posts', 'alfa_get_posts_artist' ); ?>
+						<?php add_action( 'pre_get_posts', 'alfa_sort_artists' ); ?>
 
 						<?php get_template_part( 'content', 'archive-artist' ); ?>
 
