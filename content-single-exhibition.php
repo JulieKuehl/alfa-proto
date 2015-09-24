@@ -58,9 +58,9 @@
 
 								<div class="artist-photo">
 									<?php
-									$attachment_id = get_field('artist_photo_id');
-									$size = 'large-thumbnail';
-									$image = wp_get_attachment_image_src( $attachment_id, $size );
+										$attachment_id = get_field('artist_photo_id');
+										$size = 'large-thumbnail';
+										$image = wp_get_attachment_image_src( $attachment_id, $size );
 									?>
 
 									<img class="exhbition_photo" alt="Image of <?php echo the_title(); ?> Exhibition" src="<?php echo $image[0]; ?>" />
