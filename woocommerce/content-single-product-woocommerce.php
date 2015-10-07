@@ -29,8 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 }
 ?>
 
-<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?> >
-
+<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php
 		/**
@@ -68,69 +67,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 		endif;
 		?>
 
-		<!-- Display the artwork title -->
-		<h1 class="product_title entry-title">
-			<?php the_title(); ?>
-		</h1>
-
 		<?php
 			/**
 			 * woocommerce_single_product_summary hook
 			 *
 			 * @hooked woocommerce_template_single_title - 5
+			 * @hooked woocommerce_template_single_rating - 10
+			 * @hooked woocommerce_template_single_excerpt - 20
+			 * @hooked woocommerce_template_single_price - 30
 			 * @hooked woocommerce_template_single_add_to_cart - 30
+			 * @hooked woocommerce_template_single_meta - 40
+			 * @hooked woocommerce_template_single_sharing - 50
 			 */
-			do_action( 'alfa_woocommerce_single_product_info' );
-		?>
-
-		<?php
-		// Display an Add to My Collection button
-		do_action( 'woocommerce_template_single_add_to_cart' );
-		?>
-
-		<?php
-		// Display material / substrate
-		the_field( 'artwork_material' );
-		?>
-
-		<br />
-
-		<?php
-		// Display the Dimensions
-		$depth = get_field( 'artwork_depth' );
-		the_field( 'artwork_height' ); ?>" x <?php the_field( 'artwork_width' ); ?>" <?php if (isset($depth) && ! empty($depth)) {
-			echo ' x ' . $depth . '"';
-		} else {
-			echo '';
-		}
-		?>
-
-
-		<?php
-		// Display the button
-		?>
-
-		<p><?php
-		// Display the content
-		the_content();
-		?></p>
-
-		<p>
-			<?php
-			// Display the provenance
-			the_field( 'artwork_provenance' );
-			?>
-		</p>
-
-		<?php
-		/**
-		 * woocommerce_single_product_summary hook
-		 *
-		 * @hooked woocommerce_template_single_price - 30
-		 * @hooked woocommerce_template_single_meta - 40
-		 * @hooked woocommerce_template_single_sharing - 50
-		 */
-		do_action( 'alfa_woocommerce_single_product_summary' );
+			do_action( 'woocommerce_single_product_summary' );
 		?>
 
 		<p>For more information, <a href="/contact/">please contact us.</a></p>
@@ -141,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		/**
 		 * woocommerce_after_single_product_summary hook
 		 *
-		 * @unhooked woocommerce_output_product_data_tabs - 10
+		 * @hooked woocommerce_output_product_data_tabs - 10
 		 * @hooked woocommerce_upsell_display - 15
 		 * @hooked woocommerce_output_related_products - 20
 		 */

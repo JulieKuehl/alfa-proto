@@ -1735,6 +1735,13 @@ input[type=search] {
     border-right: 1px solid #c5c5c5;
 }
 
+.soliloquy-container a.soliloquy-prev {
+    margin-left: -3em !important;
+}
+.soliloquy-container a.soliloquy-next {
+    margin-right: -3em !important;
+}
+
 ///////////////////////
 // NEW ARTWORK SHAME //
 ///////////////////////
