@@ -1832,6 +1832,16 @@ input[type=submit] {
 .fullwidth {
   width: 100%; }
 
+#soliloquy-container-90.soliloquy-container .soliloquy-prev,
+#soliloquy-container-90.soliloquy-container .soliloquy-next {
+  top: 05% !important; }
+
+#soliloquy-container-90.soliloquy-container .soliloquy-prev {
+  left: -50px !important; }
+
+#soliloquy-container-90.soliloquy-container .soliloquy-next {
+  right: -50px !important; }
+
 .artist-archive-entry {
   float: left;
   display: block;

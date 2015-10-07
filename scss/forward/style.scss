@@ -851,7 +851,6 @@ ul.sub-menu {
 //    height: 400px !important;
 //}
 
-
 // Home page widget areas
 //
 #home-page-columns {
@@ -1651,6 +1650,19 @@ input[type=submit] {
 
 .fullwidth {
     width: 100%;
+}
+
+// Move the home page carousel navigation arrows
+#soliloquy-container-90.soliloquy-container .soliloquy-prev,
+#soliloquy-container-90.soliloquy-container .soliloquy-next {
+    top: 5% !important;
+}
+
+#soliloquy-container-90.soliloquy-container .soliloquy-prev {
+    left: -50px !important;
+}
+#soliloquy-container-90.soliloquy-container .soliloquy-next {
+    right: -50px !important;
 }
 
 .artist-archive-entry {
