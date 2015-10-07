@@ -4,6 +4,6 @@ $max-width: 80em;
 $gutter: golden-ratio(1.25em, 1);
 
 // Breakpoints
-$tablet: new-breakpoint(max-width 768px 4);
+$tablet: new-breakpoint(max-width 999px 4);
 $mobile: new-breakpoint(max-width 480px 2);
-$desktop: new-breakpoint(min-width 769px 12);
+$desktop: new-breakpoint(min-width 1000px 12);
