@@ -101,7 +101,31 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 				 * @hooked woocommerce_template_loop_product_title - 10
 				 */
 				do_action( 'woocommerce_shop_loop_item_title' );
+			?>
 
+			<?php the_field( 'artwork_material' ); ?>
+			<br />
+
+			<?php
+			// Display the Dimensions
+			$height = get_field( 'artwork_height' );
+			$width = get_field( 'artwork_width' );
+			$depth = get_field( 'artwork_depth' );
+
+			if (isset($height) && isset($width) && ! empty($height) && !empty($width)) {
+				echo $height . '" x ' . $width . '"';
+			} else {
+				echo '';
+			}
+
+			if (isset($depth) && ! empty($depth)) {
+				echo ' x ' . $depth . '"';
+			} else {
+				echo '';
+			}
+			?>
+
+			<?php
 				/**
 				 * woocommerce_after_shop_loop_item_title hook
 				 *

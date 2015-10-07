@@ -97,8 +97,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<?php
 		// Display the Dimensions
+		$height = get_field( 'artwork_height' );
+		$width = get_field( 'artwork_width' );
 		$depth = get_field( 'artwork_depth' );
-		the_field( 'artwork_height' ); ?>" x <?php the_field( 'artwork_width' ); ?>" <?php if (isset($depth) && ! empty($depth)) {
+
+		if (isset($height) && isset($width) && ! empty($height) && !empty($width)) {
+			echo $height . '" x ' . $width . '"';
+		} else {
+			echo '';
+		}
+
+		if (isset($depth) && ! empty($depth)) {
 			echo ' x ' . $depth . '"';
 		} else {
 			echo '';
