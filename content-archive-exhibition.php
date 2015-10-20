@@ -9,7 +9,7 @@
 	<?php forward_featured_image(); ?>
 
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+		<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
 
 			<p><?php $starting_date = DateTime::createFromFormat('Ymd', get_field('exhibition_starting_date'));
 				echo $starting_date->format('l, F jS, Y'); ?> &mdash; <?php $ending_date = DateTime::createFromFormat('Ymd', get_field('exhibition_ending_date')); 	echo $ending_date->format('l, F jS, Y'); ?><br />

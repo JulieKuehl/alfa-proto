@@ -27,7 +27,6 @@ get_header( 'shop' ); ?>
 
 <div class="content-area fullwidth">
 
-	<!-- TODO Make this title dynamic based on category -->
 	<h1 class="page-title">New Artwork</h1>
 
 	<?php

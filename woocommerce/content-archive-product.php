@@ -46,7 +46,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
-		<div class="new-artwork-image">
+		<div class="artwork-product-image">
 			<a href="<?php the_permalink(); ?>">
 				<?php
 
@@ -63,7 +63,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 		</div><!-- .artwork-product-image -->
 
 
-		<div class="new-artwork-metainfo">
+		<div class="artwork-product-metainfo">
 
 			<?php
 			/**
@@ -83,7 +83,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
 				<ul>
-					<li class="new-artwork-artist"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+					<li class="artwork-product-artist"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 				</ul>
 			<?php endwhile; ?>
 
@@ -101,14 +101,45 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 				 * @hooked woocommerce_template_loop_product_title - 10
 				 */
 				do_action( 'woocommerce_shop_loop_item_title' );
+			?>
 
+			<?php
+			$material = get_field( 'artwork_material' );
+
+			if (isset($material) && ! empty($material)) {
+				echo $material . '<br />';
+			} else {
+				echo '';
+			}
+			?>
+
+			<?php
+			// Display the Dimensions
+			$height = get_field( 'artwork_height' );
+			$width = get_field( 'artwork_width' );
+			$depth = get_field( 'artwork_depth' );
+
+			if (isset($height) && isset($width) && ! empty($height) && !empty($width)) {
+				echo $height . '" x ' . $width . '"';
+			} else {
+				echo '';
+			}
+
+			if (isset($depth) && ! empty($depth)) {
+				echo ' x ' . $depth . '"';
+			} else {
+				echo '';
+			}
+			?>
+
+			<?php
 				/**
 				 * woocommerce_after_shop_loop_item_title hook
 				 *
 				 * @hooked woocommerce_template_loop_rating - 5
 				 * @hooked woocommerce_template_loop_price - 10
 				 */
-				do_action( 'woocommerce_after_shop_loop_item_title' );
+//				do_action( 'woocommerce_after_shop_loop_item_title' );
 			?>
 
 			<?php

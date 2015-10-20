@@ -61,7 +61,7 @@ get_header( 'shop' ); ?>
 
 					<?php add_action( 'pre_get_posts', 'alfa_get_posts_product' ); ?>
 
-					<?php wc_get_template_part( 'content', 'product' ); ?>
+					<?php wc_get_template_part( 'content', 'archive-product' ); ?>
 
 				<?php endwhile; // end of the loop. ?>
 

@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area fullwidth">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -20,22 +20,32 @@ get_header(); ?>
 
 			</header><!-- .page-header -->
 
-			<!-- Start the Loop -->
-			<?php while ( have_posts() ) : the_post(); ?>
+			<div class="exhibitions">
 
-				<?php add_action( 'pre_get_posts', 'alfa_get_posts_exhbition' ); ?>
+				<h2><span>Current Exhibitions</span></h2>
 
-				<?php get_template_part( 'content', 'archive-exhibition' ); ?>
+				<!-- Start the Loop -->
+				<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php endwhile; ?>
+					<?php add_action( 'pre_get_posts', 'alfa_get_posts_exhbition' ); ?>
 
-			<?php forward_posts_navigation(); ?>
+					<?php get_template_part( 'content', 'archive-exhibition' ); ?>
 
-		<?php else : ?>
+				<?php endwhile; ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+					<?php forward_posts_navigation(); ?>
 
-		<?php endif; ?>
+				<?php else : ?>
+
+					<?php get_template_part( 'content', 'none' ); ?>
+
+				<?php endif; ?>
+
+				<h2><span>Upcoming Exhibitions</span></h2>
+
+				<h2><span>Previous Exhibitions</span></h2>
+
+			</div><!-- .exhibitions -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

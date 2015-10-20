@@ -1224,16 +1224,32 @@ article.page,
     .entry-footer > span:last-child {
       margin-right: 0; }
 
-.page-title {
-  font-weight: 400;
+.page-title,
+.entry-header .entry-title {
+  font-weight: 300;
   font-family: "Garamond", serif;
-  font-size: 1em;
+  font-size: 3.1573345183em;
   line-height: 1em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  text-transform: uppercase;
+  margin-top: 0.5627813555em;
+  margin-bottom: 0.5627813555em;
   margin-bottom: 1.333em;
-  color: #999999; }
+  color: #760d10; }
+  @media screen and (max-width: 999px) {
+    .page-title,
+    .entry-header .entry-title {
+      font-size: 2.368593037em; } }
+  .page-title:first-child,
+  .entry-header .entry-title:first-child {
+    margin-top: 0; }
+  .page-title a:hover,
+  .entry-header .entry-title a:hover {
+    text-decoration: none; }
+
+h2.entry-title a {
+  color: #959977; }
+
+h2.entry-title a:hover {
+  color: #760d10; }
 
 .nav-links {
   display: block;
@@ -1383,6 +1399,9 @@ article.page,
     margin-right: 1em; }
     .social-sharing li:last-child {
       margin-right: 0; }
+
+p.no-break {
+  padding-top: 2em; }
 
 article.sticky {
   display: block; }
@@ -1536,17 +1555,28 @@ article.sticky {
     font-size: 0.875rem;
     line-height: 1.333em; }
 
+.fat-footer {
+  position: relative;
+  min-height: 9em; }
+
 .footer-left {
-  float: left; }
+  position: absolute;
+  bottom: 0;
+  left: 0; }
 
 .footer-right {
-  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   text-align: right; }
 
 .site-info {
   clear: both;
   padding-top: 1em;
   text-align: center; }
+
+.textwidget a img {
+  margin-right: 10px; }
 
 .search-form {
   display: block;
@@ -1591,16 +1621,16 @@ article.sticky {
 #menu-main-menu {
   float: left; }
 
-.site-header .search-box {
-  float: right; }
-
-.site-header .search-form {
+.site-header .search-form,
+.main-navigation .search-form {
   display: inline-block;
   margin-bottom: 0;
   margin-left: 2em;
+  margin-top: 5px;
   width: 35px; }
 
-.site-header .search-field {
+.site-header .search-field,
+.main-navigation .search-field {
   background-color: transparent;
   background-image: url(images/search-icon.png);
   background-position: 5px center;
@@ -1619,7 +1649,8 @@ article.sticky {
   width: 0;
   z-index: 9999; }
 
-.site-header .search-field:focus {
+.site-header .search-field:focus,
+.main-navigation .search-field:focus {
   background-color: #fff;
   border: 2px solid #c3c0ab;
   cursor: text;
@@ -1874,9 +1905,10 @@ ul.artist-work {
 
 .view-artwork-link button {
   background-color: #959977;
-  border-radius: 6px;
-  color: #e0e0c0;
-  padding: .5em; }
+  color: #e0e0c0; }
+
+.view-artwork-link button a {
+  color: #e0e0c0; }
 
 .gallery-archive-photo {
   float: left;
@@ -1899,6 +1931,14 @@ ul.artist-work {
 .artwork-product-metainfo {
   float: right;
   width: 48%; }
+
+.artwork-product-metainfo h3,
+.new-artwork-product-metainfo h3 {
+  font-style: italic; }
+
+.movement,
+.provenance {
+  font-style: italic; }
 
 .noUi-connect {
   background-color: #e0e0c0 !important; }
@@ -1970,6 +2010,24 @@ input[type=search] {
   .related-products:nth-child(4n) {
     margin-right: 0; }
 
+.related h2,
+.exhibitions h2 {
+  color: #760d10;
+  font-size: 1.6em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  border-bottom: 3px solid #959977;
+  line-height: 0.1em;
+  margin: 0 0 2.5em;
+  padding-top: 2.5em; }
+
+.related h2 span,
+.exhibitions h2 span {
+  background: #fff;
+  padding: 0 10px; }
+
 .ui-tabs {
   width: 100%;
   margin: 0 auto; }
@@ -2000,3 +2058,6 @@ ul.tabs li,
 
 .main-navigation .menu .current_page_parent {
   font-weight: 300; }
+
+.woocommerce div.product .product_title {
+  font-style: italic; }

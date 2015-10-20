@@ -78,24 +78,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 			 * woocommerce_single_product_summary hook
 			 *
 			 * @hooked woocommerce_template_single_title - 5
-			 * @hooked woocommerce_template_single_add_to_cart - 30
 			 */
 			do_action( 'alfa_woocommerce_single_product_info' );
 		?>
 
 		<?php
-		// Display an Add to My Collection button
-		do_action( 'woocommerce_template_single_add_to_cart' );
-		?>
-
-		<?php
 		// Display material / substrate
-		the_field( 'artwork_material' );
-		?>
+		$material = get_field( 'artwork_material' );
 
-		<br />
+		if (isset($material) && !empty($material)) {
+			echo $material . '&nbsp;&nbsp;&nbsp;&nbsp;';
+		} else {
+			echo '';
+		}
 
-		<?php
 		// Display the Dimensions
 		$height = get_field( 'artwork_height' );
 		$width = get_field( 'artwork_width' );
@@ -114,9 +110,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 		}
 		?>
 
+		<p class="movement"><?php
+		// Display the Movement
+		the_field( 'artwork_movement' );
+		?></p>
 
 		<?php
-		// Display the button
+		// Display an Add to My Collection button
+		alfa_add_to_cart();
 		?>
 
 		<p><?php
@@ -124,7 +125,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		the_content();
 		?></p>
 
-		<p>
+		<p class="provenance">
 			<?php
 			// Display the provenance
 			the_field( 'artwork_provenance' );
