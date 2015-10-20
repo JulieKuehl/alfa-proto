@@ -18,143 +18,159 @@ get_header(); ?>
 
 			</header><!-- .page-header -->
 
-			<div class="exhibitions">
+			<div class="outer-container facetwp-template">
 
-				<h2><span>Current Exhibitions</span></h2>
+				<div class="exhibitions">
 
-				<!-- Identify CURRENT exhibitions -->
-				<?php
+					<h2><span>Current Exhibitions</span></h2>
 
-				$today         = date( 'Ymd' );
-				$starting_date = get_field( 'exhibition_starting_date' );
-				$ending_date   = get_field( 'exhibition_ending_date' );
+					<div class="current-exhibitions">
 
-				$args = array(
-					'post_type'      => 'exhibition',
-					'meta_query'     => array(
-						array(
-							'key'     => 'exhibition_starting_date',
-							'value'   => $today,
-							'compare' => '<=',
-							'type'    => 'DATE'
-						),
-						array(
-							'key'     => 'exhibition_ending_date',
-							'value'   => $today,
-							'compare' => '>=',
-							'type'    => 'DATE'
-						),
-					)
-				);
+						<!-- Identify CURRENT exhibitions -->
+						<?php
 
-				$current = new WP_Query( $args );
-				?>
+						$today         = date( 'Ymd' );
+						$starting_date = get_field( 'exhibition_starting_date' );
+						$ending_date   = get_field( 'exhibition_ending_date' );
 
-				<!-- Display CURRENT exhibitions -->
-				<?php
-				if ( $current->have_posts() ) :
-					while ( $current->have_posts() ) :
-						$current->the_post(); ?>
+						$args = array(
+							'post_type'      => 'exhibition',
+							'meta_query'     => array(
+								array(
+									'key'     => 'exhibition_starting_date',
+									'value'   => $today,
+									'compare' => '<=',
+									'type'    => 'DATE'
+								),
+								array(
+									'key'     => 'exhibition_ending_date',
+									'value'   => $today,
+									'compare' => '>=',
+									'type'    => 'DATE'
+								),
+							)
+						);
 
-						<?php get_template_part( 'content', 'archive-exhibition' ); ?>
+						$current = new WP_Query( $args );
+						?>
 
-					<?php endwhile; ?>
+						<!-- Display CURRENT exhibitions -->
+						<?php
+						if ( $current->have_posts() ) :
+							while ( $current->have_posts() ) :
+								$current->the_post(); ?>
 
-					<?php wp_reset_postdata(); ?>
+								<?php get_template_part( 'content', 'archive-exhibition' ); ?>
 
-				<?php else : ?>
+							<?php endwhile; ?>
 
-					<p class="info-box"><?php _e( 'No current exhibitions', 'forward' ); ?></p>
+							<?php wp_reset_postdata(); ?>
 
-				<?php endif; ?>
+						<?php else : ?>
 
+							<p class="info-box"><?php _e( 'No current exhibitions', 'forward' ); ?></p>
 
-				<h2><span>Upcoming Exhibitions</span></h2>
+						<?php endif; ?>
 
-				<!-- Identify UPCOMING exhibitions -->
-				<?php
-
-				$today         = date( 'Ymd' );
-				$starting_date = get_field( 'exhibition_starting_date' );
-				$ending_date   = get_field( 'exhibition_ending_date' );
-
-				$args = array(
-					'post_type'      => 'exhibition',
-					'meta_query'     => array(
-						array(
-							'key'     => 'exhibition_starting_date',
-							'value'   => $today,
-							'compare' => '>',
-							'type'    => 'DATE'
-						),
-					)
-				);
-
-				$upcoming = new WP_Query( $args );
-				?>
-
-				<!-- Display UPCOMING exhibitions -->
-				<?php
-				if ( $upcoming->have_posts() ) :
-					while ( $upcoming->have_posts() ) :
-						$upcoming->the_post(); ?>
-
-						<?php get_template_part( 'content', 'archive-exhibition' ); ?>
-
-					<?php endwhile; ?>
-
-					<?php wp_reset_postdata(); ?>
-
-				<?php else : ?>
-
-					<p class="info-box"><?php _e( 'No upcoming exhibitions', 'forward' ); ?></p>
-
-				<?php endif; ?>
+					</div><!-- .current-exhibitions -->
 
 
-				<h2><span>Previous Exhibitions</span></h2>
+					<h2><span>Upcoming Exhibitions</span></h2>
 
-				<!-- Identify PREVIOUS exhibitions -->
-				<?php
+					<div class="upcoming-exhibitions">
 
-				$today         = date( 'Ymd' );
-				$starting_date = get_field( 'exhibition_starting_date' );
-				$ending_date   = get_field( 'exhibition_ending_date' );
+						<!-- Identify UPCOMING exhibitions -->
+						<?php
 
-				$args = array(
-					'post_type'      => 'exhibition',
-					'meta_query'     => array(
-						array(
-							'key'     => 'exhibition_ending_date',
-							'value'   => $today,
-							'compare' => '<',
-							'type'    => 'DATE'
-						),
-					)
-				);
+						$today         = date( 'Ymd' );
+						$starting_date = get_field( 'exhibition_starting_date' );
+						$ending_date   = get_field( 'exhibition_ending_date' );
 
-				$previous = new WP_Query( $args );
-				?>
+						$args = array(
+							'post_type'      => 'exhibition',
+							'meta_query'     => array(
+								array(
+									'key'     => 'exhibition_starting_date',
+									'value'   => $today,
+									'compare' => '>',
+									'type'    => 'DATE'
+								),
+							)
+						);
 
-				<!-- Display PREVIOUS exhibitions -->
-				<?php
-				if ( $previous->have_posts() ) :
-					while ( $previous->have_posts() ) :
-						$previous->the_post(); ?>
+						$upcoming = new WP_Query( $args );
+						?>
 
-						<?php get_template_part( 'content', 'archive-exhibition' ); ?>
+						<!-- Display UPCOMING exhibitions -->
+						<?php
+						if ( $upcoming->have_posts() ) :
+							while ( $upcoming->have_posts() ) :
+								$upcoming->the_post(); ?>
 
-					<?php endwhile; ?>
+								<?php get_template_part( 'content', 'archive-exhibition' ); ?>
 
-					<?php wp_reset_postdata(); ?>
+							<?php endwhile; ?>
 
-				<?php else : ?>
+							<?php wp_reset_postdata(); ?>
 
-					<p class="info-box"><?php _e( 'No previous exhibitions', 'forward' ); ?></p>
+						<?php else : ?>
 
-				<?php endif; ?>
+							<p class="info-box"><?php _e( 'No upcoming exhibitions', 'forward' ); ?></p>
 
-			</div><!-- .exhibitions -->
+						<?php endif; ?>
+
+					</div><!-- .upcoming-exhibitions -->
+
+
+					<h2><span>Previous Exhibitions</span></h2>
+
+					<div class="previous-exhibitions">
+
+						<!-- Identify PREVIOUS exhibitions -->
+						<?php
+
+						$today         = date( 'Ymd' );
+						$starting_date = get_field( 'exhibition_starting_date' );
+						$ending_date   = get_field( 'exhibition_ending_date' );
+
+						$args = array(
+							'post_type'      => 'exhibition',
+							'meta_query'     => array(
+								array(
+									'key'     => 'exhibition_ending_date',
+									'value'   => $today,
+									'compare' => '<',
+									'type'    => 'DATE'
+								),
+							)
+						);
+
+						$previous = new WP_Query( $args );
+						?>
+
+						<!-- Display PREVIOUS exhibitions -->
+						<?php
+						if ( $previous->have_posts() ) :
+							while ( $previous->have_posts() ) :
+								$previous->the_post(); ?>
+
+								<?php get_template_part( 'content', 'archive-exhibition' ); ?>
+
+							<?php endwhile; ?>
+
+							<?php wp_reset_postdata(); ?>
+
+						<?php else : ?>
+
+							<p class="info-box"><?php _e( 'No previous exhibitions', 'forward' ); ?></p>
+
+						<?php endif; ?>
+
+					</div><!-- .previous-exhibitions -->
+
+				</div><!-- .exhibitions -->
+
+			</div><!-- .outer-container -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
