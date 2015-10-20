@@ -23,7 +23,7 @@
 
 		<?php the_field( 'exhibition_location' ); ?><br />
 
-		<div class="exhibition-archive-photo">
+		<div class="exhibition-single-photo">
 			<?php
 			$attachment_id = get_field('exhibition_photo_id');
 			$size = 'large-thumbnail';
@@ -32,7 +32,7 @@
 
 			<img class="exhibition_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
 
-		</div><!-- .exhibition-archive-photo -->
+		</div><!-- .exhibition-single-photo -->
 
 		<?php the_field( 'exhibition_details' ); ?><br />
 
