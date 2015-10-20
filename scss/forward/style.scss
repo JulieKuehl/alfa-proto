@@ -1698,21 +1698,31 @@ input[type=submit] {
     right: -50px !important;
 }
 
-.artist-archive-entry {
+
+////////////////////////////////////////////
+// ARCHIVE PAGES (ARTISTS AND EXHIBITIONS //
+////////////////////////////////////////////
+
+.artist-archive-entry,
+.exhibition-archive-entry {
     @include span-columns(3);
     @include omega(4n);
+    margin-bottom: 2em;
 }
 
-.artist-archive-entry:nth-child(4n+1) {
+.artist-archive-entry:nth-child(4n+1),
+.exhibition-archive-entry:nth-child(4n+1){
     clear: left;
 }
 
-.artist-archive-photo img {
+.artist-archive-photo img,
+.exhibition-archive-photo img {
     float: left;
     width: 100%;
 }
 
-.artist-archive-name {
+.artist-archive-name,
+.exhibition-title {
 
 }
 
@@ -1907,14 +1917,3 @@ ul.tabs li,
 .woocommerce div.product .product_title {
     font-style: italic;
 }
-
-/////////////////
-// EXHIBITIONS //
-/////////////////
-
-//.exhibitions {
-//    color: $color-alfa-1;
-//    font-size: 1.3em;
-//    letter-spacing: 2px;
-//    text-transform: uppercase;
-//}
