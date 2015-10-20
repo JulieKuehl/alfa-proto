@@ -2026,8 +2026,13 @@ input[type=search] {
   width: 100%;
   border-bottom: 3px solid #959977;
   line-height: 0.1em;
-  margin: 0 0 2.5em;
+  margin: 0 0 2.5em; }
+
+.related h2 {
   padding-top: 2.5em; }
+
+.exhibitions h2 {
+  padding-top: 0; }
 
 .related h2 span,
 .exhibitions h2 span {
