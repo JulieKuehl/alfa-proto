@@ -1937,3 +1937,38 @@ ul.tabs li,
 .woocommerce-cart table.cart img {
     width: 180px;
 }
+
+.request-info {
+    display: block;
+    padding-bottom: 5em;
+}
+
+.request-info-button {
+    background-color: #760d10;
+    color: #e89a9d;
+    float: right;
+    padding: 10px;
+}
+.request-info-button a {
+    color: #e89a9d;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+//////////////////
+// Print Styles //
+//////////////////
+
+@media print {
+    header {
+        margin-bottom: 2em;
+    }
+    .main-navigation {
+        display: none;
+    }
+    .fat-footer p {
+        font-size: 70%;
+    }
+}

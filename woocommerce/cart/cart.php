@@ -25,9 +25,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<th class="product-remove">&nbsp;</th>
 			<th class="product-thumbnail">&nbsp;</th>
 			<th class="product-name"><?php _e( 'Item', 'woocommerce' ); ?></th>
-<!--			<th class="product-price">--><?php //_e( 'Price', 'woocommerce' ); ?><!--</th>-->
-<!--			<th class="product-quantity">--><?php //_e( 'Quantity', 'woocommerce' ); ?><!--</th>-->
-<!--			<th class="product-subtotal">--><?php //_e( 'Total', 'woocommerce' ); ?><!--</th>-->
 		</tr>
 	</thead>
 	<tbody>
@@ -84,34 +81,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 						?>
 					</td>
 
-<!--					<td class="product-price">-->
-<!--						--><?php
-//							echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
-//						?>
-<!--					</td>-->
 
-<!--					<td class="product-quantity">-->
-<!--						--><?php
-//							if ( $_product->is_sold_individually() ) {
-//								$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-//							} else {
-//								$product_quantity = woocommerce_quantity_input( array(
-//									'input_name'  => "cart[{$cart_item_key}][qty]",
-//									'input_value' => $cart_item['quantity'],
-//									'max_value'   => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
-//									'min_value'   => '0'
-//								), $_product, false );
-//							}
-//
-//							echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item );
-//						?>
-<!--					</td>-->
-
-<!--					<td class="product-subtotal">-->
-<!--						--><?php
-//							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );
-//						?>
-<!--					</td>-->
 				</tr>
 				<?php
 			}
@@ -121,15 +91,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 		?>
 		<tr>
 			<td colspan="6" class="actions">
-
-				<?php if ( WC()->cart->coupons_enabled() ) { ?>
-					<div class="coupon">
-
-						<label for="coupon_code"><?php _e( 'Coupon', 'woocommerce' ); ?>:</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply Coupon', 'woocommerce' ); ?>" />
-
-						<?php do_action( 'woocommerce_cart_coupon' ); ?>
-					</div>
-				<?php } ?>
 
 				<input type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update Cart', 'woocommerce' ); ?>" />
 
@@ -147,10 +108,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 </form>
 
-<!--<div class="cart-collaterals">-->
-<!---->
-<!--	--><?php //do_action( 'woocommerce_cart_collaterals' ); ?>
-<!---->
-<!--</div>-->
+<div class="request-info">
+	<button class="request-info-button"><a href="mailto:info@americanlegacyfinearts.com?subject=Request More Information About My Collection">Request More Information&nbsp;&nbsp;<img class="icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/email_32.png" /></a></button>
+
+
+</div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>
