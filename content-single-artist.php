@@ -6,8 +6,6 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php forward_featured_image(); ?>
-
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
@@ -41,15 +39,15 @@
 				<!-- Find the artwork related to this artist and show only available products -->
 				<?php
 					$args = array(
-					'post_type' => 'artist',
-					'meta_key'  => 'artwork_availability',
-					'connected_type' => 'product_to_artist',
+					'post_type'       => 'artist',
+					'meta_key'        => 'artwork_availability',
+					'connected_type'  => 'product_to_artist',
 					'connected_items' => get_queried_object(),
-					'nopaging' => true,
+					'nopaging'        => true,
 
 					'meta_query' => array(
-								'key' => 'artwork_availability',
-								'value' => array( 'Available' ),
+								'key'     => 'artwork_availability',
+								'value'   => array( 'Available' ),
 								'compare' => 'IN',
 						),
 					);
@@ -57,28 +55,25 @@
 					$connected = new WP_Query( $args );
 				?>
 
+
 				<!-- Display connected artwork (product) -->
 				<?php
 				if ( $connected->have_posts() ) :
-					while ( $connected->have_posts() ) :
-						$connected->the_post(); ?>
+				while ( $connected->have_posts() ) :
+				$connected->the_post(); ?>
 
-					<div id="available-artwork-available" class="related outer-container">
+					<ul class="products artist-available-work">
+						<div class="artist-available-work-entry">
+							<li>
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail( 'medium-thumbnail'); ?>
+									<h3><?php the_title(); ?></h3>
+								</a>
+							</li>
+						</div><!-- .related-artwork-entry -->
+					</ul>
 
-						<ul class="products artist-work">
-							<div class="related-artwork-entry">
-								<li>
-									<a href="<?php the_permalink(); ?>">
-										<?php the_post_thumbnail( 'medium-thumbnail'); ?>
-										<h3><?php the_title(); ?></h3>
-									</a>
-								</li>
-							</div><!-- .related-artwork-entry -->
-						</ul>
-
-					</div><!-- .available-artwork-available -->
-
-					<?php endwhile; ?>
+				<?php endwhile; ?>
 
 				<?php wp_reset_postdata(); ?>
 
@@ -97,15 +92,15 @@
 				<!-- Find the artwork related to this artist and show only archive products -->
 				<?php
 					$args = array(
-						'post_type' => 'artist',
-						'meta_key'  => 'artwork_availability',
-						'connected_type' => 'product_to_artist',
+						'post_type'       => 'artist',
+						'meta_key'        => 'artwork_availability',
+						'connected_type'  => 'product_to_artist',
 						'connected_items' => get_queried_object(),
-						'nopaging' => true,
+						'nopaging'        => true,
 
 						'meta_query' => array(
-							'key'    => 'artwork_availability',
-							'value'    => array( 'Archive' ),
+							'key'     => 'artwork_availability',
+							'value'   => array( 'Archive' ),
 							'compare' => 'IN',
 						),
 					);
@@ -119,20 +114,16 @@
 					while ( $connected->have_posts() ) :
 						$connected->the_post(); ?>
 
-					<div id="related-artwork-archive" class="related outer-container">
-
-						<ul class="products artist-work">
-							<div class="related-artwork-entry">
+						<ul class="products artist-archives">
+							<div class="artist-archives-entry">
 								<li>
 									<a href="<?php the_permalink(); ?>">
 										<?php the_post_thumbnail( 'medium-thumbnail'); ?>
 										<h3><?php the_title(); ?></h3>
 									</a>
 								</li>
-							</div><!-- .related-artwork-entry -->
+							</div><!-- .artist-archives-entry -->
 						</ul>
-
-					</div><!-- .related-artwork-archive -->
 
 				<?php endwhile; ?>
 
@@ -156,7 +147,6 @@
 						$size = 'large-thumbnail';
 						$image = wp_get_attachment_image_src( $attachment_id, $size );
 					?>
-
 					<img class="artist_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
 				</div><!-- .artist-photo -->
 
@@ -171,10 +161,10 @@
 				<!-- Find the exhibitions related to this artist -->
 				<?php
 				$args = array(
-					'post_type' => 'exhibition',
-					'connected_type' => 'exhibition_to_artist',
+					'post_type'       => 'exhibition',
+					'connected_type'  => 'exhibition_to_artist',
 					'connected_items' => get_queried_object(),
-					'nopaging' => true,
+					'nopaging'        => true,
 				);
 
 				$connected = new WP_Query( $args );
@@ -186,10 +176,10 @@
 				while ( $connected->have_posts() ) :
 				$connected->the_post(); ?>
 
-					<div id="related-exhibitions" class="related outer-container">
+					<div class="related outer-container artist-exhibitions">
 
-						<ul class="products artist-work">
-							<div class="related-exhibition-entry">
+						<ul class="products artist-exhibition">
+							<div class="artist-exhibition-entry">
 								<li>
 									<a href="<?php the_permalink(); ?>">
 
@@ -199,7 +189,6 @@
 												$size = 'large-thumbnail';
 												$image = wp_get_attachment_image_src( $attachment_id, $size );
 											?>
-
 											<img class="exhbition_photo" alt="Image of <?php echo the_title(); ?> Exhibition" src="<?php echo $image[0]; ?>" />
 										</div><!-- .exhibition-photo -->
 
@@ -209,7 +198,7 @@
 							</div><!-- .related-artwork-entry -->
 						</ul>
 
-					</div><!-- .related-exhibitions -->
+					</div><!-- .artist-exhibitions -->
 
 				<?php endwhile; ?>
 
@@ -220,6 +209,7 @@
 					<p class="info-box"><?php _e( 'No exhibitions', 'forward' ); ?></p>
 
 				<?php endif; ?>
+
 			</div><!-- .tab-selected-exhibitions -->
 
 			<!-- Commissions tab -->
@@ -257,4 +247,5 @@
 	<footer class="entry-footer">
 		<?php forward_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+
 </article><!-- #post-## -->

@@ -1841,11 +1841,18 @@ input[type=search] {
 // RELATED PRODUCTS //
 //////////////////////
 
-.related {
+.related,
+.tab-available-work,
+.tab-archives,
+.tab-selected-exhibitions,
+#tabs {
     @include outer-container();
 }
 
-.related-products {
+.related-products,
+.artist-available-work,
+.artist-archives,
+.artist-exhibitions {
     @include span-columns(3);
     @include omega(4n);
 }
