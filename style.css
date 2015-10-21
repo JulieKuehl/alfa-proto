@@ -2089,3 +2089,6 @@ ul.tabs li,
 
 .woocommerce div.product .product_title {
   font-style: italic; }
+
+.woocommerce-cart table.cart img {
+  width: 180px; }
