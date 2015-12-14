@@ -20,8 +20,21 @@ get_header(); ?>
 
 			</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<!-- Sort by gallery_display_order and start the Loop -->
+			<?php
+
+				$args = array(
+					'post_type' => 'gallery',
+					'meta_key' => 'gallery_display_order',
+					'orderby' => 'meta_value',
+					'order' => 'ASC',
+				);
+
+				$gallery = new WP_Query( $args );
+			?>
+
+
+			<?php while ( $gallery->have_posts() ) : $gallery->the_post(); ?>
 
 				<?php get_template_part( 'content', 'archive-gallery' ); ?>
 
@@ -34,6 +47,8 @@ get_header(); ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 
 		<?php endif; ?>
+
+		<?php wp_reset_postdata(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
