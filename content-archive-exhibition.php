@@ -8,6 +8,7 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<div class="exhibition-archive-photo">
+			<!-- Display the exhibition photo -->
 			<?php
 				$attachment_id = get_field('exhibition_photo_id');
 				$size = 'large-thumbnail';
@@ -27,7 +28,19 @@
 
 				<br />
 
-				<?php the_field( 'exhibition_location' ); ?>
+				<!-- Display the exhibition's location and link to it, if it has a link -->
+				<?php
+				$exhibitionlocation = get_field('exhibition_location');
+				$exhibitionlocationlink = get_field('exhibition_location_link');
+
+				if (isset( $exhibitionlocationlink[0] )) {
+					// if has link
+					echo '<a href="' . $exhibitionlocationlink . '">' . $exhibitionlocation . '</a><br />Yes';
+				} else {
+					// if no link
+					echo $exhibitionlocation . '<br />No';
+				}
+				?>
 			</p>
 
 		</div><!-- .exhibition-archive-photo -->

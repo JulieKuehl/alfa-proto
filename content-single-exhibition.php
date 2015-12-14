@@ -14,11 +14,25 @@
 
 	<div class="entry-content">
 
+		<!-- Display the dates of the exhibition -->
 		<p><?php $starting_date = DateTime::createFromFormat('Ymd', get_field('exhibition_starting_date'));
 			echo $starting_date->format('l, F jS, Y'); ?> &mdash; <?php $ending_date = DateTime::createFromFormat('Ymd', get_field('exhibition_ending_date')); 	echo $ending_date->format('l, F jS, Y'); ?><br />
 
-		<?php the_field( 'exhibition_location' ); ?><br />
+		<!-- Display the exhibition's location and link to it, if it has a link -->
+		<?php
+		$exhibitionlocation = get_field('exhibition_location');
+		$exhibitionlocationlink = get_field('exhibition_location_link');
 
+		if (isset( $exhibitionlocationlink[0] )) {
+			// if has link
+			echo '<a href="' . $exhibitionlocationlink . '">' . $exhibitionlocation . '</a><br />Yes';
+		} else {
+			// if no link
+			echo $exhibitionlocation . '<br />No';
+		}
+		?>
+
+		<!-- Display the photo for the exhibition -->
 		<div class="exhibition-single-photo">
 			<?php
 			$attachment_id = get_field('exhibition_photo_id');
@@ -30,6 +44,7 @@
 
 		</div><!-- .exhibition-single-photo -->
 
+		<!-- Display the details about the exhibition -->
 		<?php the_field( 'exhibition_details' ); ?><br />
 
 		<!-- Display connected artists -->
@@ -52,7 +67,7 @@
 						<li>
 							<a href="<?php the_permalink(); ?>">
 
-								<div class="artist-photo">
+<!-- 								<div class="artist-photo">
 									<?php
 										$attachment_id = get_field('artist_photo_id');
 										$size = 'large-thumbnail';
