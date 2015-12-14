@@ -384,7 +384,7 @@ function alfa_get_posts_product( $query ) {
 
 
 /*
- * Sort Artists archive page by last name
+ * Sort Artists on archive page by last name
  */
 add_action( 'pre_get_posts', 'alfa_sort_artists' );
 

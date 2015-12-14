@@ -8,12 +8,6 @@
 
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php forward_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -21,7 +15,12 @@
 		<!-- Begin tabbed content -->
 		<div id="tabs" class="ui-tabs">
 
-			<!-- Tab navigation menu -->
+			<!-- if Artist is a gallery artist, then show all the tabs -->
+			<?php
+			$artist_category = get_field('artist_category');
+			if ($artist_category === 'Gallery') : ?>
+
+			<!-- Full tab navigation menu -->
 			<ul class="tabs ui-tabs-nav">
 				<li><a href="#tab-available-work">Available Work</a></li>
 				<li><a href="#tab-archives">Archives</a></li>
@@ -32,6 +31,19 @@
 				<li><a href="#tab-press">Press and Publications</a></li>
 				<li><a href="#tab-visit">Studio Visit</a></li>
 			</ul>
+
+			<!-- if Artist is not a gallery artist, then reduce tabs -->
+			<?php else : ?>
+
+			<!-- Reduced tab navigation menu -->
+			<ul class="tabs ui-tabs-nav">
+				<li><a href="#tab-available-work">Available Work</a></li>
+				<li><a href="#tab-archives">Archives</a></li>
+				<li><a href="#tab-biography">Biography</a></li>
+				<li><a href="#tab-press">Press and Publications</a></li>
+			</ul>
+
+			<?php endif; ?>
 
 			<!-- Available Work tab -->
 			<div id="tab-available-work" class="ui-tabs-panel">
@@ -62,16 +74,20 @@
 				while ( $connected->have_posts() ) :
 				$connected->the_post(); ?>
 
-					<ul class="products artist-available-work">
-						<div class="artist-available-work-entry">
-							<li>
+				<div class="related outer-container artist-available-works">
+
+					<ul class="products">
+						<li>
+							<div class="artist-available-work-image">
 								<a href="<?php the_permalink(); ?>">
 									<?php the_post_thumbnail( 'medium-thumbnail'); ?>
 									<h3><?php the_title(); ?></h3>
 								</a>
-							</li>
-						</div><!-- .related-artwork-entry -->
+							</div><!-- .artist-available-work-image -->
+						</li>
 					</ul>
+
+				</div>
 
 				<?php endwhile; ?>
 
@@ -115,14 +131,12 @@
 						$connected->the_post(); ?>
 
 						<ul class="products artist-archives">
-							<div class="artist-archives-entry">
-								<li>
-									<a href="<?php the_permalink(); ?>">
-										<?php the_post_thumbnail( 'medium-thumbnail'); ?>
-										<h3><?php the_title(); ?></h3>
-									</a>
-								</li>
-							</div><!-- .artist-archives-entry -->
+							<li>
+								<a href="<?php the_permalink(); ?>">
+									<?php the_post_thumbnail( 'medium-thumbnail'); ?>
+									<h3><?php the_title(); ?></h3>
+								</a>
+							</li>
 						</ul>
 
 				<?php endwhile; ?>
@@ -178,24 +192,23 @@
 
 					<div class="related outer-container artist-exhibitions">
 
-						<ul class="products artist-exhibition">
-							<div class="artist-exhibition-entry">
-								<li>
-									<a href="<?php the_permalink(); ?>">
+						<ul class="products">
+							<li>
+								<a href="<?php the_permalink(); ?>">
 
-										<div class="exhibition-photo">
-											<?php
-												$attachment_id = get_field('exhibition_photo_id');
-												$size = 'large-thumbnail';
-												$image = wp_get_attachment_image_src( $attachment_id, $size );
-											?>
-											<img class="exhbition_photo" alt="Image of <?php echo the_title(); ?> Exhibition" src="<?php echo $image[0]; ?>" />
-										</div><!-- .exhibition-photo -->
+									<div class="exhibition-photo">
+										<?php
+											$attachment_id = get_field('exhibition_photo_id');
+											$size = 'large-thumbnail';
+											$image = wp_get_attachment_image_src( $attachment_id, $size );
+										?>
+										<img class="exhbition_photo" alt="Image of <?php echo the_title(); ?> Exhibition" src="<?php echo $image[0]; ?>" />
+									</div><!-- .exhibition-photo -->
 
-										<h3><?php the_title(); ?></h3>
-									</a>
-								</li>
-							</div><!-- .related-artwork-entry -->
+									<h3><?php the_title(); ?></h3>
+
+								</a>
+							</li>
 						</ul>
 
 					</div><!-- .artist-exhibitions -->
