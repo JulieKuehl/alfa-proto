@@ -1705,13 +1705,13 @@ input[type=submit] {
 
 .artist-archive-entry,
 .exhibition-archive-entry {
-    @include span-columns(3);
-    @include omega(4n);
+    @include span-columns(2);
+    @include omega(6n);
     margin-bottom: 2em;
 }
 
-.artist-archive-entry:nth-child(4n+1),
-.exhibition-archive-entry:nth-child(4n+1) {
+.artist-archive-entry:nth-child(6n+1),
+.exhibition-archive-entry:nth-child(6n+1) {
     clear: left;
 }
 
@@ -1820,20 +1820,22 @@ input[type=search] {
 #exhibition-artists .products,
 #exhibition-artwork .products,
 #related-artwork-archive .products,
-#new-artwork-archive .products {
+#new-artwork-archive .products,
+#tab-available-work .products {
     @include outer-container();
 }
 
 .related-exhibition-entry,
 .related-artwork-entry,
 .new-artwork-entry {
-        @include span-columns(3);
-        @include omega(4n);
+        @include span-columns(2);
+        @include omega(6n);
 }
 
-.related-exhibition-entry:nth-child(4n+1),
-.related-artwork-entry:nth-child(4n+1),
-.new-artwork-entry:nth-child(4n+1) {
+.related-exhibition-entry:nth-child(6n+1),
+.related-artwork-entry:nth-child(6n+1),
+.new-artwork-entry:nth-child(6n+1),
+.artist-available-works:nth-child(6n+1) {
     clear: left;
 }
 
@@ -1850,11 +1852,11 @@ input[type=search] {
 }
 
 .related-products,
-.artist-available-work,
 .artist-archives,
-.artist-exhibitions {
-    @include span-columns(3);
-    @include omega(4n);
+.artist-exhibitions,
+.artist-available-works {
+    @include span-columns(2);
+    @include omega(6n);
 }
 
 .related h2,
