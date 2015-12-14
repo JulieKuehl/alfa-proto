@@ -36,20 +36,26 @@ get_header(); ?>
 
 						$args = array(
 							'post_type' => 'artist',
-							'meta_key' => 'artist_category',
-							'meta_value' => array('Gallery')
+							'meta_key' => 'artist_lastname',
+							'orderby' => 'meta_value',
+							'order' => 'ASC',
+							'meta_query' => array(
+								array(
+									'key' => 'artist_category',
+									'value' => 'Gallery',
+								),
+							),
 						);
 
 						$gallery = new WP_Query( $args );
 						?>
 
-						<!-- Display connected artwork (product) -->
+						<!-- Display artwork (products) connected to gallery artists -->
 						<?php
 						if ( $gallery->have_posts() ) :
 							while ( $gallery->have_posts() ) :
 								$gallery->the_post(); ?>
 
-									<?php add_action( 'pre_get_posts', 'alfa_sort_artists' ); ?>
 									<?php get_template_part( 'content', 'archive-artist' ); ?>
 
 							<?php endwhile; ?>
@@ -67,25 +73,31 @@ get_header(); ?>
 					<!-- Historic Artists tab -->
 					<div id="tab-historic-artists" class="ui-tabs-panel">
 
-						<!-- Identify GALLERY ARTISTS -->
+						<!-- Identify HISTORIC ARTISTS -->
 						<?php
 
 						$args = array(
 							'post_type' => 'artist',
-							'meta_key' => 'artist_category',
-							'meta_value' => array('Historic')
+							'meta_key' => 'artist_lastname',
+							'orderby' => 'meta_value',
+							'order' => 'ASC',
+							'meta_query' => array(
+								array(
+									'key' => 'artist_category',
+									'value' => 'Historic',
+								),
+							),
 						);
 
 						$gallery = new WP_Query( $args );
 						?>
 
-						<!-- Display connected artwork (product) -->
+						<!-- Display artwork (products) connected to historic artists -->
 						<?php
 						if ( $gallery->have_posts() ) :
 							while ( $gallery->have_posts() ) :
 								$gallery->the_post(); ?>
 
-								<?php add_action( 'pre_get_posts', 'alfa_sort_artists' ); ?>
 								<?php get_template_part( 'content', 'archive-artist' ); ?>
 
 							<?php endwhile; ?>
@@ -103,25 +115,31 @@ get_header(); ?>
 					<!-- Additional Artwork tab -->
 					<div id="tab-additional-artwork" class="ui-tabs-panel">
 
-						<!-- Identify GALLERY ARTISTS -->
+						<!-- Identify ADDITIONAL ARTWORK -->
 						<?php
 
 						$args = array(
 							'post_type' => 'artist',
-							'meta_key' => 'artist_category',
-							'meta_value' => array('Additional')
+							'meta_key' => 'artist_lastname',
+							'orderby' => 'meta_value',
+							'order' => 'ASC',
+							'meta_query' => array(
+								array(
+									'key' => 'artist_category',
+									'value' => 'Additional',
+								),
+							),
 						);
 
 						$gallery = new WP_Query( $args );
 						?>
 
-						<!-- Display connected artwork (product) -->
+						<!-- Display additional artwork (products) -->
 						<?php
 						if ( $gallery->have_posts() ) :
 							while ( $gallery->have_posts() ) :
 								$gallery->the_post(); ?>
 
-								<?php add_action( 'pre_get_posts', 'alfa_sort_artists' ); ?>
 								<?php get_template_part( 'content', 'archive-artist' ); ?>
 
 							<?php endwhile; ?>
