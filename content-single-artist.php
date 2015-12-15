@@ -237,7 +237,28 @@
 
 			<!-- Press and Publications tab -->
 			<div id="tab-press" class="ui-tabs-panel">
-				<?php echo the_field( 'artist_news' ); ?>
+<!--				--><?php //echo the_field( 'artist_news' ); ?>
+
+				<?php if( have_rows( 'artist_press_and_publications' ) ) : ?>
+
+				<div class="press-publications">
+					<?php while( have_rows( 'artist_press_and_publications' ) ): the_row(); ?>
+
+						<div>
+							<?php the_field( 'artist_news' ); ?>
+<!--							<a href="--><?php //the_sub_field( 'artist_press_and_publications_link' ); ?><!--"><img src="--><?php //the_sub_field( 'artist_press_and_publications_image' ); ?><!--" />-->
+<!--							--><?php //the_sub_field( 'artist_press_and_publications_text' ); ?><!--</a>-->
+						</div>
+
+					<?php endwhile; ?>
+
+					<?php else : ?>
+						<p class="info-box"><?php _e( 'No publications found.', 'forward' ); ?></p>
+					<?php endif; ?>
+
+				</div>
+
+<!--				--><?php //echo the_field( '' ); ?>
 			</div><!-- .tab-press -->
 
 			<!-- Studio Visit tab -->
