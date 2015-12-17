@@ -2112,6 +2112,13 @@ ul.tabs li,
 .icon {
   vertical-align: middle; }
 
+#fsb-social-bar {
+  margin-top: 3em !important; }
+
+.fsb-title {
+  font-family: "Garamond", serif !important;
+  font-style: italic; }
+
 @media print {
   header {
     margin-bottom: 2em; }
@@ -2121,24 +2128,19 @@ ul.tabs li,
 
   .fat-footer p {
     font-size: 70%; } }
-
 /* SHAME SHAME SHAME */
- .soliloquy-outer-container {
-  height: 350px;
-}
+.soliloquy-outer-container {
+  height: 350px; }
 
 .footer-left {
-  position: relative;
-}
+  position: relative; }
 
 .widget.simple-social-icons {
   border-bottom: none;
   margin-bottom: 0;
-  padding-bottom: 0;
-}
+  padding-bottom: 0; }
 
 .gallery-description:before {
   content: "";
   display: table;
-  clear: both;
-}
+  clear: both; }
