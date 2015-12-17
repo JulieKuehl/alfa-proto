@@ -1816,6 +1816,22 @@ input[type=submit] {
 .gfield_error .gfield_description {
   color: #B2432C; }
 
+.gform_wrapper .gform_footer input.button,
+.gform_wrapper .gform_footer input[type=image],
+.gform_wrapper .gform_footer input[type=submit] {
+  background-color: transparent;
+  border: 1px solid #dbdbdb;
+  border-radius: 0;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #595959;
+  padding: .7em 1.4em; }
+  .gform_wrapper .gform_footer input.button:hover,
+  .gform_wrapper .gform_footer input[type=image]:hover,
+  .gform_wrapper .gform_footer input[type=submit]:hover {
+    background-color: #5e5e5e;
+    color: white; }
+
 .error404 .content-area {
   float: left;
   display: block;
@@ -2096,18 +2112,40 @@ ul.tabs li,
 .woocommerce-cart table.cart img {
   width: 180px; }
 
+.entry-summary h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em; }
+
 .request-info {
   display: block;
   padding-bottom: 5em; }
 
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.single_add_to_cart_button,
 .request-info-button {
-  background-color: #760d10;
-  color: #e89a9d;
-  float: right;
-  padding: 10px; }
+  background-color: transparent;
+  border: 1px solid #dbdbdb;
+  border-radius: 0;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #595959;
+  padding: .7em 1.4em; }
+  .woocommerce #respond input#submit.alt:hover,
+  .woocommerce a.button:hover,
+  .woocommerce a.button.alt:hover,
+  .woocommerce button.button.alt:hover,
+  .woocommerce input.button.alt:hover,
+  .single_add_to_cart_button:hover,
+  .request-info-button:hover {
+    background-color: #5e5e5e;
+    color: white; }
 
-.request-info-button a {
-  color: #e89a9d; }
+.request-info-button {
+  float: right; }
 
 .icon {
   vertical-align: middle; }

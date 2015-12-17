@@ -1625,6 +1625,11 @@ input[type=submit] {
         color: $hex-red;
     }
 }
+.gform_wrapper .gform_footer input.button,
+.gform_wrapper .gform_footer input[type=image],
+.gform_wrapper .gform_footer input[type=submit] {
+    @include button();
+}
 
 
 /////////
@@ -1940,19 +1945,28 @@ ul.tabs li,
     width: 180px;
 }
 
+.entry-summary h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
 .request-info {
     display: block;
     padding-bottom: 5em;
 }
 
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.single_add_to_cart_button,
 .request-info-button {
-    background-color: #760d10;
-    color: #e89a9d;
-    float: right;
-    padding: 10px;
+    @include button();
 }
-.request-info-button a {
-    color: #e89a9d;
+
+.request-info-button {
+    float: right;
 }
 
 .icon {
@@ -1964,7 +1978,7 @@ ul.tabs li,
 //////////////////
 
 #fsb-social-bar {
-    
+
     margin-top: 3em !important;
 }
 
