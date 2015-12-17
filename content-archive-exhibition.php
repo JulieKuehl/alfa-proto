@@ -21,13 +21,13 @@
 
 			<?php the_title( sprintf( '<h4 class="exhibition-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h4>' ); ?>
 
-			<p>
+			<div class="exhibition-dates">
 				<?php $starting_date = DateTime::createFromFormat('Ymd', get_field('exhibition_starting_date'));
-				echo $starting_date->format('M j, Y'); ?> &mdash; <?php $ending_date = DateTime::createFromFormat('Ymd', get_field('exhibition_ending_date')); 	echo $ending_date->format('M j, Y'); ?>
+				echo $starting_date->format('F j, Y'); ?> &mdash; <?php $ending_date = DateTime::createFromFormat('Ymd', get_field('exhibition_ending_date')); 	echo $ending_date->format('F j, Y'); ?>
+			</div>
 
-				<br />
-
-				<!-- Display the exhibition's location and link to it, if it has a link -->
+			<!-- Display the exhibition's location and link to it, if it has a link -->
+			<div class="exhibition-location">
 				<?php
 				$exhibitionlocation = get_field('exhibition_location');
 				$exhibitionlocationlink = get_field('exhibition_location_link');
@@ -40,7 +40,7 @@
 					echo $exhibitionlocation . '<br />';
 				}
 				?>
-			</p>
+			</div>
 
 		</div><!-- .exhibition-archive-photo -->
 

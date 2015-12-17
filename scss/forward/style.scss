@@ -369,6 +369,12 @@ img {
     margin-bottom: ms(3);
 }
 
+// Buttons
+//
+button {
+    @include button();
+}
+
 
 ///////////////
 // Utilities //
@@ -453,29 +459,43 @@ img {
 //        }
 //    }
 }
+.site-logo {
+    // @include transition (font-size $timing-default $easing-default);
+    @include media($tablet) {
+        line-height: $header-bar-height-mobile;
+    }
+
+    display: inline-block;
+
+    margin: 0.5em 1em 1em 0;
+    float: left;
+}
 .site-branding {
 //    @include media($tablet) {
 //        left: $gutter / 2;
 //    }
 //    @include position(absolute, 0px null null $gutter);
+    position: relative;
+    height: 150px;
 }
 .site-title {
     @include type-style-h1;
     @include font-weight(light);
-}
-.site-logo {
-//    // @include transition (font-size $timing-default $easing-default);
-//    @include media($tablet) {
-//        line-height: $header-bar-height-mobile;
-//    }
-//
-//    display: inline-block;
-//
-//    margin-top: 0;
-//    margin-bottom: 0;
+    display: inline-block;
+    font-family: $garamond;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 35px;
 }
 .site-description {
-//    display: none;
+    display: inline-block;
+    font-family: $garamond;
+    font-style: italic;
+    font-size: 2em;
+    position: absolute;
+    bottom: 0;
 }
 
 // Admin bar
@@ -975,7 +995,7 @@ article.page,
 .entry-header .entry-title {
     @include type-style-h1;
 
-    margin-bottom: ms(1);
+    //margin-bottom: ms(1);
 
     color: $color-alfa-1;
 }
@@ -1727,8 +1747,14 @@ input[type=submit] {
 }
 
 .artist-archive-name,
-.exhibition-title {
-
+.artwork-title,
+.exhibition-title,
+.exhibition-dates {
+    line-height: 1.3;
+    padding-top: 0.8em;
+}
+.exhibition-dates {
+    padding-bottom: 0.4em;
 }
 
 .info-box {
@@ -1809,9 +1835,13 @@ input[type=search] {
 
 .soliloquy-container a.soliloquy-prev {
     margin-left: -3em !important;
+    height: 320px;
+    background-color: $color-alfa-2;
 }
 .soliloquy-container a.soliloquy-next {
     margin-right: -3em !important;
+    height: 320px;
+    background-color: $color-alfa-2;
 }
 
 /////////////////
@@ -1851,10 +1881,15 @@ input[type=search] {
     margin-bottom: 2em;
 }
 
+.artwork-product-metainfo h3,
 .new-artwork-product-metainfo h3 {
     font-family: $garamond;
     font-style: italic;
     font-weight: 400;
+    padding-bottom: 0;
+}
+.woocommerce ul.products li.product h3 {
+    padding-bottom: 0;
 }
 
 //////////////////////
@@ -2036,4 +2071,18 @@ ul.tabs li,
     content: "";
     display: table;
     clear: both;
+}
+
+h1.entry-title.team-member-title {
+    margin-bottom: 0.5em !important;
+    margin-top: 1em !important;
+}
+.team_member_photo {
+    float: left;
+    margin-right: 1em;
+    padding-top: 0.6em;
+}
+
+.view-artwork-link button {
+    @include button();
 }

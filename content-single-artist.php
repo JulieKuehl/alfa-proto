@@ -81,7 +81,7 @@
 							<div class="artist-available-work-image">
 								<a href="<?php the_permalink(); ?>">
 									<?php the_post_thumbnail( 'medium-thumbnail'); ?>
-									<h3><?php the_title(); ?></h3>
+									<h4 class="artwork-title"><?php the_title(); ?></h4>
 								</a>
 							</div><!-- .artist-available-work-image -->
 						</li>
@@ -134,7 +134,7 @@
 							<li>
 								<a href="<?php the_permalink(); ?>">
 									<?php the_post_thumbnail( 'medium-thumbnail'); ?>
-									<h3><?php the_title(); ?></h3>
+									<h4 class="artwork-title"><?php the_title(); ?></h4>
 								</a>
 							</li>
 						</ul>
@@ -155,14 +155,14 @@
 			<!-- Biography tab -->
 			<div id="tab-biography" class="ui-tabs-panel">
 
-				<div class="artist-photo">
-					<?php
-						$attachment_id = get_field('artist_photo_id');
-						$size = 'large-thumbnail';
-						$image = wp_get_attachment_image_src( $attachment_id, $size );
-					?>
-					<img class="artist_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
-				</div><!-- .artist-photo -->
+<!--				<div class="artist-photo">-->
+<!--					--><?php
+//						$attachment_id = get_field('artist_photo_id');
+//						$size = 'large-thumbnail';
+//						$image = wp_get_attachment_image_src( $attachment_id, $size );
+//					?>
+<!--					<img class="artist_photo" alt="Image of --><?php //echo the_title(); ?><!--" src="--><?php //echo $image[0]; ?><!--" />-->
+<!--				</div><!-- .artist-photo -->
 
 				<?php echo the_field( 'artist_biography' ); ?>
 
@@ -205,7 +205,12 @@
 										<img class="exhbition_photo" alt="Image of <?php echo the_title(); ?> Exhibition" src="<?php echo $image[0]; ?>" />
 									</div><!-- .exhibition-photo -->
 
-									<h3><?php the_title(); ?></h3>
+									<?php the_title( sprintf( '<h4 class="exhibition-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h4>' ); ?>
+
+									<div class="exhibition-dates">
+										<?php $starting_date = DateTime::createFromFormat('Ymd', get_field('exhibition_starting_date'));
+										echo $starting_date->format('F j, Y'); ?> &mdash; <?php $ending_date = DateTime::createFromFormat('Ymd', get_field('exhibition_ending_date')); 	echo $ending_date->format('F j, Y'); ?>
+									</div>
 
 								</a>
 							</li>
