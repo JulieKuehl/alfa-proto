@@ -32,6 +32,7 @@
 	<div id="mobile-menu-switch">
 		<a href="" class="toggle">Menu</a>
 	</div><!-- .mobile-menu-switch -->
+
 	<nav id="site-navigation" class="main-navigation" role="navigation">
 		<div class="container">
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false ) ); ?>
@@ -45,7 +46,7 @@
 		<?php if ( function_exists( 'soliloquy' ) ) {
 			soliloquy( 'main-home-page-slider', 'slug' );
 		} ?>
-	</div>
+	</div><!-- .home-page-slider -->
 
 	<div id="content" class="site-content">
 		<div class="content-container">
@@ -53,40 +54,18 @@
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-<!--		--><?php //if ( have_posts() ) : ?>
-<!---->
-<!--			--><?php ///* Start the Loop */ ?>
-<!--			--><?php //while ( have_posts() ) : the_post(); ?>
-<!---->
-<!--				--><?php
-//					/* Include the Post-Format-specific template for the content.
-//					 * If you want to override this in a child theme, then include a file
-//					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-//					 */
-//					get_template_part( 'content-front-page', get_post_format() );
-//				?>
-<!---->
-<!--			--><?php //endwhile; ?>
-<!---->
-<!--			--><?php //forward_posts_navigation(); ?>
-<!---->
-<!--		--><?php //else : ?>
-<!---->
-<!--			--><?php //get_template_part( 'content', 'none' ); ?>
-<!---->
-<!--		--><?php //endif; ?>
+			<div id="home-page-columns" class="container">
+				<div class="home-page-column"><?php dynamic_sidebar( 'home-col-1' ); ?></div>
+				<div class="home-page-column"><?php dynamic_sidebar( 'home-col-2' ); ?></div>
+				<div class="home-page-column"><?php dynamic_sidebar( 'home-col-3' ); ?></div>
+				<div class="home-page-column"><?php dynamic_sidebar( 'home-col-4' ); ?></div>
+			</div><!-- .home-page-columns -->
 
-		<div id="home-page-columns" class="container">
-			<div class="home-page-column"><?php dynamic_sidebar( 'home-col-1' ); ?></div>
-			<div class="home-page-column"><?php dynamic_sidebar( 'home-col-2' ); ?></div>
-			<div class="home-page-column"><?php dynamic_sidebar( 'home-col-3' ); ?></div>
-			<div class="home-page-column"><?php dynamic_sidebar( 'home-col-4' ); ?></div>
-		</div>
-
-		<h3 class="home-carousel-title">New Artwork</h3>
-		<?php if ( function_exists( 'soliloquy' ) ) {
-			soliloquy( 'home-page-carousel', 'slug' );
-		} ?>
+			<h3 class="home-carousel-title">New Artwork</h3>
+			
+			<?php if ( function_exists( 'soliloquy' ) ) {
+				soliloquy( 'home-page-carousel', 'slug' );
+			} ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

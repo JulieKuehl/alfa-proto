@@ -39,7 +39,7 @@
 		<p>Hours:<br/>
 		<?php the_field( 'gallery_hours' ); ?></p>
 
-		<?php the_field( 'gallery_description' ); ?>
+		<div class="gallery-description"><?php the_field( 'gallery_description' ); ?></p>
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(

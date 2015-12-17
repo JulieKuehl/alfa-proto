@@ -9,3 +9,25 @@
 @import '../variables';
 @import 'mixins';
 @import '../mixins';
+
+
+/* SHAME SHAME SHAME */
+ .soliloquy-outer-container {
+  height: 350px;
+}
+
+.footer-left {
+  position: relative;
+}
+
+.widget.simple-social-icons {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.gallery-description:before {
+  content: "";
+  display: table;
+  clear: both;
+}

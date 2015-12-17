@@ -33,7 +33,7 @@
 	<header id="masthead" class="" role="banner">
 		<div class="site-header header-container">
 			<div class="site-branding">
-				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/alfa-logo.png" alt="ALFA Logo" /></a>
+				<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/alfa-logo.png" alt="ALFA Logo" nopin="nopin" data-pin-no-hover="true" /></a>
 			</div><!-- .site-branding -->
 		</div><!-- .header-container -->
 	</header><!-- #masthead -->

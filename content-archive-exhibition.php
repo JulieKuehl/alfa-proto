@@ -8,7 +8,6 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<div class="exhibition-archive-photo">
-			<!-- Display the exhibition photo -->
 			<?php
 				$attachment_id = get_field('exhibition_photo_id');
 				$size = 'large-thumbnail';
@@ -24,7 +23,7 @@
 
 			<p>
 				<?php $starting_date = DateTime::createFromFormat('Ymd', get_field('exhibition_starting_date'));
-				echo $starting_date->format('M jS, Y'); ?> &mdash; <?php $ending_date = DateTime::createFromFormat('Ymd', get_field('exhibition_ending_date')); 	echo $ending_date->format('M jS, Y'); ?>
+				echo $starting_date->format('M j, Y'); ?> &mdash; <?php $ending_date = DateTime::createFromFormat('Ymd', get_field('exhibition_ending_date')); 	echo $ending_date->format('M j, Y'); ?>
 
 				<br />
 
@@ -35,10 +34,10 @@
 
 				if (isset( $exhibitionlocationlink[0] )) {
 					// if has link
-					echo '<a href="' . $exhibitionlocationlink . '">' . $exhibitionlocation . '</a><br />Yes';
+					echo '<a href="' . $exhibitionlocationlink . '">' . $exhibitionlocation . '</a><br />';
 				} else {
 					// if no link
-					echo $exhibitionlocation . '<br />No';
+					echo $exhibitionlocation . '<br />';
 				}
 				?>
 			</p>

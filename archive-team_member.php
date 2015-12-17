@@ -20,10 +20,10 @@ get_header(); ?>
 
 			</header><!-- .page-header -->
 
-			<?php query_posts($query_string . '&orderby=team_member_display_order&order=ASC'); ?>
-
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php add_action( 'pre_get_posts', 'alfa_sort_team_members' ); ?>
 
 				<?php get_template_part( 'content', 'archive-team_member' ); ?>
 
