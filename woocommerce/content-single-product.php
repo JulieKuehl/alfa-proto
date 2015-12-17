@@ -120,6 +120,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		alfa_add_to_cart();
 		?>
 
+		<p>For more information, <a href="/contact/">please contact us.</a></p>
+
 		<p><?php
 		// Display the content
 		the_content();
@@ -143,7 +145,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		do_action( 'alfa_woocommerce_single_product_summary' );
 		?>
 
-		<p>For more information, <a href="/contact/">please contact us.</a></p>
+
 
 	</div><!-- .summary -->
 
