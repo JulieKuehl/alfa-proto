@@ -742,7 +742,8 @@ textarea {
       padding-left: 1.01125em; } }
 
 .header-container {
-  position: relative; }
+  position: relative;
+  margin-bottom: 1em; }
 
 #masthead {
   border-bottom: 1px solid #dbdbdb; }
