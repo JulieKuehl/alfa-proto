@@ -1974,8 +1974,13 @@ input[type=search] {
 .soliloquy-container a.soliloquy-next {
   margin-right: -3em !important; }
 
-.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
   width: 100%; }
+
+.woocommerce .products ul,
+.woocommerce ul.products {
+  margin: 0; }
 
 #exhibition-artists .products,
 #exhibition-artwork .products,
@@ -2014,7 +2019,13 @@ input[type=search] {
 .related-artwork-entry:nth-child(6n+1),
 .new-artwork-entry:nth-child(6n+1),
 .artist-available-works:nth-child(6n+1) {
-  clear: left; }
+  clear: left;
+  margin-bottom: 2em; }
+
+.new-artwork-product-metainfo h3 {
+  font-family: "Garamond", serif;
+  font-style: italic;
+  font-weight: 400; }
 
 .related,
 .tab-available-work,

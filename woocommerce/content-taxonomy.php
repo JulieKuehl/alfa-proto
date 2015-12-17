@@ -67,7 +67,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 		</div><!-- .artwork-product-image -->
 
 		<div class="new-artwork-product-metainfo">
-
+			<a href="<?php the_permalink(); ?>">
 			<?php
 			/**
 			 * Related artist connected posts
@@ -86,7 +86,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
 				<ul>
-					<li class="new-artwork-product-artist"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+					<li class="new-artwork-product-artist"><?php the_title(); ?></li>
 				</ul>
 			<?php endwhile; ?>
 
@@ -157,8 +157,8 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 			?>
 
-			<div class="view-artwork-link"><button><a href="<?php the_permalink(); ?>">View this piece</a></button></div>
-
+<!--			<div class="view-artwork-link"><button><a href="--><?php //the_permalink(); ?><!--">View this piece</a></button></div>-->
+		</a>
 		</div><!-- .artwork-product-metainfo -->
 
 </li>
