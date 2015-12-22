@@ -2272,3 +2272,15 @@ h1.entry-title.team-member-title {
   .view-artwork-link button:hover {
     background-color: #5e5e5e;
     color: white; }
+
+.publications-list li {
+  list-style: none; }
+
+.publications-list li span:after {
+  content: "\A";
+  white-space: pre; }
+
+.publications-list li:after {
+  content: "";
+  display: table;
+  clear: both; }
