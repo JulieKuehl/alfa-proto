@@ -57,7 +57,7 @@
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<div id="home-page-columns" class="container">
+			<div id="home-page-columns" class="container home-page-columns">
 				<div class="home-page-column"><?php dynamic_sidebar( 'home-col-1' ); ?></div>
 				<div class="home-page-column"><?php dynamic_sidebar( 'home-col-2' ); ?></div>
 				<div class="home-page-column"><?php dynamic_sidebar( 'home-col-3' ); ?></div>

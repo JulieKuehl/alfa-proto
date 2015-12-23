@@ -879,16 +879,13 @@ ul.sub-menu {
 
 // Home page widget areas
 //
-#home-page-columns {
-    margin: 0 auto 2em;
-    padding-left: 0;
-    padding-right: 0;
+.home-page-columns {
+    @include span-columns(12);
 }
 
 .home-page-column {
-    float: left;
-    width: 24%;
-    margin-right: 1%;
+    @include span-columns(3 of 12);
+
     text-align: center;
 }
 
@@ -1718,16 +1715,16 @@ input[type=submit] {
 }
 
 // Move the home page carousel navigation arrows
-#soliloquy-container-90.soliloquy-container .soliloquy-prev,
-#soliloquy-container-90.soliloquy-container .soliloquy-next {
+.soliloquy-container .soliloquy-prev,
+.soliloquy-container .soliloquy-next {
     top: 5% !important;
 }
 
-#soliloquy-container-90.soliloquy-container .soliloquy-prev {
-    left: -50px !important;
+.soliloquy-container .soliloquy-prev {
+    //left: -50px !important;
 }
-#soliloquy-container-90.soliloquy-container .soliloquy-next {
-    right: -50px !important;
+.soliloquy-container .soliloquy-next {
+    //right: -50px !important;
 }
 
 
@@ -2140,6 +2137,17 @@ h1.entry-title.team-member-title {
     .current-exhibitions {
         @include span-columns(12);
     }
+    .home-page-columns {
+        @include span-columns(12);
+        padding-bottom: 3em;
+    }
+    .home-page-column {
+        @include span-columns(6);
+        @include omega(2n);
+        &:nth-child(2n + 1) {
+            clear: left;
+        }
+    }
     .artist-archive-entry,
     .exhibition-archive-entry {
         @include span-columns(4);
@@ -2147,6 +2155,21 @@ h1.entry-title.team-member-title {
         &:nth-child(4n + 1) {
             clear: left;
         }
+    }
+
+    // home page headings
+    h3.home-col-title,
+    h3.home-carousel-title {
+        font-size: 1.5em;
+    }
+
+    // remove nav arrows from home page New Artwork carousel
+    .soliloquy-container {
+        overflow: hidden;
+    }
+    .soliloquy-container .soliloquy-prev,
+    .soliloquy-container .soliloquy-next {
+        display: none !important;
     }
 
     // footer arrangement
@@ -2205,10 +2228,12 @@ h1.entry-title.team-member-title {
     }
 
     // grid display
+    .home-page-columns,
     .ui-tabs-panel,
     .exhibitions {
         @include span-columns(12);
     }
+    .home-page-column,
     .artist-archive-entry,
     .exhibition-archive-entry {
         @include span-columns(12);
