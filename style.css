@@ -1609,8 +1609,9 @@ article.sticky {
   right: 0;
   text-align: right; }
 
-.site-info {
+.site-credits {
   clear: both;
+  font-size: 0.8em;
   padding-top: 1em;
   text-align: center; }
 
@@ -2288,3 +2289,86 @@ h1.entry-title.team-member-title {
   content: "";
   display: table;
   clear: both; }
+
+@media screen and (max-width: 999px) {
+  .toggle,
+  #mobile-menu-switch .toggle.on {
+    background-color: #d9dbce; }
+
+  .ui-tabs-panel {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 100%; }
+    .ui-tabs-panel:last-child {
+      margin-right: 0; }
+
+  .artist-archive-entry {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%; }
+    .artist-archive-entry:last-child {
+      margin-right: 0; }
+    .artist-archive-entry:nth-child(3n) {
+      margin-right: 0; }
+    .artist-archive-entry:nth-child(3n + 1) {
+      clear: left; }
+
+  .footer-container {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 100%; }
+    .footer-container:last-child {
+      margin-right: 0; }
+
+  .footer-left,
+  .footer-right {
+    position: relative;
+    width: 100%;
+    text-align: center; }
+
+  .footer-left:after,
+  .footer-right:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+  .footer-right {
+    font-size: 0.8em; }
+
+  .simple-social-icons {
+    background-color: hotpink; }
+
+  .simple-social-icons ul.alignleft {
+    background-color: skyblue;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto; } }
+@media screen and (max-width: 480px) {
+  .site-logo {
+    display: none; }
+
+  #tabs .ui-tabs-nav,
+  .ui-tabs-panel {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 100%; }
+    #tabs .ui-tabs-nav:last-child,
+    .ui-tabs-panel:last-child {
+      margin-right: 0; }
+
+  .ui-state-default,
+  .artist-archive-entry {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 100%; }
+    .ui-state-default:last-child,
+    .artist-archive-entry:last-child {
+      margin-right: 0; }
+
+  .ui-state-default {
+    text-align: center; } }

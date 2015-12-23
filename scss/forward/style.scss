@@ -1418,8 +1418,9 @@ article.format-chat {
     text-align: right;
 }
 
-.site-info {
+.site-credits {
     clear: both;
+    font-size: 0.8em;
     padding-top: 1em;
     text-align: center;
 }
@@ -2104,4 +2105,81 @@ h1.entry-title.team-member-title {
     content: "";
     display: table;
     clear: both;
+}
+
+///////////////////
+// MEDIA QUERIES //
+///////////////////
+
+// Tablet-sized display
+@media screen and (max-width: 999px) {
+
+    // menu display
+    .toggle,
+    #mobile-menu-switch .toggle.on {
+        background-color: lighten($color-alfa-2, 30%);
+    }
+
+    // grid display
+    .ui-tabs-panel {
+        @include span-columns(12);
+    }
+    .artist-archive-entry {
+        @include span-columns(4);
+        @include omega(3n);
+        &:nth-child(3n + 1) {
+            clear: left;
+        }
+    }
+
+    // footer arrangement
+    .footer-container {
+        @include span-columns(12);
+    }
+    .footer-left,
+    .footer-right {
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+    .footer-left:after,
+    .footer-right:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .footer-right {
+        font-size: 0.8em;
+    }
+    .simple-social-icons {
+        background-color: hotpink;
+    }
+    .simple-social-icons ul.alignleft {
+        background-color: skyblue;
+        display: inline;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+// Phone-sized display
+@media screen and (max-width: 480px) {
+
+    // hide logo
+    .site-logo {
+        display: none;
+    }
+
+    // Artist page tabs
+    #tabs .ui-tabs-nav,
+    .ui-tabs-panel {
+        @include span-columns(12);
+    }
+    .ui-state-default,
+    .artist-archive-entry {
+        @include span-columns(12);
+    }
+    .ui-state-default {
+        text-align: center;
+    }
 }
