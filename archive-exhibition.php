@@ -22,9 +22,9 @@ get_header(); ?>
 
 				<div class="exhibitions">
 
-					<h2><span>Current Exhibitions</span></h2>
-
 					<div class="current-exhibitions">
+
+						<h2><span>Current Exhibitions</span></h2>
 
 						<!-- Identify CURRENT exhibitions -->
 						<?php
@@ -75,9 +75,9 @@ get_header(); ?>
 					</div><!-- .current-exhibitions -->
 
 
-					<h2><span>Upcoming Exhibitions</span></h2>
-
 					<div class="upcoming-exhibitions">
+
+						<h2><span>Upcoming Exhibitions</span></h2>
 
 						<!-- Identify UPCOMING exhibitions -->
 						<?php
@@ -122,9 +122,9 @@ get_header(); ?>
 					</div><!-- .upcoming-exhibitions -->
 
 
-					<h2><span>Previous Exhibitions</span></h2>
-
 					<div class="previous-exhibitions">
+
+						<h2><span>Previous Exhibitions</span></h2>
 
 						<!-- Identify PREVIOUS exhibitions -->
 						<?php
