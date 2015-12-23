@@ -2072,10 +2072,6 @@ ul.tabs li,
 
 
 /* SHAME SHAME SHAME */
-.soliloquy-outer-container {
-    height: 350px;
-}
-
 .footer-left {
     position: relative;
 }
@@ -2087,9 +2083,7 @@ ul.tabs li,
 }
 
 .gallery-description:before {
-    content: "";
-    display: table;
-    clear: both;
+    @include clearfix();
 }
 
 h1.entry-title.team-member-title {
@@ -2114,9 +2108,7 @@ h1.entry-title.team-member-title {
     white-space: pre;
 }
 .publications-list li:after {
-    content: "";
-    display: table;
-    clear: both;
+    @include clearfix();
 }
 
 ///////////////////
