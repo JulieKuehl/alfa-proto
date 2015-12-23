@@ -2452,4 +2452,7 @@ h1.entry-title.team-member-title {
     .home-page-column:nth-child(1n + 1),
     .artist-archive-entry:nth-child(1n + 1),
     .exhibition-archive-entry:nth-child(1n + 1) {
-      clear: left; } }
+      clear: left; }
+
+  .home-page-column img {
+    width: 100%; } }
