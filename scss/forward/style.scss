@@ -412,16 +412,21 @@ button {
 .header-container {
     @extend %container;
 
+    display: block;
     position: relative;
     margin-bottom: 1em;
 }
 
 .content-container {
     @extend %container;
+
+    display: block;
 }
 
 .footer-container {
     @extend %container;
+
+    display: block;
 }
 
 
@@ -1393,9 +1398,9 @@ article.format-chat {
 
     padding-top: unit(4);
     padding-bottom: unit(4);
-
     border-top: 1px solid $hex-border;
-    .site-info {
+
+    .site-credits {
         @include type-style-small;
     }
 }

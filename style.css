@@ -741,8 +741,15 @@ textarea {
       padding-left: 1.01125em; } }
 
 .header-container {
+  display: block;
   position: relative;
   margin-bottom: 1em; }
+
+.content-container {
+  display: block; }
+
+.footer-container {
+  display: block; }
 
 #masthead {
   border-bottom: 1px solid #dbdbdb; }
@@ -1576,15 +1583,18 @@ article.sticky {
     .pingback + .comment .comment-body {
       margin-top: 0.9375rem; } }
 
-.site-footer {
+.site-footer,
+.footer-container {
   padding-top: 3.75rem;
   padding-bottom: 3.75rem;
   border-top: 1px solid #dbdbdb; }
   @media screen and (max-width: 999px) {
-    .site-footer {
+    .site-footer,
+    .footer-container {
       padding-top: 1.875rem;
       padding-bottom: 1.875rem; } }
-  .site-footer .site-info {
+  .site-footer .site-credits,
+  .footer-container .site-credits {
     font-size: 0.875rem;
     line-height: 1.333em; }
 

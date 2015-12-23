@@ -11,8 +11,7 @@
 		</div><!-- .container -->
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="footer-container">
+	<footer id="colophon" class="site-footer footer-container" role="contentinfo">
 			<div class="fat-footer">
 				<div class="footer-left"><?php dynamic_sidebar( 'footer-left' ); ?></div>
 				<div class="footer-right"><?php dynamic_sidebar( 'footer-right' ); ?></div>
@@ -20,7 +19,6 @@
 			 <div class="site-credits">
 				<?php printf( __( 'Website by %1$s', 'forward' ), '<a href="http://straightforwardwebsolutions.com" >straightFORWARD Web Solutions</a>' ); ?>
 			</div><!-- .site-credits -->
-		</div><!-- .footer-container -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
