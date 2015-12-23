@@ -17,7 +17,7 @@
 				<div class="footer-right"><?php dynamic_sidebar( 'footer-right' ); ?></div>
 			</div><!-- .fat-footer -->
 			 <div class="site-credits">
-				<?php printf( __( 'Website by %1$s', 'forward' ), '<a href="http://straightforwardwebsolutions.com" >straightFORWARD Web Solutions</a>' ); ?>
+				 &copy; <?php the_date( 'Y' ); ?> <?php bloginfo( 'title' ); ?> | Built by <a href="http://straightforwardwebsolutions.com" >straightFORWARD Web Solutions</a>
 			</div><!-- .site-credits -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
