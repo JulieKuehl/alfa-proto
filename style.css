@@ -2249,6 +2249,9 @@ ul.tabs li,
   .fat-footer p {
     font-size: 70%; } }
 /* SHAME SHAME SHAME */
+.main-navigation .container {
+  display: block; }
+
 .footer-left {
   position: relative; }
 
