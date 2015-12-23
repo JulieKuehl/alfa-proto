@@ -1977,6 +1977,11 @@ ul.tabs li,
     display: inherit;
 }
 
+.ui-state-default:before,
+.ui-state-default:after {
+    content:  "|";
+}
+
 // removed boldness from submenus
 .main-navigation .menu .current_page_parent {
     font-weight: 300;

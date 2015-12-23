@@ -2172,6 +2172,10 @@ ul.tabs li,
 .tab-content.current {
   display: inherit; }
 
+.ui-state-default:before,
+.ui-state-default:after {
+  content: "|"; }
+
 .main-navigation .menu .current_page_parent {
   font-weight: 300; }
 
