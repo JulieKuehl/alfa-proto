@@ -357,3 +357,9 @@ $modular-scale-base: 1em;
         color: white;
     }
 }
+
+@mixin clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}

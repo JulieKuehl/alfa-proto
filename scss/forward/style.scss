@@ -1742,6 +1742,16 @@ input[type=submit] {
     clear: left;
 }
 
+.current-exhibitions,
+.upcoming-exhibitions,
+.previous-exhibitions {
+    @include clearfix();
+    @include span-columns(12);
+}
+.exhibitions h2 {
+    margin-top: 2em;
+}
+
 .artist-archive-photo img,
 .exhibition-archive-photo img {
     float: left;
@@ -2121,13 +2131,15 @@ h1.entry-title.team-member-title {
     }
 
     // grid display
-    .ui-tabs-panel {
+    .ui-tabs-panel,
+    .current-exhibitions {
         @include span-columns(12);
     }
-    .artist-archive-entry {
+    .artist-archive-entry,
+    .exhibition-archive-entry {
         @include span-columns(4);
-        @include omega(3n);
-        &:nth-child(3n + 1) {
+        @include omega(4n);
+        &:nth-child(4n + 1) {
             clear: left;
         }
     }
@@ -2144,9 +2156,7 @@ h1.entry-title.team-member-title {
     }
     .footer-left:after,
     .footer-right:after {
-        content: "";
-        display: table;
-        clear: both;
+        @include clearfix();
     }
     .footer-right {
         font-size: 0.8em;
@@ -2160,13 +2170,16 @@ h1.entry-title.team-member-title {
     }
 }
 
-// Phone-sized display
-@media screen and (max-width: 480px) {
-
+// Logo display
+@media screen and (max-width: 600px) {
     // hide logo
     .site-logo {
         display: none;
     }
+}
+
+// Phone-sized display
+@media screen and (max-width: 480px) {
 
     // Artist page tabs
     #tabs .ui-tabs-nav,
@@ -2179,5 +2192,19 @@ h1.entry-title.team-member-title {
     }
     .ui-state-default {
         text-align: center;
+    }
+
+    // grid display
+    .ui-tabs-panel,
+    .exhibitions {
+        @include span-columns(12);
+    }
+    .artist-archive-entry,
+    .exhibition-archive-entry {
+        @include span-columns(12);
+        @include omega(1n);
+        &:nth-child(1n + 1) {
+            clear: left;
+        }
     }
 }
