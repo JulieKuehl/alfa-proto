@@ -1583,18 +1583,15 @@ article.sticky {
     .pingback + .comment .comment-body {
       margin-top: 0.9375rem; } }
 
-.site-footer,
-.footer-container {
+.site-footer {
   padding-top: 3.75rem;
   padding-bottom: 3.75rem;
   border-top: 1px solid #dbdbdb; }
   @media screen and (max-width: 999px) {
-    .site-footer,
-    .footer-container {
+    .site-footer {
       padding-top: 1.875rem;
       padding-bottom: 1.875rem; } }
-  .site-footer .site-credits,
-  .footer-container .site-credits {
+  .site-footer .site-credits {
     font-size: 0.875rem;
     line-height: 1.333em; }
 
@@ -2353,7 +2350,14 @@ h1.entry-title.team-member-title {
     clear: both; }
 
   .footer-right {
-    font-size: 0.8em; }
+    font-size: 0.875rem;
+    line-height: 1.333em; }
+
+  .footer-left aside.simple-social-icons {
+    display: inline-block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto; }
 
   .simple-social-icons ul.alignleft {
     display: inline;

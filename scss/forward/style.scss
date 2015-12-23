@@ -2164,9 +2164,14 @@ h1.entry-title.team-member-title {
         @include clearfix();
     }
     .footer-right {
-        font-size: 0.8em;
+        @include type-style-small;
     }
-    .simple-social-icons {
+
+    .footer-left aside.simple-social-icons {
+        display: inline-block;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
     }
     .simple-social-icons ul.alignleft {
         display: inline;
