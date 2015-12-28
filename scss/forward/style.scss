@@ -270,7 +270,7 @@ img.size-full,
 img.size-large,
 img.wp-post-image,
 figure.wp-caption {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
@@ -394,7 +394,7 @@ button {
 ////////////////
 
 %container {
-    @include outer-container;
+    @include outer-container();
     // @include transition (padding $timing-default $easing-default);
     @include media($tablet) {
         padding-right: $gutter / 2;
@@ -2151,9 +2151,38 @@ h1.entry-title.team-member-title {
         background-color: lighten($color-alfa-2, 30%);
     }
 
-    #site-navigation ul {
+    #site-navigation ul,
+    .search-box {
         background-color: lighten($color-alfa-2, 30%);
         width: 100%;
+    }
+
+    // search box
+    .site-header .search-field,
+    .main-navigation .search-field {
+        background-color: transparent;
+        background-image: url(images/search-icon.png);
+        background-position: 5px center;
+        background-repeat: no-repeat;
+        background-size: 24px 24px;
+        border: none;
+        cursor: pointer;
+        height: 37px;
+        margin: 3px 0;
+        padding: 0 0 0 34px;
+        position: relative;
+        display: inline-block;
+        float: left;
+        //    right: 310px;
+        //    top: 155px;
+        -webkit-transition: width 400ms ease, background 400ms ease;
+        transition:         width 400ms ease, background 400ms ease;
+        width: 0;
+        z-index: 9999;
+    }
+
+    #content.site-content {
+        border-bottom: none;
     }
 
     // grid display
@@ -2174,8 +2203,8 @@ h1.entry-title.team-member-title {
     .artist-archive-entry,
     .exhibition-archive-entry {
         @include span-columns(4);
-        @include omega(4n);
-        &:nth-child(4n + 1) {
+        @include omega(3n);
+        &:nth-child(3n + 1) {
             clear: left;
         }
     }

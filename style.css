@@ -622,7 +622,7 @@ img.size-full,
 img.size-large,
 img.wp-post-image,
 figure.wp-caption {
-  max-width: 100%;
+  width: 100%;
   height: auto; }
 
 .entry-content .twitter-tweet-rendered {
@@ -2318,9 +2318,33 @@ h1.entry-title.team-member-title {
   #mobile-menu-switch .toggle.on {
     background-color: #d9dbce; }
 
-  #site-navigation ul {
+  #site-navigation ul,
+  .search-box {
     background-color: #d9dbce;
     width: 100%; }
+
+  .site-header .search-field,
+  .main-navigation .search-field {
+    background-color: transparent;
+    background-image: url(images/search-icon.png);
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    border: none;
+    cursor: pointer;
+    height: 37px;
+    margin: 3px 0;
+    padding: 0 0 0 34px;
+    position: relative;
+    display: inline-block;
+    float: left;
+    -webkit-transition: width 400ms ease, background 400ms ease;
+    transition: width 400ms ease, background 400ms ease;
+    width: 0;
+    z-index: 9999; }
+
+  #content.site-content {
+    border-bottom: none; }
 
   .ui-tabs-panel,
   .current-exhibitions {
@@ -2361,11 +2385,11 @@ h1.entry-title.team-member-title {
     .artist-archive-entry:last-child,
     .exhibition-archive-entry:last-child {
       margin-right: 0; }
-    .artist-archive-entry:nth-child(4n),
-    .exhibition-archive-entry:nth-child(4n) {
+    .artist-archive-entry:nth-child(3n),
+    .exhibition-archive-entry:nth-child(3n) {
       margin-right: 0; }
-    .artist-archive-entry:nth-child(4n + 1),
-    .exhibition-archive-entry:nth-child(4n + 1) {
+    .artist-archive-entry:nth-child(3n + 1),
+    .exhibition-archive-entry:nth-child(3n + 1) {
       clear: left; }
 
   .related-products,
