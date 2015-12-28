@@ -754,13 +754,16 @@ textarea {
 #masthead {
   border-bottom: 1px solid #dbdbdb; }
 
-.site-logo {
-  display: inline-block;
+.site-logo-img {
   margin: 0.5em 1em 1em 0;
   float: left; }
   @media screen and (max-width: 999px) {
-    .site-logo {
+    .site-logo-img {
       line-height: 60px; } }
+
+.site-logo {
+  margin: 0.5em 1em 1em 0;
+  float: left; }
 
 .site-branding {
   position: relative;
@@ -803,12 +806,9 @@ textarea {
     top: 0px;
     left: 0px; } }
 
-#site-navigation {
-  border-bottom: 1px solid #dbdbdb;
-  margin-bottom: 1em; }
-  #site-navigation ul {
-    margin-bottom: 0;
-    padding-top: .5em; }
+#site-navigation ul {
+  margin-bottom: 0;
+  padding-top: .5em; }
 
 @media screen and (max-width: 999px) {
   .main-navigation {
@@ -1103,7 +1103,8 @@ ul.sub-menu {
   float: left;
   display: block;
   margin-right: 2.3576515979%;
-  width: 100%; }
+  width: 100%;
+  padding-bottom: 3em; }
   .home-page-columns:last-child {
     margin-right: 0; }
 
@@ -2057,8 +2058,7 @@ input[type=search] {
 #exhibition-artists .products,
 #exhibition-artwork .products,
 #related-artwork-archive .products,
-#new-artwork-archive .products,
-#tab-available-work .products {
+#new-artwork-archive .products {
   content: "";
   display: table;
   clear: both;
@@ -2252,6 +2252,21 @@ ul.tabs li,
 .main-navigation .container {
   display: block; }
 
+.home-page-content-area {
+  margin-top: 1em; }
+
+.soliloquy-outer-container {
+  height: 350px; }
+
+.home-page-columns {
+  margin-top: 3em; }
+
+.home-page-carousel {
+  margin-bottom: 2em; }
+
+.site-content {
+  border-bottom: 1px solid #dbdbdb; }
+
 .footer-left {
   position: relative; }
 
@@ -2303,6 +2318,10 @@ h1.entry-title.team-member-title {
   #mobile-menu-switch .toggle.on {
     background-color: #d9dbce; }
 
+  #site-navigation ul {
+    background-color: #d9dbce;
+    width: 100%; }
+
   .ui-tabs-panel,
   .current-exhibitions {
     float: left;
@@ -2317,8 +2336,7 @@ h1.entry-title.team-member-title {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
-    width: 100%;
-    padding-bottom: 3em; }
+    width: 100%; }
     .home-page-columns:last-child {
       margin-right: 0; }
 
@@ -2349,6 +2367,48 @@ h1.entry-title.team-member-title {
     .artist-archive-entry:nth-child(4n + 1),
     .exhibition-archive-entry:nth-child(4n + 1) {
       clear: left; }
+
+  .related-products,
+  .artist-archives,
+  .artist-exhibitions,
+  .artist-available-works {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%; }
+    .related-products:last-child,
+    .artist-archives:last-child,
+    .artist-exhibitions:last-child,
+    .artist-available-works:last-child {
+      margin-right: 0; }
+    .related-products:nth-child(3n),
+    .artist-archives:nth-child(3n),
+    .artist-exhibitions:nth-child(3n),
+    .artist-available-works:nth-child(3n) {
+      margin-right: 0; }
+
+  .related-exhibition-entry,
+  .related-artwork-entry,
+  .new-artwork-entry {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%; }
+    .related-exhibition-entry:last-child,
+    .related-artwork-entry:last-child,
+    .new-artwork-entry:last-child {
+      margin-right: 0; }
+    .related-exhibition-entry:nth-child(3n),
+    .related-artwork-entry:nth-child(3n),
+    .new-artwork-entry:nth-child(3n) {
+      margin-right: 0; }
+
+  .related-exhibition-entry:nth-child(3n+1),
+  .related-artwork-entry:nth-child(3n+1),
+  .new-artwork-entry:nth-child(3n+1),
+  .artist-available-works:nth-child(3n+1) {
+    clear: left;
+    margin-bottom: 2em; }
 
   h3.home-col-title,
   h3.home-carousel-title {
@@ -2455,4 +2515,46 @@ h1.entry-title.team-member-title {
       clear: left; }
 
   .home-page-column img {
-    width: 100%; } }
+    width: 100%; }
+
+  .related-products,
+  .artist-archives,
+  .artist-exhibitions,
+  .artist-available-works {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 100%; }
+    .related-products:last-child,
+    .artist-archives:last-child,
+    .artist-exhibitions:last-child,
+    .artist-available-works:last-child {
+      margin-right: 0; }
+    .related-products:nth-child(1n),
+    .artist-archives:nth-child(1n),
+    .artist-exhibitions:nth-child(1n),
+    .artist-available-works:nth-child(1n) {
+      margin-right: 0; }
+
+  .related-exhibition-entry,
+  .related-artwork-entry,
+  .new-artwork-entry {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 100%; }
+    .related-exhibition-entry:last-child,
+    .related-artwork-entry:last-child,
+    .new-artwork-entry:last-child {
+      margin-right: 0; }
+    .related-exhibition-entry:nth-child(1n),
+    .related-artwork-entry:nth-child(1n),
+    .new-artwork-entry:nth-child(1n) {
+      margin-right: 0; }
+
+  .related-exhibition-entry:nth-child(1n+1),
+  .related-artwork-entry:nth-child(1n+1),
+  .new-artwork-entry:nth-child(1n+1),
+  .artist-available-works:nth-child(1n+1) {
+    clear: left;
+    margin-bottom: 2em; } }

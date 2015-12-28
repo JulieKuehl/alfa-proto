@@ -519,8 +519,8 @@ button {
 // Site Navigation
 //
 #site-navigation {
-    border-bottom: 1px solid $hex-border;
-    margin-bottom: 1em;
+    //border-bottom: 1px solid $hex-border;
+    //margin-bottom: 1em;
 
     ul {
         margin-bottom: 0;
@@ -881,6 +881,8 @@ ul.sub-menu {
 //
 .home-page-columns {
     @include span-columns(12);
+
+    padding-bottom: 3em;
 }
 
 .home-page-column {
@@ -1875,8 +1877,7 @@ input[type=search] {
 #exhibition-artists .products,
 #exhibition-artwork .products,
 #related-artwork-archive .products,
-#new-artwork-archive .products,
-#tab-available-work .products {
+#new-artwork-archive .products {
     @include outer-container();
 }
 
@@ -2076,6 +2077,26 @@ ul.tabs li,
     display: block;
 }
 
+.home-page-content-area {
+    margin-top: 1em;
+}
+
+.soliloquy-outer-container {
+    height: 350px;
+}
+
+.home-page-columns {
+    margin-top: 3em;
+}
+
+.home-page-carousel {
+    margin-bottom: 2em;
+}
+
+.site-content {
+    border-bottom: 1px solid $hex-border;
+}
+
 .footer-left {
     position: relative;
 }
@@ -2115,6 +2136,8 @@ h1.entry-title.team-member-title {
     @include clearfix();
 }
 
+
+
 ///////////////////
 // MEDIA QUERIES //
 ///////////////////
@@ -2128,6 +2151,11 @@ h1.entry-title.team-member-title {
         background-color: lighten($color-alfa-2, 30%);
     }
 
+    #site-navigation ul {
+        background-color: lighten($color-alfa-2, 30%);
+        width: 100%;
+    }
+
     // grid display
     .ui-tabs-panel,
     .current-exhibitions {
@@ -2135,7 +2163,6 @@ h1.entry-title.team-member-title {
     }
     .home-page-columns {
         @include span-columns(12);
-        padding-bottom: 3em;
     }
     .home-page-column {
         @include span-columns(6);
@@ -2151,6 +2178,29 @@ h1.entry-title.team-member-title {
         &:nth-child(4n + 1) {
             clear: left;
         }
+    }
+
+    .related-products,
+    .artist-archives,
+    .artist-exhibitions,
+    .artist-available-works {
+        @include span-columns(4);
+        @include omega(3n);
+    }
+
+    .related-exhibition-entry,
+    .related-artwork-entry,
+    .new-artwork-entry {
+        @include span-columns(4);
+        @include omega(3n);
+    }
+
+    .related-exhibition-entry:nth-child(3n+1),
+    .related-artwork-entry:nth-child(3n+1),
+    .new-artwork-entry:nth-child(3n+1),
+    .artist-available-works:nth-child(3n+1) {
+        clear: left;
+        margin-bottom: 2em;
     }
 
     // home page headings
@@ -2240,5 +2290,29 @@ h1.entry-title.team-member-title {
     }
     .home-page-column img {
         width: 100%;
+    }
+
+
+    .related-products,
+    .artist-archives,
+    .artist-exhibitions,
+    .artist-available-works {
+        @include span-columns(12);
+        @include omega(1n);
+    }
+
+    .related-exhibition-entry,
+    .related-artwork-entry,
+    .new-artwork-entry {
+        @include span-columns(12);
+        @include omega(1n);
+    }
+
+    .related-exhibition-entry:nth-child(1n+1),
+    .related-artwork-entry:nth-child(1n+1),
+    .new-artwork-entry:nth-child(1n+1),
+    .artist-available-works:nth-child(1n+1) {
+        clear: left;
+        margin-bottom: 2em;
     }
 }
