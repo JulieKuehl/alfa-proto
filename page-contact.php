@@ -31,5 +31,8 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<div class="contact-page"><?php dynamic_sidebar( 'contact-page' ); ?></div>
+<div id="secondary" class="contact-page-sidebar">
+	<?php dynamic_sidebar( 'contact-page' ); ?>
+</div><!-- #secondary -->
+
 <?php get_footer(); ?>

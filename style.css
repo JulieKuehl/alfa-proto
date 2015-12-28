@@ -1065,6 +1065,21 @@ ul.sub-menu {
   margin-top: 1em;
   margin-bottom: 1em; }
 
+.contact-page-sidebar {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 31.7615656014%;
+  padding-top: 3.75rem;
+  float: right; }
+  .contact-page-sidebar:last-child {
+    margin-right: 0; }
+
+.contact-page-sidebar:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 .widget {
   margin-bottom: 1em;
   padding-top: 1em;
@@ -1586,10 +1601,14 @@ article.sticky {
     .pingback + .comment .comment-body {
       margin-top: 0.9375rem; } }
 
+.footer-border {
+  border-top: 1px solid #dbdbdb;
+  position: static;
+  display: inline-block; }
+
 .site-footer {
-  padding-top: 3.75rem;
-  padding-bottom: 3.75rem;
-  border-top: 1px solid #dbdbdb; }
+  padding-top: 1.875rem;
+  padding-bottom: 3.75rem; }
   @media screen and (max-width: 999px) {
     .site-footer {
       padding-top: 1.875rem;

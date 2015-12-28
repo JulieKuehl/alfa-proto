@@ -11,6 +11,10 @@
 		</div><!-- .container -->
 	</div><!-- #content -->
 
+	<div class="footer-border fullwidth">
+		<p>&nbsp;</p>
+	</div>
+
 	<footer id="colophon" class="site-footer footer-container" role="contentinfo">
 			<div class="fat-footer">
 				<div class="footer-left"><?php dynamic_sidebar( 'footer-left' ); ?></div>

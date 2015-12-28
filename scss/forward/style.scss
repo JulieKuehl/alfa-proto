@@ -829,6 +829,17 @@ ul.sub-menu {
     @include type-style-h5;
 }
 
+// Contact page sidebar
+.contact-page-sidebar {
+    @include span-columns(4 of 12);
+
+    padding-top: 3.75rem;
+    float: right;
+}
+.contact-page-sidebar:after {
+    @include clearfix;
+}
+
 // Widget
 // 
 .widget {
@@ -1388,15 +1399,22 @@ article.format-chat {
 // Footer //
 ////////////
 
+.footer-border {
+    border-top: 1px solid $hex-border;
+    position: static;
+    display: inline-block;
+}
+
 .site-footer {
     @include media($tablet) {
         padding-top: unit(2);
         padding-bottom: unit(2);
     }
 
-    padding-top: unit(4);
+    padding-top: unit(2);
     padding-bottom: unit(4);
-    border-top: 1px solid $hex-border;
+
+
 
     .site-credits {
         @include type-style-small;
