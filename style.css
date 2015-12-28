@@ -754,16 +754,12 @@ textarea {
 #masthead {
   border-bottom: 1px solid #dbdbdb; }
 
-.site-logo-img {
-  margin: 0.5em 1em 1em 0;
-  float: left; }
-  @media screen and (max-width: 999px) {
-    .site-logo-img {
-      line-height: 60px; } }
-
 .site-logo {
   margin: 0.5em 1em 1em 0;
   float: left; }
+  @media screen and (max-width: 999px) {
+    .site-logo {
+      line-height: 60px; } }
 
 .site-branding {
   position: relative;

@@ -466,16 +466,15 @@ button {
 //    }
 }
 .site-logo {
-    // @include transition (font-size $timing-default $easing-default);
+     //@include transition (font-size $timing-default $easing-default);
     @include media($tablet) {
         line-height: $header-bar-height-mobile;
     }
 
-    display: inline-block;
-
     margin: 0.5em 1em 1em 0;
     float: left;
 }
+
 .site-branding {
 //    @include media($tablet) {
 //        left: $gutter / 2;
