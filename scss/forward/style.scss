@@ -434,10 +434,6 @@ button {
 // Header //
 ////////////
 
-#masthead {
-    border-bottom: 1px solid $hex-border;
-}
-
 .site-header {
     // @include transition (padding, height $timing-default $easing-default);
     @include media($tablet) {
@@ -517,8 +513,9 @@ button {
 
 // Site Navigation
 //
-#site-navigation {
-    //border-bottom: 1px solid $hex-border;
+nav#site-navigation {
+    border-bottom: 1px solid $hex-border;
+    border-top: 1px solid $hex-border;
     //margin-bottom: 1em;
 
     ul {
@@ -2058,6 +2055,19 @@ ul.tabs li,
     vertical-align: middle;
 }
 
+// move images and summary on single product (Artwork) page
+.woocommerce #content div.product div.images,
+.woocommerce div.product div.images,
+.woocommerce-page #content div.product div.images,
+.woocommerce-page div.product div.images,
+.woocommerce #content div.product div.summary,
+.woocommerce div.product div.summary,
+.woocommerce-page #content div.product div.summary,
+.woocommerce-page div.product div.summary {
+    margin-top: 2em;
+}
+
+
 //////////////////
 // Social Share //
 //////////////////
@@ -2108,10 +2118,6 @@ ul.tabs li,
 
 .home-page-carousel {
     margin-bottom: 2em;
-}
-
-.site-content {
-    border-bottom: 1px solid $hex-border;
 }
 
 .footer-left {

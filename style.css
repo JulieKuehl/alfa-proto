@@ -751,9 +751,6 @@ textarea {
 .footer-container {
   display: block; }
 
-#masthead {
-  border-bottom: 1px solid #dbdbdb; }
-
 .site-logo {
   margin: 0.5em 1em 1em 0;
   float: left; }
@@ -802,9 +799,12 @@ textarea {
     top: 0px;
     left: 0px; } }
 
-#site-navigation ul {
-  margin-bottom: 0;
-  padding-top: .5em; }
+nav#site-navigation {
+  border-bottom: 1px solid #dbdbdb;
+  border-top: 1px solid #dbdbdb; }
+  nav#site-navigation ul {
+    margin-bottom: 0;
+    padding-top: .5em; }
 
 @media screen and (max-width: 999px) {
   .main-navigation {
@@ -2247,6 +2247,16 @@ ul.tabs li,
 .icon {
   vertical-align: middle; }
 
+.woocommerce #content div.product div.images,
+.woocommerce div.product div.images,
+.woocommerce-page #content div.product div.images,
+.woocommerce-page div.product div.images,
+.woocommerce #content div.product div.summary,
+.woocommerce div.product div.summary,
+.woocommerce-page #content div.product div.summary,
+.woocommerce-page div.product div.summary {
+  margin-top: 2em; }
+
 #fsb-social-bar {
   margin-top: 3em !important; }
 
@@ -2278,9 +2288,6 @@ ul.tabs li,
 
 .home-page-carousel {
   margin-bottom: 2em; }
-
-.site-content {
-  border-bottom: 1px solid #dbdbdb; }
 
 .footer-left {
   position: relative; }
