@@ -1721,6 +1721,11 @@ input[type=submit] {
     padding: 1em .5em 1em;
 }
 
+// remove Update Cart button from cart page
+td.actions {
+    display: none;
+}
+
 
 ///////////////////////////
 // Custom Theme Specific //
