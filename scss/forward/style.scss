@@ -1672,6 +1672,15 @@ input[type=submit] {
 }
 
 
+////////////////////
+// CONTACT FORM 7 //
+////////////////////
+
+.wpcf7-submit,
+input[type=submit] {
+    @include button();
+}
+
 /////////
 // 404 //
 /////////
