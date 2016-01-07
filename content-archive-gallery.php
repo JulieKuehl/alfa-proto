@@ -34,7 +34,7 @@
 		<a href="http://maps.google.com/?q=<?php the_field( 'gallery_address' ); ?>, <?php the_field( 'gallery_city' ); ?>, <?php the_field( 'gallery_state' ); ?>, <?php the_field( 'gallery_zip' ); ?>" target="_blank"><?php the_field( 'gallery_address' ); ?><br/>
 		<?php the_field( 'gallery_city'); ?>, <?php the_field( 'gallery_state' ); ?> <?php the_field( 'gallery_zip' ); ?></a><br/>
 
-		<p><?php the_field( 'gallery_phone' ); ?></p>
+		<p><a href="tel:<?php the_field( 'gallery_phone' ); ?>"><?php the_field( 'gallery_phone' ); ?></a></p>
 
 		<p>Hours:<br/>
 		<?php the_field( 'gallery_hours' ); ?></p>
