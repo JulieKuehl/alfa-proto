@@ -11,6 +11,12 @@ Tags: black, blue, gray, white, light, two-columns, left-sidebar, responsive-lay
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -778,6 +784,10 @@ textarea {
     margin-top: 0; }
   .site-title a:hover {
     text-decoration: none; }
+  @media screen and (max-width: 999px) {
+    .site-title {
+      display: block;
+      position: relative; } }
 
 .site-description {
   display: inline-block;
@@ -786,6 +796,11 @@ textarea {
   font-size: 2em;
   position: absolute;
   bottom: 0; }
+  @media screen and (max-width: 999px) {
+    .site-description {
+      font-size: 1.3em;
+      display: block;
+      position: relative; } }
 
 @media screen and (max-width: 999px) {
   #wpadminbar {
@@ -1888,6 +1903,20 @@ input[type=submit] {
     background-color: #5e5e5e;
     color: white; }
 
+.wpcf7-submit,
+input[type=submit] {
+  background-color: transparent;
+  border: 1px solid #dbdbdb;
+  border-radius: 0;
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #5e5e5e;
+  padding: .7em 1.4em; }
+  .wpcf7-submit:hover,
+  input[type=submit]:hover {
+    background-color: #5e5e5e;
+    color: white; }
+
 .error404 .content-area {
   float: left;
   display: block;
@@ -2279,6 +2308,9 @@ ul.tabs li,
 
 .soliloquy-outer-container {
   height: 350px; }
+  @media screen and (max-width: 999px) {
+    .soliloquy-outer-container {
+      height: auto; } }
 
 .home-page-columns {
   margin-top: 3em; }
@@ -2601,3 +2633,5 @@ h1.entry-title.team-member-title {
   .artist-available-works:nth-child(1n+1) {
     clear: left;
     margin-bottom: 2em; } }
+.star {
+  vertical-align: middle; }

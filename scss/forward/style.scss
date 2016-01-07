@@ -489,6 +489,11 @@ button {
     text-transform: uppercase;
     position: absolute;
     bottom: 35px;
+
+    @include media($tablet) {
+        display: block;
+        position: relative;
+    }
 }
 .site-description {
     display: inline-block;
@@ -497,6 +502,12 @@ button {
     font-size: 2em;
     position: absolute;
     bottom: 0;
+
+    @include media($tablet) {
+        font-size: 1.3em;
+        display: block;
+        position: relative;
+    }
 }
 
 // Admin bar
@@ -2124,6 +2135,10 @@ ul.tabs li,
 
 .soliloquy-outer-container {
     height: 350px;
+
+    @include media($tablet) {
+        height: auto;
+    }
 }
 
 .home-page-columns {
