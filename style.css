@@ -2331,7 +2331,13 @@ ul.tabs li,
   display: table;
   clear: both; }
 
-h1.entry-title.team-member-title {
+.team_member {
+  content: "";
+  display: table;
+  clear: both; }
+
+h1.entry-title.team-member-title,
+.entry-header .entry-title.team-member-title {
   margin-bottom: 0.5em !important;
   margin-top: 1em !important; }
 
