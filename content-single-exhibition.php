@@ -63,17 +63,18 @@
 
 		<div id="exhibition-artists" class="outer-container">
 			<h2>Featured Artists:</h2>
-			<ul class="products">
-				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-					<div class="featured-artists">
+
+			<div class="featured-artists">
+				<ul class="products"><!-- what a horrible tag for people -->
+					<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
 						<li>
 							<a href="<?php the_permalink(); ?>">
 								<h3><?php the_title(); ?></h3>
 							</a>
 						</li>
-					</div><!-- .related-products -->
-				<?php endwhile; ?>
-			</ul>
+					<?php endwhile; ?>
+				</ul>
+			</div><!-- .products -->
 
 			<?php
 			// Prevent weirdness
@@ -145,8 +146,6 @@
 		<?php forward_social_links(); ?>
 	</div>
 
-	<footer class="entry-footer">
-		<?php forward_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<p class="clearfix">&nbsp;</p>
 
 </article><!-- #post-## -->
