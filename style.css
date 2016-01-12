@@ -468,7 +468,7 @@ a {
     top: 1px; }
 
 p {
-  margin-bottom: 1em; }
+  margin-bottom: 2em; }
 
 b,
 strong {
@@ -2066,7 +2066,8 @@ ul.artist-work {
 
 .artwork-product-metainfo h3,
 .new-artwork-product-metainfo h3 {
-  font-style: italic; }
+  font-style: italic;
+  line-height: 1.2em; }
 
 .movement,
 .provenance {
@@ -2331,7 +2332,7 @@ ul.tabs li,
   display: table;
   clear: both; }
 
-.team_member {
+article.team_member {
   content: "";
   display: table;
   clear: both; }
@@ -2340,6 +2341,9 @@ h1.entry-title.team-member-title,
 .entry-header .entry-title.team-member-title {
   margin-bottom: 0.5em !important;
   margin-top: 1em !important; }
+
+.entry-header .entry-title.team-member-title:first-of-type {
+  margin-top: 0 !important; }
 
 .team_member_photo {
   float: left;
@@ -2369,6 +2373,11 @@ h1.entry-title.team-member-title,
   content: "";
   display: table;
   clear: both; }
+
+.yith_magnifier_gallery li {
+  margin-left: 0.5em; }
+  .yith_magnifier_gallery li:first-of-type {
+    margin-left: 0; }
 
 @media screen and (max-width: 999px) {
   .toggle,
@@ -2494,6 +2503,10 @@ h1.entry-title.team-member-title,
   h3.home-col-title,
   h3.home-carousel-title {
     font-size: 1.5em; }
+
+  article.post h1,
+  h1.blog-title {
+    font-size: 2.5em !important; }
 
   .soliloquy-container {
     overflow: hidden; }
