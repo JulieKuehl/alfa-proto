@@ -2164,7 +2164,7 @@ ul.tabs li,
     @include clearfix();
 }
 
-.team_member {
+article.team_member {
     @include clearfix;
 }
 
@@ -2172,6 +2172,10 @@ h1.entry-title.team-member-title,
 .entry-header .entry-title.team-member-title {
     margin-bottom: 0.5em !important;
     margin-top: 1em !important;
+}
+
+.entry-header .entry-title.team-member-title:first-of-type {
+    margin-top: 0 !important;
 }
 
 .team_member_photo {
