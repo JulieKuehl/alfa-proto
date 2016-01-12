@@ -154,7 +154,9 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 
 			?>
 
-			<div class="view-artwork-link"><button><a href="<?php the_permalink(); ?>">View this piece</a></button></div>
+			<div class="view-artwork-link">
+				<a href="<?php the_permalink(); ?>"><button>View this piece</button></a>
+			</div><!-- .view-artwork-link -->
 
 		</div><!-- .artwork-product-metainfo -->
 
