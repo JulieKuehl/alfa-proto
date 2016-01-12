@@ -1871,9 +1871,15 @@ ul.artist-work {
 }
 
 .artwork-product-metainfo h3,
-.new-artwork-product-metainfo h3 {
+.new-artwork-product-metainfo h3,
+.related-products h3 {
     font-style: italic;
     line-height: 1.2em;
+}
+
+.related-products h3 {
+    font-family: $garamond;
+    margin-top: 0.5em;
 }
 
 .movement,
