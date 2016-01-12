@@ -169,4 +169,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 </div><!-- #product-<?php the_ID(); ?> -->
 
+<p class="clearfix">&nbsp;</p>
+
 <?php do_action( 'woocommerce_after_single_product' ); ?>
