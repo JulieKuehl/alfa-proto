@@ -25,10 +25,10 @@
 
 		if (isset( $exhibitionlocationlink[0] )) {
 			// if has link
-			echo '<a href="' . $exhibitionlocationlink . '">' . $exhibitionlocation . '</a><br />Yes';
+			echo '<a href="' . $exhibitionlocationlink . '">' . $exhibitionlocation . '</a><br />';
 		} else {
 			// if no link
-			echo $exhibitionlocation . '<br />No';
+			echo $exhibitionlocation . '<br />';
 		}
 		?>
 
@@ -43,6 +43,8 @@
 			<img class="exhibition_photo" alt="Image of <?php echo the_title(); ?>" src="<?php echo $image[0]; ?>" />
 
 		</div><!-- .exhibition-single-photo -->
+
+		<div class="clearfix"></div>
 
 		<!-- Display the details about the exhibition -->
 		<?php the_field( 'exhibition_details' ); ?><br />
@@ -63,20 +65,9 @@
 			<h2>Featured Artists:</h2>
 			<ul class="products">
 				<?php while ( $connected->have_posts() ) : $connected->the_post(); ?>
-					<div class="new-artwork-entry related-products">
+					<div class="featured-artists">
 						<li>
 							<a href="<?php the_permalink(); ?>">
-
-<!-- 								<div class="artist-photo">
-									<?php
-										$attachment_id = get_field('artist_photo_id');
-										$size = 'large-thumbnail';
-										$image = wp_get_attachment_image_src( $attachment_id, $size );
-									?>
-
-									<img class="exhbition_photo" alt="Image of <?php echo the_title(); ?> Exhibition" src="<?php echo $image[0]; ?>" />
-								</div><!-- .artist-photo -->
-
 								<h3><?php the_title(); ?></h3>
 							</a>
 						</li>

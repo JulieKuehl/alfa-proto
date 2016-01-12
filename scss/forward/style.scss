@@ -1921,6 +1921,18 @@ input[type=search] {
     @include outer-container();
 }
 
+#exhibition-artists {
+    margin-bottom: 2em;
+}
+
+#exhibition-artists ul.products {
+    margin-left: 0;
+}
+
+.featured-artists h3 {
+    font-size: 1.7em;
+}
+
 .related-exhibition-entry,
 .related-artwork-entry,
 .new-artwork-entry {
