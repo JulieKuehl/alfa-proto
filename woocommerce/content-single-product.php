@@ -74,15 +74,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</h1>
 
 		<?php
-			/**
-			 * woocommerce_single_product_summary hook
-			 *
-			 * @hooked woocommerce_template_single_title - 5
-			 */
-			do_action( 'alfa_woocommerce_single_product_info' );
-		?>
-
-		<?php
 		// Display material / substrate
 		$material = get_field( 'artwork_material' );
 
@@ -110,22 +101,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 		}
 		?>
 
-		<p class="movement"><?php
-		// Display the Movement
-		the_field( 'artwork_movement' );
-		?></p>
+		<p class="movement">
+			<?php
+				// Display the Movement
+				the_field( 'artwork_movement' );
+			?>
+		</p>
 
-		<?php
-		// Display an Add to My Collection button
-		alfa_add_to_cart();
-		?>
+<!--		--><?php
+//		// Display an Add to My Collection button
+//		alfa_add_to_cart();
+//		?>
 
-		<p>For more information, <a href="/contact/">please contact us.</a></p>
+		<a href="/contact/"><button>Request More Information</button></a>
 
-		<p><?php
-		// Display the content
-		the_content();
-		?></p>
+<!--		<p>For more information, <a href="/contact/">please contact us.</a></p>-->
+
+		<p>
+			<?php
+				// Display the content
+				the_content();
+			?>
+		</p>
 
 		<p class="provenance">
 			<?php
@@ -134,18 +131,33 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 		</p>
 
+
 		<?php
 		/**
 		 * woocommerce_single_product_summary hook
 		 *
+		 * @hooked woocommerce_template_single_title - 5
+		 * @hooked woocommerce_template_single_rating - 10
+		 * @hooked woocommerce_template_single_excerpt - 20
 		 * @hooked woocommerce_template_single_price - 30
+		 * @hooked woocommerce_template_single_add_to_cart - 30
 		 * @hooked woocommerce_template_single_meta - 40
 		 * @hooked woocommerce_template_single_sharing - 50
 		 */
-		do_action( 'alfa_woocommerce_single_product_summary' );
+		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+		remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
+
+		do_action( 'woocommerce_single_product_summary' );
+//		do_action( 'alfa_woocommerce_single_product_summary' );
 		?>
 
-
+		<?php
+		if ( function_exists( 'floating_social_bar' ) ) floating_social_bar( array( 'facebook' => true, 'twitter' => true, 'pinterest' => true, 'linkedin' => true, 'static' => true ) );
+		?>
 
 	</div><!-- .summary -->
 

@@ -2379,6 +2379,14 @@ h1.entry-title.team-member-title,
   .yith_magnifier_gallery li:first-of-type {
     margin-left: 0; }
 
+span.sku_wrapper {
+  display: none; }
+
+.quantity,
+.price,
+.amount {
+  display: none; }
+
 @media screen and (max-width: 999px) {
   .toggle,
   #mobile-menu-switch .toggle.on {

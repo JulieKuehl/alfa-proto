@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 ?>
 
-<?php do_action( 'alfa_get_price' ); ?>
+<?php //do_action( 'alfa_get_price' ); ?>
 
 <?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
