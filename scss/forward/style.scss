@@ -2306,6 +2306,12 @@ h1.entry-title.team-member-title,
         font-size: 1.5em;
     }
 
+    // blog entry headings
+    article.post h1,
+    h1.blog-title {
+        font-size: 2.5em !important;
+    }
+
     // remove nav arrows from home page New Artwork carousel
     .soliloquy-container {
         overflow: hidden;
