@@ -2205,6 +2205,10 @@ h1.entry-title.team-member-title,
 
 .view-artwork-link button {
     @include button();
+
+    &:hover {
+        color: white;
+    }
 }
 
 .publications-list li {
