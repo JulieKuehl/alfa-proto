@@ -25,6 +25,8 @@ get_header(); ?>
 
 		<?php endwhile; // end of the loop. ?>
 
+		<p>&nbsp;</p>
+
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
