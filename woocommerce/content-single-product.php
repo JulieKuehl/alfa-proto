@@ -108,14 +108,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 		</p>
 
-<!--		--><?php
-//		// Display an Add to My Collection button
-//		alfa_add_to_cart();
-//		?>
-
 		<a href="/contact/"><button>Request More Information</button></a>
-
-<!--		<p>For more information, <a href="/contact/">please contact us.</a></p>-->
 
 		<p>
 			<?php
