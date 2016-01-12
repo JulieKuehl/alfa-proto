@@ -108,7 +108,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			?>
 		</p>
 
-		<a href="/contact/"><button>Request More Information</button></a>
+		<a href="mailto:info@americanlegacyfinearts.com?subject=Request%20More%20Information&body=I%20would%20like%20more%20information%20regarding:%20<?php the_permalink(); ?>"><button>Request More Information</button></a>
 
 		<p>
 			<?php
