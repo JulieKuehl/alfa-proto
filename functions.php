@@ -312,8 +312,8 @@ function woocommerce_support() {
  * Customize WooCommerce single product page
  */
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 30 );
 
 
@@ -429,4 +429,14 @@ add_filter( 'wpseo_metabox_prio', 'yoasttobottom');
 
 function yoasttobottom() {
 	return 'low';
+}
+
+
+/**
+ * Make the list on the My Collections page persistent
+ *
+ */
+add_filter( 'ywraq_clear_list_after_send_quote', 'ywraq_clear_list_after_send_quote' );
+function ywraq_clear_list_after_send_quote( $return ){
+  return false;
 }

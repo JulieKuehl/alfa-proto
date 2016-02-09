@@ -27,9 +27,9 @@
 				<li><a href="#tab-biography">Biography</a></li>
 				<li><a href="#tab-selected-exhibitions">Selected Exhibitions</a></li>
 				<li><a href="#tab-commissions">Commissions</a></li>
-				<li><a href="#tab-art-reviews">Art Reviews</a></li>
-				<li><a href="#tab-press">Press and Publications</a></li>
-				<li><a href="#tab-visit">Studio Visit</a></li>
+<!--				<li><a href="#tab-art-reviews">Art Reviews</a></li>-->
+<!--				<li><a href="#tab-press">Press and Publications</a></li>-->
+<!--				<li><a href="#tab-visit">Studio Visit</a></li>-->
 			</ul>
 
 			<!-- if Artist is not a gallery artist, then reduce tabs -->
