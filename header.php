@@ -31,31 +31,33 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'forward' ); ?></a>
 
 	<header id="masthead" class="" role="banner">
-		<div class="site-header header-container">
+		<div class="site-header container">
+
+			<div class="site-logo">
+				<a href="<?php bloginfo( 'url' ); ?>">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/alfa-logo.png" alt="ALFA Logo" class="site-logo" nopin="nopin" data-pin-no-hover="true"/>
+				</a>
+			</div><!-- .site-logo -->
 
 			<div class="site-branding">
-				<a href="<?php bloginfo( 'url' ); ?>">
-					<div class="site-logo">
-						<a href="<?php bloginfo( 'url' ); ?>">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/alfa-logo.png" alt="ALFA Logo" class="site-logo" nopin="nopin" data-pin-no-hover="true"/>
-							</a>
-					</div>
 
-					<div class="site-title">
-						<a href="<?php bloginfo( 'url' ); ?>">
-							<?php bloginfo( 'name' ); ?>
-						</a>
-					</div>
+				<div class="site-title">
+					<a href="<?php bloginfo( 'url' ); ?>">
+						<?php bloginfo( 'name' ); ?>
+					</a>
+				</div><!-- .site-title -->
 
-					<div class="site-description">
-						<a href="<?php bloginfo( 'url' ); ?>">
-							<?php bloginfo( 'description' ); ?>
-						</a>
-					</div>
-				</a>
+				<br/>
+
+				<div class="site-description">
+					<a href="<?php bloginfo( 'url' ); ?>">
+						<?php bloginfo( 'description' ); ?>
+					</a>
+				</div><!-- .site-description -->
+
 			</div><!-- .site-branding -->
 
-		</div><!-- .header-container -->
+		</div><!-- .container -->
 	</header><!-- #masthead -->
 
 	<nav id="site-navigation" class="main-navigation" role="navigation">

@@ -188,47 +188,6 @@ ul.sub-menu {
     z-index: 1000;
 }
 
-// Mobile Menu Switch
-//
-#mobile-menu-switch {
-    @include media($tablet) {
-        display: block;
-    }
-    @include position(fixed, 0px 0px null null);
-
-    display: none;
-    // Adjust for wp admin bar
-    .admin-bar & {
-        @include media($tablet) {
-            top: $wp-admin-bar-height;
-        }
-    }
-    .toggle {
-        font-size: rem(14);
-        line-height: $header-bar-height-mobile;
-
-        display: block;
-
-        width: $header-bar-height-mobile + 10px;
-        height: $header-bar-height-mobile;
-
-        text-align: center;
-        text-transform: uppercase;
-
-        color: $hex-primary;
-        &:hover {
-            text-decoration: none;
-        }
-        &:active {
-            top: 0;
-        }
-        &.on {
-            border-left: 1px solid $hex-border;
-            background-color: $hex-white;
-        }
-    }
-}
-
 // removed boldness from submenus
 .main-navigation .menu .current_page_parent {
     font-weight: 300;

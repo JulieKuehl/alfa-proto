@@ -15,9 +15,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 // Import default configuration.
 // Use '@import config-child' when building child themes.
 // 
-@import 'config';
+@import "config";
 
-@import 'nav-site';
+@import "nav-site";
+@import "header";
 
 body,
 button,
@@ -408,13 +409,13 @@ button {
     @extend %container;
 }
 
-.header-container {
-    @extend %container;
-
-    display: block;
-    position: relative;
-    margin-bottom: 1em;
-}
+//.header-container {
+//    @extend %container;
+//
+//    display: block;
+//    position: relative;
+//    margin-bottom: 1em;
+//}
 
 .content-container {
     @extend %container;
@@ -428,72 +429,72 @@ button {
     display: block;
 }
 
-////////////
-// Header //
-////////////
-
-.site-header {
-
-}
-
-.site-logo {
-    @include media($tablet) {
-        line-height: $header-bar-height-mobile;
-    }
-
-    margin: 0.5em 1em 5px 0;
-    float: left;
-}
-
-.site-branding {
-    position: relative;
-    height: 150px;
-
-    @include media($tablet) {
-        height: auto;
-        margin-top: 5px;
-    }
-}
-
-.site-title {
-    @include type-style-h1;
-    @include font-weight(light);
-    display: inline-block;
-    font-family: $garamond;
-    margin-top: 0;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    position: absolute;
-    bottom: 35px;
-
-    @include media($tablet) {
-        display: block;
-        position: relative;
-    }
-}
-
-.site-description {
-    display: inline-block;
-    font-family: $garamond;
-    font-style: italic;
-    font-size: 2em;
-    position: absolute;
-    bottom: 0;
-
-    @include media($tablet) {
-        font-size: 1.3em;
-        display: block;
-        position: relative;
-    }
-}
-
-// Admin bar
-// 
-#wpadminbar {
-    @include media($tablet) {
-        @include position(fixed, 0px null null 0px);
-    }
-}
+//////////////
+//// Header //
+//////////////
+//
+//.site-header {
+//
+//}
+//
+//.site-logo {
+//    @include media($tablet) {
+//        line-height: $header-bar-height-mobile;
+//    }
+//
+//    margin: 0.5em 1em 5px 0;
+//    float: left;
+//}
+//
+//.site-branding {
+//    position: relative;
+//    height: 150px;
+//
+//    @include media($tablet) {
+//        height: auto;
+//        margin-top: 5px;
+//    }
+//}
+//
+//.site-title {
+//    @include type-style-h1;
+//    @include font-weight(light);
+//    display: inline-block;
+//    font-family: $garamond;
+//    margin-top: 0;
+//    margin-bottom: 0;
+//    text-transform: uppercase;
+//    position: absolute;
+//    bottom: 35px;
+//
+//    @include media($tablet) {
+//        display: block;
+//        position: relative;
+//    }
+//}
+//
+//.site-description {
+//    display: inline-block;
+//    font-family: $garamond;
+//    font-style: italic;
+//    font-size: 2em;
+//    position: absolute;
+//    bottom: 0;
+//
+//    @include media($tablet) {
+//        font-size: 1.3em;
+//        display: block;
+//        position: relative;
+//    }
+//}
+//
+//// Admin bar
+////
+//#wpadminbar {
+//    @include media($tablet) {
+//        @include position(fixed, 0px null null 0px);
+//    }
+//}
 
 ////////////////
 // Navigation //

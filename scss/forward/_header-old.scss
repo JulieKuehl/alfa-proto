@@ -1,0 +1,66 @@
+////////////
+// Header //
+////////////
+
+.site-header {
+
+}
+
+.site-logo {
+    @include media($tablet) {
+        line-height: $header-bar-height-mobile;
+    }
+
+    margin: 0.5em 1em 5px 0;
+    float: left;
+}
+
+.site-branding {
+    position: relative;
+    height: 150px;
+
+    @include media($tablet) {
+        height: auto;
+        margin-top: 5px;
+    }
+}
+
+.site-title {
+    @include type-style-h1;
+    @include font-weight(light);
+    display: inline-block;
+    font-family: $garamond;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 35px;
+
+    @include media($tablet) {
+        display: block;
+        position: relative;
+    }
+}
+
+.site-description {
+    display: inline-block;
+    font-family: $garamond;
+    font-style: italic;
+    font-size: 2em;
+    position: absolute;
+    bottom: 0;
+
+    @include media($tablet) {
+        font-size: 1.3em;
+        display: block;
+        position: relative;
+    }
+}
+
+// Admin bar
+//
+#wpadminbar {
+    @include media($tablet) {
+        @include position(fixed, 0px null null 0px);
+    }
+}

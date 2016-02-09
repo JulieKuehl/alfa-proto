@@ -1,0 +1,80 @@
+////////////
+// Header //
+////////////
+
+.site-header {
+    @include outer-container();
+
+    display: block;
+    position: relative;
+    margin: 1em 0;
+    width: 100%;
+}
+
+.site-logo {
+    float: left;
+
+    :hover {
+        text-decoration: none;
+    }
+
+    @media screen and ($tablet) {
+        max-width: 50%;
+    }
+
+    @media screen and ($mobile) {
+        max-width: 95%;
+    }
+}
+
+.site-branding {
+    position: absolute;
+    bottom: 0;
+    left: 350px;
+
+    @media screen and (max-width: 1138px) {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        float: left;
+        margin-top: 1em;
+    }
+}
+
+.site-title {
+    float: left;
+
+    font-weight: 300;
+    font-family: "Garamond",serif;
+    font-size: 3.1573345183em;
+    line-height: 1em;
+    text-transform: uppercase;
+
+    :hover {
+        text-decoration: none;
+    }
+
+    @include tablet-single;
+    @include mobile-single;
+}
+
+.site-description {
+    float: left;
+
+    font-family: "Garamond",serif;
+    font-style: italic;
+    font-size: 2em;
+
+    :hover {
+        text-decoration: none;
+    }
+
+    @include tablet-single;
+    @include mobile-single;
+}
+
+.main-navigation {
+    @media screen and (max-width: 1138px) {
+        display: none !important;
+    }
+}
