@@ -2420,6 +2420,11 @@ span.sku_wrapper {
     .exhibitions {
         @include span-columns(12);
     }
+    .current-exhibitions,
+    .upcoming-exhibitions,
+    .previous-exhibitions {
+        margin-top: 2em;
+    }
     .home-page-column,
     .artist-archive-entry,
     .exhibition-archive-entry {

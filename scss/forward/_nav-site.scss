@@ -3,6 +3,7 @@
 nav#site-navigation {
     border-bottom: 1px solid $hex-border;
     border-top: 1px solid $hex-border;
+    max-height: 50px;
     //margin-bottom: 1em;
 
     ul {
@@ -28,9 +29,9 @@ nav#site-navigation {
         -webkit-overflow-scrolling: touch;
     }
     @include media($desktop) {
-        display: block !important;
+        display: block;
 
-        height: auto !important;
+        height: auto;
     }
     //    @include position(absolute, 20px 0px null null);
     // Adjust for wp admin bar

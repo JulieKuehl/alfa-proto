@@ -9,6 +9,7 @@
     position: relative;
     margin: 1em 0;
     width: 100%;
+
 }
 
 .site-logo {
@@ -18,12 +19,18 @@
         text-decoration: none;
     }
 
-    @media screen and ($tablet) {
-        max-width: 50%;
+    @media screen and (max-width: 1138px) {
+        max-height: 7em;
     }
 
-    @media screen and ($mobile) {
-        max-width: 95%;
+    @media screen and (max-width: 999px) {
+        float: none;
+        max-height: 6em;
+        text-align: center;
+
+        :after {
+            @include clearfix;
+        }
     }
 }
 
@@ -33,11 +40,20 @@
     left: 350px;
 
     @media screen and (max-width: 1138px) {
+        left: 300px;
+    }
+
+    @media screen and (max-width: 999px) {
+        float: none;
         position: relative;
-        bottom: auto;
         left: auto;
-        float: left;
         margin-top: 1em;
+        margin-right: 0;
+        text-align: center;
+
+        :after {
+            @include clearfix;
+        }
     }
 }
 
@@ -46,7 +62,8 @@
 
     font-weight: 300;
     font-family: "Garamond",serif;
-    font-size: 3.1573345183em;
+    //font-size: 3.1573345183em;
+    font-size: 3vw;
     line-height: 1em;
     text-transform: uppercase;
 
@@ -54,8 +71,19 @@
         text-decoration: none;
     }
 
-    @include tablet-single;
-    @include mobile-single;
+    @media screen and (max-width: 999px) {
+        //font-size: 2em;
+        font-size: 5vw;
+        padding-left: 1em;
+        padding-right: 1em;
+        text-align: center;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 480px) {
+        //font-size: 2em;
+        font-size: 8vw;
+    }
 }
 
 .site-description {
@@ -63,18 +91,38 @@
 
     font-family: "Garamond",serif;
     font-style: italic;
-    font-size: 2em;
+    //font-size: 2em;
+    font-size: 2vw;
 
     :hover {
         text-decoration: none;
     }
 
-    @include tablet-single;
-    @include mobile-single;
+    @media screen and (max-width: 999px) {
+        //font-size: 1.2em;
+        font-size: 3vw;
+        text-align: center;
+        padding-left: 2em;
+        padding-right: 2em;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 480px) {
+        //font-size: 2em;
+        font-size: 5vw;
+        line-height: 1;
+        margin-top: 0.5rem;
+    }
 }
 
 .main-navigation {
     @media screen and (max-width: 1138px) {
-        display: none !important;
+        display: none;
+    }
+}
+
+.content-container {
+    @media screen and (max-width: 1138px) {
+        border-top: 1px solid #dbdbdb;
     }
 }
