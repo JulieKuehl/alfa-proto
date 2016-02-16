@@ -892,6 +892,10 @@ button {
     margin-right: 0;
 }
 
+.textwidget img {
+    border: 1px solid #dbdbdb;
+}
+
 .home-col-title {
     @include type-style-h3;
     font-size: 1.7em;
@@ -2466,4 +2470,9 @@ span.sku_wrapper {
 // Star icon for My Collections menu item
 .star {
     vertical-align: middle;
+}
+
+// Facebook Like button display
+.fb_iframe_widget iframe {
+    max-width: initial;
 }
